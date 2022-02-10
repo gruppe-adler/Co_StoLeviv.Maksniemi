@@ -1,0 +1,48 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class Camera
+	{
+		pos[]={1107.5134,229.87282,7937.6489};
+		dir[]={0.88143432,-0.44552365,-0.1568523};
+		up[]={0.4386363,0.89526689,-0.078056037};
+		aside[]={-0.17520005,2.5131158e-008,-0.98454106};
+	};
+};
+binarizationWanted=0;
+sourceName="Co_StoLeviv";
+class AddonsMetaData
+{
+};
+randomSeed=6295661;
+class ScenarioData
+{
+	author="nomisum";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.10000001;
+		startWind=0.10000001;
+		startWaves=0.1;
+		forecastWeather=0.2;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=2019;
+		month=8;
+		day=21;
+		hour=10;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+};
