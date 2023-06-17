@@ -4,3 +4,7 @@ if (didJIP) then {
 
 ["InitializePlayer", [player,true]] call BIS_fnc_dynamicGroups;
 grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
+
+if (player getVariable ["isSneaky",false]) then {
+    [player] execVM "INC_undercover\Scripts\initUCR.sqf";
+};

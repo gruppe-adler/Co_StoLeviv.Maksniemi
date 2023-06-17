@@ -45,10 +45,16 @@ class missionSettings {
 	};
 };
 
+class Extended_InitPost_EventHandlers {
+     class CAManBase {
+		init = "_this call (compile preprocessFileLineNumbers 'postInitXEH.sqf')";
+	};
+};
 
 //FUNCTIONS ====================================================================
 class CfgFunctions
 {
+    #include "INC_undercover\cfgFunctions.hpp"
 	#include "functions\common\cfgFunctions.hpp"
 	#include "functions\diagnostics\cfgFunctions.hpp"
     #include "functions\events\cfgFunctions.hpp"
