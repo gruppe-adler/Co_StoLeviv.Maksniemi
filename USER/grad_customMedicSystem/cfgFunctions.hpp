@@ -1,0 +1,9 @@
+class grad_customMedicSystem {
+	class common {	
+		file = "USER\grad_customMedicSystem";
+
+		class autoInit { postInit = 1; };
+		class createMedicMarker;
+		class removeMedicMarker;
+	};
+};
