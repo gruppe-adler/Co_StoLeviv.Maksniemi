@@ -12,6 +12,6 @@ if (_yearbirth > _yeardeath) then {
 	_yeardeath = _yearbirth;
 };
 
-private _string = str _daybirth + "." + str _monthbirth + "." + str _year + " - " + str _daydeath + "." + str _monthdeath + "." + str _yeardeath;
+private _string = str _daybirth + "." + str _monthbirth + "." + str _yearbirth + " - " + str _daydeath + "." + str _monthdeath + "." + str _yeardeath;
 
 _string
