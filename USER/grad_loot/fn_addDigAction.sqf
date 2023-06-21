@@ -2,8 +2,6 @@ params ["_object"];
 
 private _action = ["Dig", "Dig", "", {
 
-    params ["_target", "_player", "_params"];
-
     [5, [_target], {
 
         params ["_target"];
@@ -18,4 +16,4 @@ private _action = ["Dig", "Dig", "", {
 
 }, {true}] call ace_interact_menu_fnc_createAction;
 
-[_object, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+[_object, 0, [], _action, true] call ace_interact_menu_fnc_addActionToObject;

@@ -25,6 +25,6 @@ for "_i" from 1 to _amount do {
  if (_buried) then {
     // _container setPosATL (_positionATL#0, _positionATL#1, _positionATL#2);
     // hideObjectGlobal _lootContainer;
-    [_container] remoteExec ["grad_loot_fnc_addDigAction", 0, _container]
+    [_lootContainer] remoteExec ["grad_loot_fnc_addDigAction", 0, _lootContainer]
 };
 
