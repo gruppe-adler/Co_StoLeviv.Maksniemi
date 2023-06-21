@@ -58,7 +58,7 @@ _noOffRoad = false; //Civilian vehicles driving at speed more than 50 meters fro
 _incogFactions = ["OPF_F","OPF_T_F", "rhs_faction_msv", "rhs_faction_rva", "rhs_faction_tv", "rhs_faction_vdv", "rhs_faction_vmf", "rhs_faction_vpvo", "rhs_faction_vv", "rhs_faction_vvs_c", "rhs_faction_vvs"]; //Array of enemy factions whose items and vehicles will allow the player to impersonate the enemy
 
  //Names of additional markers for areas that would be considered trespassing (any with "INC_tre" - case sensitive - somewhere in the marker name will automatically be included)
-_trespassMarkers = ["mrk_base_port", "mrk_base_trainstation"];
+_trespassMarkers = ["mrk_base_port", "mrk_base_trainstation", "mrk_base_small_north"];
 
 //(Array of classnames) Safe vests (on top of the specific factions above - useful if faction has randomisation script or to add items that are not used by the faction)
 _incognitoVests = [];
@@ -110,7 +110,7 @@ Civilians will operate under similar restrictions to the player.
 You can also dismiss your new teammates and they will leave your group and carry on doing whatever it is they fancy doing (usually sitting cross-legged in the middle of a field).
 */
 
-_civRecruitEnabled = true;          //(Bool - true or false) Set this to false to prevent undercover units from recruiting civilians
+_civRecruitEnabled = false;          //(Bool - true or false) Set this to false to prevent undercover units from recruiting civilians
 _armedCivPercentage = 70;           //(Number - 0 to 100) Max percentage of civilians armed with weapons from the array below, either on their person or in their backpacks (will only work if _civRecruitEnabled is set to true, otherwise this is ignored)
 
 //Weapon classnames for armed civilians (array of classnames)
