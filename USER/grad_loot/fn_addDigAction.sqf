@@ -1,4 +1,4 @@
-params ["_object"];
+params ["_actiondummy"];
 
 private _action = ["Dig", "Dig", "", {
 
@@ -6,8 +6,10 @@ private _action = ["Dig", "Dig", "", {
 
         params ["_target"];
 
-        hint str (getItemCargo _target);
-        if (count (getItemCargo _target select 1) > 0) then {
+        private _weaponholder = _target getVariable ["grad_loot_weaponholder", objNull];
+
+        hint str (getItemCargo _weaponholder);
+        if (count (getItemCargo _weaponholder select 1) > 0) then {
             Hint "Finished!"
         };
     }, {
@@ -16,4 +18,4 @@ private _action = ["Dig", "Dig", "", {
 
 }, {true}] call ace_interact_menu_fnc_createAction;
 
-[_object, 0, [], _action, true] call ace_interact_menu_fnc_addActionToObject;
+[_actiondummy, 0, [], _action, true] call ace_interact_menu_fnc_addActionToObject;

@@ -12,6 +12,11 @@ if (_yearbirth > _yeardeath) then {
 	_yeardeath = _yearbirth;
 };
 
+// we dont want to calculate real dates really
+if (_yearbirth == _yeardeath) then {
+	_yeardeath = _yeardeath + 1;
+};
+
 private _string = str _daybirth + "." + str _monthbirth + "." + str _yearbirth + " - " + str _daydeath + "." + str _monthdeath + "." + str _yeardeath;
 
 _string
