@@ -1,31 +1,34 @@
-params ["_classname", "_positionATL", ["_amount", 1], ["_buried", false]];
+params ["_classname", "_positionATL", ["_amount", 1]];
 
- private _lootContainer = createVehicle ["GroundWeaponHolder", [0,0,0], [], 0, "CAN_COLLIDE"];
-_lootContainer setDir (random 360);
-_lootContainer setPosATL _positionATL;
-
-systemchat ("creating " + str _classname);
+private _lootContainers = [];
 
 for "_i" from 1 to _amount do {
+    private _lootContainer = createVehicle ["weaponholdersimulated", [0,0,0], [], 0, "CAN_COLLIDE"];
 
-    if (_classname in ([configFile >> "CfgWeapons", true] call BIS_fnc_returnParents)) then {
-        _container addWeaponCargoGlobal [_classname, _amount]; 
+    _lootContainer setDir (random 360); 
+    _lootContainer setPosATL [_positionATL#0, _positionATL#1, _positionATL#2+.2]; 
+
+    ([_classname] call BIS_fnc_itemType) params ["_type"];
+
+    if (_type == "WEAPON") then {
+        _lootContainer addWeaponCargoGlobal [_classname, _amount]; 
     };
-    if (_classname in ([configFile >> "CA_Magazine", true] call BIS_fnc_returnParents)) then {
-        _container addMagazineCargoGlobal [_classname, _amount]; 
+    if (_type == "ITEM") then {
+        _lootContainer addItemCargoGlobal [_classname, _amount]; 
     };
-    if (_classname in ([configFile >> "CfgItems", true] call BIS_fnc_returnParents)) then {
-        _container addItemCargoGlobal [_classname, _amount]; 
+    if (_type == "MAGAZINE") then {
+        _lootContainer addMagazineCargoGlobal [_classname, _amount]; 
     };
-    if (_classname in ([configFile >> "Bag_Base", true] call BIS_fnc_returnParents)) then {
-        _container addBackpackCargoGlobal [_classname, _amount]; 
+    if (_type == "EQUIPMENT") then {
+        //backpack
+        if ( isClass( configFile >> "CfgVehicles" >> _classname ) ) then {
+            _lootContainer addBackpackCargoGlobal [ _classname, 1 ];
+        }else{
+            _lootContainer addItemCargoGlobal [ _classname, 1 ];
+        };
     };
+    _lootContainer hideObjectGlobal true;
+    _lootContainers pushBackUnique _lootContainer;
 };
 
- if (_buried) then {
-    // _container setPosATL (_positionATL#0, _positionATL#1, _positionATL#2);
-    // hideObjectGlobal _lootContainer;
-    [_lootContainer] remoteExec ["grad_loot_fnc_addDigAction", 0, _lootContainer];
-};
-
-_lootContainer
+_lootContainers

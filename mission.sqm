@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1855;
+		nextID=1884;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=318;
+		nextID=336;
 	};
 	class Camera
 	{
-		pos[]={9738.7793,30.031118,4615.6411};
-		dir[]={0.21825482,-0.9209038,0.32295665};
-		up[]={0.51564109,0.38978991,0.76300591};
-		aside[]={0.82854027,0,-0.55992937};
+		pos[]={9745.7148,6.8062468,4635.6694};
+		dir[]={-0.042604879,-0.50448197,0.86239243};
+		up[]={-0.02489442,0.86340451,0.5038957};
+		aside[]={0.99880052,-2.7295027e-007,0.04934575};
 	};
 };
 binarizationWanted=0;

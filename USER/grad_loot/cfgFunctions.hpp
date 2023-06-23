@@ -15,6 +15,8 @@ class grad_loot {
 		class getEpitaph;
 		class generateNames;
 		class getDateRange;
+
+		class digFinishFX;
 		
 	};
 	
