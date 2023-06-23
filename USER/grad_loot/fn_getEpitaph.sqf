@@ -1,4 +1,4 @@
-selectRandom [
+private _epitaphPool = [
   "I told you I was sick.",
   "I'll be back... as a ghost.",
   "I always knew this day would come.",
@@ -215,4 +215,14 @@ selectRandom [
   "I never met a ghost I didn't like.",
   "I finally have an excuse to wear ghostly pajamas all day.",
   "I'll be forever young in ghost years."
-]
+];
+
+private _epitaphs = [];
+
+while { count _epitaphs < 900 } do { 
+
+  _epitaphs pushBackUnique (selectRandom _epitaphPool);
+
+};
+
+_epitaphs

@@ -6,17 +6,18 @@ class grad_loot {
 		class addTombNameAction;
 		
 		class autoInit { postInit = 1; };
-        class createLoot;
+        
+		class createLoot;
 		class createMarker;
-		class getTombStones;
-
-		class getFirstName;
-		class getSurname;
-		class getEpitaph;
+		
+		class digFinishFX;
+		
 		class generateNames;
 		class getDateRange;
-
-		class digFinishFX;
+		class getEpitaph;
+		class getFirstName;
+		class getSurname;
+		class getTombStones;
 		
 	};
 	

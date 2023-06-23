@@ -1,28 +1,55 @@
+if (isServer) then {
 
-call grad_loot_fnc_generateNames;
+	[] spawn {
 
-// tombstone loot
-private _tombStones = call grad_loot_fnc_getTombStones;
+		// tombstone loot
+		private _tombStones = call grad_loot_fnc_getTombStones;
+		private _names = call grad_loot_fnc_generateNames;
+		private _deathdates = call grad_loot_fnc_getDateRange;
+		private _epitaphs = call grad_loot_fnc_getEpitaph;
+		
+		private _allHashMaps = [];
+		systemChat str _tombStones;
+		{ 
+			private _hashOfThisTombStone = createHashMapFromArray [
+				[_x, _names#_forEachIndex], 
+				[_x, _deathdates#_forEachIndex], 
+				[_x, _epitaphs#_forEachIndex]
+			];
+			_allHashMaps pushBack _hashOfThisTombStone;
 
+			systemChat str _forEachIndex;
 
-{
-	private _tombstone = _x;
+		} forEach _tombStones;
 
-	private _weaponholders = ["rhs_weap_m38", getPosATL _x, 1] call grad_loot_fnc_createLoot;
+		for "_i" from 1 to 10 do { 
+			private _stone = _tombStones selectRandomWeighted [_forEachIndex, 5, 10];
+			private _weaponholder = ["rhs_weap_m38", getPosATL _stone, 1] call grad_loot_fnc_createLoot;
+		};
 
-	private _actiondummy = "Sign_Sphere10cm_F" createVehicle [0,0,0];
-	private _positionATL = getPosATL _tombstone;
-	_actiondummy setPosATL [_positionATL#0, _positionATL#1, _positionATL#2 + 0.35];
-	_tombstone setVariable ["grad_loot_actiondummy", _actiondummy, true];
-	_actionDummy setVariable ["grad_loot_weaponholders", _weaponholders, true];
-	_actionDummy setVariable ["grad_loot_tombstone", _tombstone, true];
-	
-	[_actiondummy, "colorGreen"] call grad_loot_fnc_createMarker;
-	_actiondummy setVariable ["grad_loot_name", grad_lootnames select _foreachindex, true];
-	_actiondummy setVariable ["grad_loot_deathdate", call grad_loot_fnc_getDateRange, true];
-	_actiondummy setVariable ["grad_loot_epitaph", call grad_loot_fnc_getEpitaph, true];
+		missionNameSpace setVariable ["grad_loot_tombstoneHashes", _allHashMaps, true];
+	};
+};
 
-	[_actiondummy] remoteExec ["grad_loot_fnc_addTombNameAction", 0, _actiondummy];
-    [_actiondummy] remoteExec ["grad_loot_fnc_addDigAction", 0, _actiondummy];
-	
-} forEach _tombStones;
+if (hasInterface) then {
+
+	[] spawn {
+		waitUntil {
+			count (missionNameSpace getVariable ["grad_loot_tombstoneHashes", []]) > 0
+		};
+
+		private _tombStoneHashes = missionNameSpace getVariable ["grad_loot_tombstoneHashes", []];
+		{
+			private _actiondummy = "Sign_Sphere10cm_F" createVehicleLocal [0,0,0];
+			private _positionATL = getPosATL _tombstone;
+			_actiondummy setPosATL [_positionATL#0, _positionATL#1, _positionATL#2 + 0.35];
+			_tombstone setVariable ["grad_loot_actiondummy", _actiondummy];
+			_actionDummy setVariable ["grad_loot_tombstone", _tombstone];
+
+			[_actiondummy, "colorGreen"] call grad_loot_fnc_createMarker;
+
+			[_actiondummy] call grad_loot_fnc_addTombNameAction;
+			[_actiondummy] call grad_loot_fnc_addDigAction;
+		} forEach _tombStoneHashes;
+	};
+};
