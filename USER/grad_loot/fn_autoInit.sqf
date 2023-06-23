@@ -11,7 +11,7 @@ if (isServer) then {
 		private _allHashMaps = [];
 		systemChat str _tombStones;
 		{ 
-			private _hashOfThisTombStone = createHashMapFromArray [
+			private _hashOfThisTombStone = createHashMapFromArray [				
 				[_x, _names#_forEachIndex], 
 				[_x, _deathdates#_forEachIndex], 
 				[_x, _epitaphs#_forEachIndex]
@@ -28,6 +28,7 @@ if (isServer) then {
 		};
 
 		missionNameSpace setVariable ["grad_loot_tombstoneHashes", _allHashMaps, true];
+		missionNameSpace setVariable ["grad_loot_tombstones", _tombStones, true];
 	};
 };
 
@@ -35,13 +36,13 @@ if (hasInterface) then {
 
 	[] spawn {
 		waitUntil {
-			count (missionNameSpace getVariable ["grad_loot_tombstoneHashes", []]) > 0
+			count (missionNameSpace getVariable ["grad_loot_tombstones", []]) > 0
 		};
 
-		private _tombStoneHashes = missionNameSpace getVariable ["grad_loot_tombstoneHashes", []];
+		private _tombStones = missionNameSpace getVariable ["grad_loot_tombstoneHashes", []];
 		{
 			private _actiondummy = "Sign_Sphere10cm_F" createVehicleLocal [0,0,0];
-			private _positionATL = getPosATL _tombstone;
+			private _positionATL = getPosATL _x;
 			_actiondummy setPosATL [_positionATL#0, _positionATL#1, _positionATL#2 + 0.35];
 			_tombstone setVariable ["grad_loot_actiondummy", _actiondummy];
 			_actionDummy setVariable ["grad_loot_tombstone", _tombstone];
@@ -50,6 +51,6 @@ if (hasInterface) then {
 
 			[_actiondummy] call grad_loot_fnc_addTombNameAction;
 			[_actiondummy] call grad_loot_fnc_addDigAction;
-		} forEach _tombStoneHashes;
+		} forEach _tombStones;
 	};
 };
