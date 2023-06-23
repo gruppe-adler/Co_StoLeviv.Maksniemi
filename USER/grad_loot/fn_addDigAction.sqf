@@ -4,10 +4,12 @@ private _action = ["Dig", "Dig", "", {
 
     private _cutter = (nearestObject [player, "Land_ClutterCutter_small_F"]);
     if (isNull _cutter) then {
-        "Land_ClutterCutter_small_F" createVehicle position player;
+        _cutter = "Land_ClutterCutter_small_F" createVehicle [0,0,0];
+        _cutter setPos getPos player;
     } else {
         if (_cutter distance player > 1) then {
-            "Land_ClutterCutter_small_F" createVehicle position player;
+            _cutter = "Land_ClutterCutter_small_F" createVehicle [0,0,0];
+            _cutter setPos getPos player;
         };
     };
     
@@ -17,10 +19,12 @@ private _action = ["Dig", "Dig", "", {
 		_args params ["_target"];
 
         private _weaponholders = _target getVariable ["grad_loot_weaponholders", []];
-
+        private _tombstone = _target getVariable ["grad_loot_tombstone", []];
         Hint "Finished!";
         { _x hideObjectGlobal false; } forEach _weaponHolders;
-        [getPos _target, getPos player] call grad_loot_fnc_digFinishFX;
+        _tombstone hideObjectGlobal false;
+
+        [(getModelInfo _tombstone) select 1, _target, getPos player] call grad_loot_fnc_digFinishFX;
         _target setVariable ["grad_loot_available", false, true];
     }, {
         hint "Aborted digging!";

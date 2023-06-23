@@ -15,6 +15,7 @@ private _tombStones = call grad_loot_fnc_getTombStones;
 	_actiondummy setPosATL [_positionATL#0, _positionATL#1, _positionATL#2 + 0.35];
 	_tombstone setVariable ["grad_loot_actiondummy", _actiondummy, true];
 	_actionDummy setVariable ["grad_loot_weaponholders", _weaponholders, true];
+	_actionDummy setVariable ["grad_loot_tombstone", _tombstone, true];
 	
 	[_actiondummy, "colorGreen"] call grad_loot_fnc_createMarker;
 	_actiondummy setVariable ["grad_loot_name", grad_lootnames select _foreachindex, true];
