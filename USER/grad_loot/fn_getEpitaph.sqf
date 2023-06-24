@@ -221,7 +221,7 @@ private _epitaphs = [];
 
 while { count _epitaphs < 900 } do { 
 
-  _epitaphs pushBackUnique (selectRandom _epitaphPool);
+  _epitaphs pushBack (selectRandom _epitaphPool);
 
 };
 

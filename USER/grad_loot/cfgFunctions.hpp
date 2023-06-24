@@ -1,5 +1,6 @@
 class grad_loot {
 	class common {
+		tag = "grad_loot";
 		file = "USER\grad_loot";
 		
 		class addDigAction;
