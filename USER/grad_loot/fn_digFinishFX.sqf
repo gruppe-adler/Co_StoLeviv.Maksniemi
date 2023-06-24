@@ -3,9 +3,11 @@ params ["_p3d", "_actionDummy", "_positionPlayer"];
 private _positiontomb = getPos _actionDummy;
 
 private _tombStoneThrown = createSimpleObject [_p3d, [0,0,0]];
-_tombStoneThrown setPosASL getPosASL player;
+private _positionASL = getPosASL player;
+(_tombStoneThrown call BIS_fnc_boundingBoxDimensions) params ["_width", "_depth", "_height"];
+_tombStoneThrown setPosASL [_positionASL#0, _positionASL#1, _positionASL#2 - _depth/2 - 0.15];
 _tombStoneThrown setVectorDirAndUp [[0,1,0], [1,0,0]];
-_actionDummy setPos getPos player;
+deleteVehicle _actionDummy; // todo delete on other clients :sweat:
 
 systemchat (str _positionTomb + " " + str _positionPlayer);
 

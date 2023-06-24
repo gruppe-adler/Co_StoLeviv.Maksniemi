@@ -13,6 +13,8 @@ private _action = ["Dig", "Dig", "", {
         };
     };
     
+    // [_object, ACE_player] call grad_trenches_functions_fnc_playSound;
+    // [_object] call grad_loot_fnc_digFX;
 
     [5, [_target], {
         params ["_args"];
@@ -22,13 +24,23 @@ private _action = ["Dig", "Dig", "", {
         private _tombstone = _target getVariable ["grad_loot_tombstone", []];
         Hint "Finished!";
         { _x hideObjectGlobal false; } forEach _weaponHolders;
-        _tombstone hideObjectGlobal false;
+        _tombstone hideObjectGlobal true;
 
         [(getModelInfo _tombstone) select 1, _target, getPos player] call grad_loot_fnc_digFinishFX;
         _target setVariable ["grad_loot_available", false, true];
     }, {
         hint "Aborted digging!";
-    }, "Digging..."] call ace_common_fnc_progressBar;
+    }, "Digging...", {
+        params ["_args"];
+		_args params ["_target"];
+        private _lastFX = _target getVariable ["grad_loot_lastFX", CBA_missionTime];
+        if (CBA_missionTime - _lastFX > 2) then {
+            _target setVariable ["grad_loot_lastFX", CBA_missionTime];
+            [_target, ACE_player] call grad_trenches_functions_fnc_playSound;
+            [_target] remoteExec ["grad_loot_fnc_digFX"];
+        };
+        true
+    }] call ace_common_fnc_progressBar;
 
 }, {
     (_target getVariable ["grad_loot_available", true])

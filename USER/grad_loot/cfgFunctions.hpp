@@ -12,6 +12,7 @@ class grad_loot {
 		class createMarker;
 		
 		class digFinishFX;
+		class digFX;
 		
 		class generateNames;
 		class getDateRange;
