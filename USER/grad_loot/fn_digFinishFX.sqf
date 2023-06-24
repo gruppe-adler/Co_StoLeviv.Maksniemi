@@ -1,13 +1,15 @@
-params ["_p3d", "_actionDummy", "_positionPlayer"];
+params ["_p3d", "_actionDummy", "_tombstone", "_positionPlayer"];
 
 private _positiontomb = getPos _actionDummy;
 
 private _tombStoneThrown = createSimpleObject [_p3d, [0,0,0]];
-private _positionASL = getPosASL player;
+private _positionWorld = getPosWorld player;
 (_tombStoneThrown call BIS_fnc_boundingBoxDimensions) params ["_width", "_depth", "_height"];
-_tombStoneThrown setPosASL [_positionASL#0, _positionASL#1, _positionASL#2 - _depth/2 - 0.15];
-_tombStoneThrown setVectorDirAndUp [[0,1,0], [1,0,0]];
+_tombStoneThrown setPosWorld [_positionWorld#0, _positionWorld#1, _positionWorld#2 - _depth/2 - 0.15];
+_tombStoneThrown setDir (random 360);
+_tombStoneThrown setVectorUp [0,1,0];
 deleteVehicle _actionDummy; // todo delete on other clients :sweat:
+[_tombstone] remoteExec ["grad_loot_fnc_destroyActionDummy", 0, true];
 
 systemchat (str _positionTomb + " " + str _positionPlayer);
 

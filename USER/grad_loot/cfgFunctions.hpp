@@ -10,6 +10,8 @@ class grad_loot {
         
 		class createLoot;
 		class createMarker;
+
+		class destroyActionDummy;
 		
 		class digFinishFX;
 		class digFX;

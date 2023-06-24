@@ -51,6 +51,8 @@ if (hasInterface) then {
 			_values params ["_name", "_date", "_epitaph"];
 
 			private _actiondummy = "Sign_Sphere10cm_F" createVehicleLocal [0,0,0];
+			_actiondummy setObjectTexture [0, "#(rgb,8,8,3)color(0,0,0,0)"];
+			
 			private _positionATL = getPosATL _tombstone;
 			_actiondummy setPosATL [_positionATL#0, _positionATL#1, _positionATL#2 + 0.35];
 			_tombstone setVariable ["grad_loot_actiondummy", _actiondummy];
