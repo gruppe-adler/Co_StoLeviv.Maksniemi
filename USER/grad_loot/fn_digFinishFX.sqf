@@ -5,13 +5,12 @@ private _positiontomb = getPos _actionDummy;
 private _tombStoneThrown = createSimpleObject [_p3d, [0,0,0]];
 private _positionWorld = getPosWorld player;
 (_tombStoneThrown call BIS_fnc_boundingBoxDimensions) params ["_width", "_depth", "_height"];
-_tombStoneThrown setPosWorld [_positionWorld#0, _positionWorld#1, _positionWorld#2 - _depth/2 - 0.15];
+_tombStoneThrown setPosWorld [_positionWorld#0, _positionWorld#1, _positionWorld#2 - _depth/2];
 _tombStoneThrown setDir (random 360);
 _tombStoneThrown setVectorUp [0,1,0];
-deleteVehicle _actionDummy; // todo delete on other clients :sweat:
 [_tombstone] remoteExec ["grad_loot_fnc_destroyActionDummy", 0, true];
 
-systemchat (str _positionTomb + " " + str _positionPlayer);
+// systemchat (str _positionTomb + " " + str _positionPlayer);
 
 private _skeletonClass = selectRandom [
 	"Land_HumanSkeleton_F",
