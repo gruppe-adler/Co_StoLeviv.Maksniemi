@@ -12,7 +12,7 @@ private _taskObjective4 = ""; // task for sinking ships in harbor
 private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition there
 
 
-[owner, taskID, description, destination, state, priority, showNotification, type, visibleIn3D] call BIS_fnc_taskCreate
+// [owner, taskID, description, destination, state, priority, showNotification, type, visibleIn3D] call BIS_fnc_taskCreate
 
 
 {
