@@ -8,3 +8,5 @@
 #include "grad_loot\cfgFunctions.hpp"
 #include "grad_buoys\cfgFunctions.hpp"
 #include "grad_fish\cfgFunctions.hpp"
+#include "grad_clothing\cfgFunctions.hpp"
+#include "grad_tasks\cfgFunctions.hpp"

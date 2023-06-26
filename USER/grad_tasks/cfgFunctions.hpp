@@ -4,7 +4,7 @@ class grad_tasks{
 		file = "USER\grad_tasks";
 		
 		class autoInit { postInit = 1; };
+		class addPhoneAction;
 		
 	};
-	
 };

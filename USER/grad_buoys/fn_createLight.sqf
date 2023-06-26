@@ -1,5 +1,7 @@
 params ["_buoy"];
 
+// systemchat "wtf";
+
 private _reflector = "Reflector_Cone_01_wide_white_F" createVehicleLocal [0,0,0];
 _reflector attachTo [_buoy, [0.00378418,0.00439453,2.98995]];
 

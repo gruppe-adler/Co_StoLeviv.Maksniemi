@@ -41,12 +41,15 @@ _source2 setParticleParams [
     [0.1, 0.1, 1], [0, 0, 0], 0.5, 200, 20, 0, [1,1,1], [[0.3, 0.3, 0.3, 1], [0.3, 0.3, 0.3, 0.3], [0.3, 0.3, 0.3, 0]], 
     [0.08], 1, 0, "", "", _this,0,true,0.1
 ];  
-_source2 setDropInterval 0.0001; 
+_source2 setDropInterval 0.001; 
 
 [{ params ["_source"]; deleteVehicle _source; }, [_source2], 0.1] call CBA_fnc_waitAndExecute;
 
 private _source3 = "#particlesource" createVehicleLocal [0, 0, 0]; 
 _source3 setPos _position;
-_source3 setParticleClass "WaterSplash"; 
+_source3 setParticleClass "vn_hebombeffectswater_2000";  // WaterWave, WaterWhirl,vn_shockwavebig, vn_hebombeffectswater_2000, vn_hebombeffectswater_high
+_source3 setDropInterval 0.1; 
 
-[{ params ["_source"]; deleteVehicle _source; }, [_source3], 0.1] call CBA_fnc_waitAndExecute;
+[{ params ["_source"]; deleteVehicle _source; }, [_source3], 0.15] call CBA_fnc_waitAndExecute;
+
+
