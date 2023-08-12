@@ -7,7 +7,7 @@ private _reviveAsMedic = random 1 > 0.5;
 if (_reviveAsMedic) then {
 	// remove from blufor and inco tracker, add to civilian side
 	_unit setVariable ["isSneaky", false, true];
-	[_unit] joinSilent (createGroup civilian);
+	[_unit] remoteExec ["grad_customMedicSystem_fnc_initMedic", _unit];
 } else {
 	// reset all inco values
 	_unit setVariable ["INC_undercoverHandlerRunning", false];

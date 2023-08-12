@@ -12,6 +12,10 @@ if (isServer) then {
 		};
 
 	}] call CBA_fnc_addEventhandler;
+
+    {
+        [_x] remoteExec ["grad_customMedicSystem_fnc_addReviveAction", 0, true];
+    } forEach (playableUnits + switchableUnits);
 };
 
 
