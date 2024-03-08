@@ -5,6 +5,7 @@ class grad_tasks{
 		
 		class autoInit { postInit = 1; };
 		class addPhoneAction;
+		class getTaskForRole;
 		
 	};
 };

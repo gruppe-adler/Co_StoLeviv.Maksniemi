@@ -1,5 +1,5 @@
 #include "component.hpp"
-#include "\z\ace\addons\medical\functions\script_component.hpp"
+#include "\z\ace\addons\medical\script_component.hpp"
 
 //10% of the default Blood Volume as failsafe
 #define MIN_BLOOD_VOL (BLOOD_VOLUME_FATAL + 0.1 * DEFAULT_BLOOD_VOLUME)

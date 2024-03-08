@@ -27,3 +27,5 @@ private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition th
 		};
 		
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+

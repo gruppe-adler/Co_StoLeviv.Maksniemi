@@ -10,6 +10,7 @@ class grad_loot {
         
 		class createLoot;
 		class createMarker;
+		class createMarkerMeeting;
 
 		class destroyActionDummy;
 		
