@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2264;
+		nextID=2269;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=468;
+		nextID=487;
 	};
 	class Camera
 	{
-		pos[]={10706.631,16.085552,4632.2944};
-		dir[]={0.56107789,-0.44155914,0.70015562};
-		up[]={0.27612635,0.89722836,0.34457183};
-		aside[]={0.78035223,-4.2608008e-08,-0.62534422};
+		pos[]={10742.767,20.133751,4655.5742};
+		dir[]={-0.49401048,-0.57833052,0.64922094};
+		up[]={-0.35020879,0.81580198,0.46023893};
+		aside[]={0.79580611,2.2817403e-08,0.6055513};
 	};
 };
 binarizationWanted=0;
@@ -147,7 +147,8 @@ addons[]=
 	"gm_characters_ge_characters",
 	"gm_weapons_items_ge_items",
 	"A3_Characters_F_AoW",
-	"A3_Structures_F_Argo_Commercial_Accessories"
+	"A3_Structures_F_Argo_Commercial_Accessories",
+	"A3_Characters_F_Exp"
 };
 class AddonsMetaData
 {
@@ -750,7 +751,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=262;
+		items=267;
 		class Item0
 		{
 			dataType="Layer";
@@ -2863,7 +2864,6 @@ class Mission
 					class Attributes
 					{
 						init="this setVariable [""isSneaky"",true]";
-						isPlayer=1;
 						class Inventory
 						{
 							class handgun
@@ -18398,7 +18398,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25974;
+			angle=228.2597;
 			id=2142;
 		};
 		class Item215
@@ -18861,7 +18861,7 @@ class Mission
 					};
 					id=2201;
 					type="B_Soldier_F";
-					atlOffset=-0.12290144;
+					atlOffset=-0.12290192;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18898,7 +18898,7 @@ class Mission
 			{
 			};
 			id=2200;
-			atlOffset=-0.12290144;
+			atlOffset=-0.12290192;
 		};
 		class Item231
 		{
@@ -19036,18 +19036,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={10733.368,4.0794511,4668.7588};
+						position[]={10733.368,4.0794082,4668.7588};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
 						description="Partisan";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=2207;
 					type="B_Soldier_F";
-					atlOffset=4.2915344e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19084,7 +19084,6 @@ class Mission
 			{
 			};
 			id=2206;
-			atlOffset=4.2915344e-05;
 		};
 		class Item234
 		{
@@ -20807,6 +20806,87 @@ class Mission
 			};
 			id=2262;
 			atlOffset=-7.1525574e-06;
+		};
+		class Item262
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10735.557,4.8392053,4669.9492};
+				angles[]={0.12659223,0,0.02544759};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2264;
+			type="Item_U_I_C_Soldier_Bandit_2_F";
+			atlOffset=0.036458969;
+		};
+		class Item263
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10736.264,4.8357291,4669.7788};
+				angles[]={0.12659177,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2265;
+			type="Item_rhs_uniform_6sh122_v1";
+		};
+		class Item264
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10736.092,4.7103753,4670.7637};
+				angles[]={0.12659177,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2266;
+			type="Item_rhs_uniform_6sh122_v1";
+		};
+		class Item265
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10736.859,4.0935755,4670.4146};
+				angles[]={0.12659177,0,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2267;
+			type="gm_placeableItem_gc_civ_uniform_man_01_80_blu";
+		};
+		class Item266
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10735.721,4.8124213,4669.0537};
+				angles[]={6.1565938,0,0.0072752428};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2268;
+			type="Item_U_C_Poloshirt_tricolour";
 		};
 	};
 	class Connections
