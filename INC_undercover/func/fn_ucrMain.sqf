@@ -90,9 +90,10 @@ switch (_operation) do {
 		];
 		_return = true;
 	};
-
+	/*
 	case "addConcealActions": {
 
+		
 		_input params ["_unit","_groupLead",["_dismiss",true]];
 
 		_unit addEventHandler ["InventoryClosed", {
@@ -405,6 +406,7 @@ switch (_operation) do {
 			},[],5.5,false,true,"","((_this == _target) && (isPlayer _this || {_this getVariable ['INC_canSwitch',false]}))"
 		];
 
+		
 		if (_temporary) then {
 
 			[_unit,_duration] spawn {
@@ -423,6 +425,7 @@ switch (_operation) do {
 				_unit setVariable ["INC_switchUniformActionActive",false];
 			};
 		};
+		
 
 		_return = true;
 	};
@@ -458,6 +461,7 @@ switch (_operation) do {
 			},[],5.5,false,true,"","((_this == _target) && (isPlayer _this || {_this getVariable ['INC_canSwawp',false]}))"
 		];
 
+		
 		if (_temporary) then {
 
 			[_unit,_duration] spawn {
@@ -476,6 +480,7 @@ switch (_operation) do {
 				_unit setVariable ["INC_swapActionActive",false];
 			};
 		};
+		
 
 		_return = true;
 	};
@@ -498,6 +503,7 @@ switch (_operation) do {
 			},[],5.5,false,true,"","((_this == _target) && (isNull objectParent _this))"
 		];
 
+	
 		if (_temporary) then {
 
 			[_unit,_duration] spawn {
@@ -514,6 +520,7 @@ switch (_operation) do {
 
 		_return = true;
 	};
+	*/
 
 	case "getUnitIDs": {
 		_input params ["_unit",["_checkType","face"]];
