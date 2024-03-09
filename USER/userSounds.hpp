@@ -10,3 +10,11 @@ class GRAD_garble {
 	// subtitle delay in seconds, subtitle text
 	titles[] = {0, ""};
 };
+
+class GRAD_scissors {
+	name = "GRAD_scissors";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\scissors.ogg", 20, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};

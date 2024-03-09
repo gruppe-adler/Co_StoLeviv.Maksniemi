@@ -1,3 +1,33 @@
+/*
+	tailor stuff
+*/
+
+/*
+["loadout", {
+
+	systemChat str _this
+	
+}] call CBA_fnc_addPlayerEventHandler;
+
+
+player addEventHandler [ "Put", {
+    params[ "_unit", "_container" ];
+    
+    if( typeOf _container isEqualTo "GroundWeaponHolder" ) then {
+        {
+			if (typeOf _x in ((missionNamespace getVariable ["INC_incogUniforms",[]]) + (missionNamespace getVariable ["INC_civilianUniforms",[]]))) then {
+				systemchat "player dropped his uniform";
+			};
+		} forEach items _container;
+    };
+}];
+*/
+
+
+/*
+	vehicle crew stuff
+*/
+
 player addEventhandler ["GetInMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 
@@ -22,10 +52,8 @@ player addEventhandler ["GetInMan", {
 	};
 }];
 
-
 player addEventHandler ["SeatSwitchedMan", {
 	params ["_unit1", "_unit2", "_vehicle"];
-
 	{
 		private _role = assignedVehicleRole _x;
 		if (_role == "driver" || _role == "gunner") then {
@@ -35,5 +63,5 @@ player addEventHandler ["SeatSwitchedMan", {
 			};
 		};
 	} forEach [_unit1, _unit2];
-
 }];
+

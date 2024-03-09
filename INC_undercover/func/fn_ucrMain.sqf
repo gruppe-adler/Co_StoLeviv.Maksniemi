@@ -252,14 +252,14 @@ switch (_operation) do {
 			_unit addEventHandler ["InventoryClosed", {
 				params ["_unit"];
 				if ([[_unit,false],"switchUniforms"] call INCON_ucr_fnc_gearHandler) then {
-					[[_unit,true,4],"SwitchUniformAction"] call INCON_ucr_fnc_ucrMain;
+					[[_unit,true,1],"SwitchUniformAction"] call INCON_ucr_fnc_ucrMain;
 				};
 			}];
 
 			_unit addEventHandler ["InventoryClosed", {
 				params ["_unit"];
 				if ([[_unit,false],"swapGear"] call INCON_ucr_fnc_gearHandler) then {
-					[[_unit,true,4],"SwapGearAction"] call INCON_ucr_fnc_ucrMain;
+					[[_unit,true,1],"SwapGearAction"] call INCON_ucr_fnc_ucrMain;
 				};
 			}];
 

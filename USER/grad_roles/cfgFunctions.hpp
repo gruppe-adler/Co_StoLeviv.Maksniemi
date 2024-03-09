@@ -4,7 +4,7 @@ class grad_roles{
 		file = "USER\grad_roles";
 		
 		class autoInit { postInit = 1; };
-		class 
+		class initTailor;
 		
 	};
 };
