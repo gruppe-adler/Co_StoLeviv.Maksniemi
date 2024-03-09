@@ -29,3 +29,8 @@ private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition th
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 
+["GRAD_telephone_fakeCallAccept", {
+	params ["_phone"];
+
+	["CROSSROAD", "Mission is a go, I repeat, mission is a go, Crossroad, out."] spawn grad_tasks_fnc_forceSubtitle;
+}] call CBA_fnc_addEventHandler;
