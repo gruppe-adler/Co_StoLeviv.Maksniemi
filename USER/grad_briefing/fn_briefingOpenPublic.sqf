@@ -20,39 +20,28 @@ Parameter(s):
 
 // TEXTS
 
-// STORY
-private _titleStory = "<t size='1.5' color='#99ffffff'>Story</t><br/>";
-private _textStory = "<t size='1.0' color='#ffffffff'>In NOT GREAT NOT TERRIBLE 1 an exploding nuclear plant unleashed hordes of mutants and zombies.</t><br/><br/>";
+// COMMON
+private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>This is your public briefing. Intel might get added during mission.</t><br/><br/>";
+private _dynamicTextCombined = "";
 
-// TASK
-private _titleTask = "<t size='1.5' color='#99ffffff'>Task</t><br/>";
-private _textTask = "<t size='1.0' color='#ffffffff'>Your task is to eliminate the threat by killing cows at neuralgic points on the map and baiting zombies into the area. At the last objective the fuel truck is meant to function as a bomb to kill the horde.</t><br/><br/>";
+// ROLE SPECIFIC INTEL
+private _displayName = player getVariable ["GRAD_cfgRoles_displayName", "no name"];
+private _briefing = player getVariable ["GRAD_cfgRoles_briefing", "empty briefing"];
 
-// FLOODLIGHTS
-private _titleFloodlights = "<t size='1.5' color='#99ffffff'>Floodlights and Generator</t><br/>";
-private _textFloodlights = "<t size='1.0' color='#ffffffff'>Floodlights need to be connected to the generator and the generator to be turned on to give light. Take a cable from the generator and connect it with ace interact to a floodlight.</t><br/><br/>";
 
-// COWS
-private _titleCowBait =  "<t size='1.5' color='#99ffffff'>Cow Bait</t><br/>";
-private _textCowBait = "<t size='1.0' color='#ffffffff'>Take a cow from lowered flatbed and serve it to zombies with a circular saw. Circular Saws are inside the cow vehicle.</t><br/><br/>";
 
-// FUEL
-private _titleFuel =  "<t size='1.5' color='#99ffffff'>Fuel Truck</t><br/>";
-private _textFuel = "<t size='1.0' color='#ffffffff'>Inside the fuel truck are explosives. Those are meant to be placed at the truck at the last objective to kill as many zombies as possible. Beware the explosion radius is many dozen meters.</t><br/><br/>";
+// DYNAMIC INTEL
+{
+	_x params ["_time", "_text"];
+	private _titleDynamic = "<t size='1.5' color='#99ff0000'>" + _time + "</t><br/><br/>";
+	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
 
+	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
+} forEach (player getVariable ["GRAD_dynamicIntel", []]);
 
 [ parseText
   (
-    _titleStory +
-    _textStory +
-    _titleTask +
-    _textTask +
-    _titleCowBait +
-    _textCowBait +
-    _titleFloodLights +
-    _textFloodLights +
-    _titleFuel +
-    _textFuel
+	_titleCommon +
+    _dynamicTextCombined
   )
 ] call grad_briefing_fnc_briefingScrollView;
-

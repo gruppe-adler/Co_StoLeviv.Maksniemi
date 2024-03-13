@@ -23,34 +23,20 @@ Parameter(s):
 // COMMON
 private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>Please keep this personal briefing secret.</t><br/><br/>";
 
-// SABOTEUR
-private _titleSaboteur =  if ((player getVariable ["missionControl_role", "none"]) == "saboteur") then {
-  "<t size='1.5' color='#99ffffff'>Saboteur!</t><br/><br/>" } else { "" };
-private _textSaboteur = if ((player getVariable ["missionControl_role", "none"]) == "saboteur") then { "<t size='1.0' color='#ffffffff'>Zombies have rights too! You secretly sympathize with Zombies and their supporting cultist faction. Try to covertly sabotage the mission by deflating tires, sabotaging engines or fuel tanks and shutting off power (ACE Interact). _Wait till the third objective for this!_ Be aware of others watching you. Dont trust anyone, not even your buddy!</t><br/><br/>" } else { "" };
+private _dynamicTextCombined = "";
 
-// PTL
-private _titlePTL =  if ((player getVariable ["missionControl_role", "none"]) == "ptl") then {
-  "<t size='1.5' color='#99ffffff'>PTL</t><br/><br/>" } else { "" };
-private _textPTL = if ((player getVariable ["missionControl_role", "none"]) == "ptl") then { "<t size='1.0' color='#ffffffff'>There is a cultist faction that sympathizes with Zombies and might try to sabotage your mission. They might be even inside your forces. Prevent this at all costs and dont trust anyone!</t><br/><br/>" } else { "" };
+// DYNAMIC INTEL
+{
+	_x params ["_time", "_text"];
+	private _titleDynamic = "<t size='1.5' color='#99ff0000'>" + _time + "</t><br/><br/>";
+	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
 
-
-// CULTIST
-private _titleCultist =  if ((player getVariable ["missionControl_role", "none"]) == "mutant") then {
-  "<t size='1.5' color='#99ff0000'>Cultist</t><br/><br/>" } else { "" };
-private _textCultist= if ((player getVariable ["missionControl_role", "none"]) == "mutant") then { "<t size='1.0' color='#ffffffff'>You are part of the cultist faction now. <br/><br/>You dont need a mask, you can perform a ritual to spawn a horse for travel, zombies or other monsters. You can even teleport. Beware all those actions can be seen and heard and need Mana. Your Mana slowly replenishes automatically. Self Interact to activate NVG.<br/><br/>Prevent those zombie hating invaders from leaving the area alive! Please dont pick up weapons.<br/><br/>If you are bored or just want to spectate, you can do so. Beware there is no way back.</t><br/><br/>" } else { "" };
-
-
+	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
+} forEach (player getVariable ["GRAD_dynamicIntel", []]);
 
 [ parseText
   (
 	_titleCommon +
-    _titleSaboteur +
-    _textSaboteur +
-    _titlePTL +
-    _textPTL +
-    _titleCultist +
-    _textCultist +
-    _titleBuddy +
-    _textBuddy
+    _dynamicTextCombined
   )
 ] call grad_briefing_fnc_briefingScrollView;

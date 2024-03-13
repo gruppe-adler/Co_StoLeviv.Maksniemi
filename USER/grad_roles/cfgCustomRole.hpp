@@ -3,14 +3,14 @@ class cfgRoles {
     class engineer {
         role = "Engineer";
         briefing = "You can repair any vehicle with your golden hands.";
-        code = "(_this select 0) setVariable ['ACE_isEngineer', 2, true];";
+        code = "_this setVariable ['ACE_isEngineer', 2, true];";
         spawn = "mrk_spawn_engineer";
     };
 
     class emergency {
         role = "Emergency Doctor";
         briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
-        code = "(_this select 0) call grad_customMedicSystem_fnc_initMedic;";
+        code = "_this call grad_customMedicSystem_fnc_initMedic;";
         spawn = "mrk_spawn_emergency";
     };
 
