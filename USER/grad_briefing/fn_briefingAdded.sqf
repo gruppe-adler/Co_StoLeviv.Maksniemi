@@ -1,0 +1,1 @@
+["Intel added to your private briefing (self interact)", 1.5] call CBA_fnc_notify;
