@@ -51,7 +51,7 @@ if (!isServer) exitWith {};
     {
         private _playerAsZeus = getAssignedCuratorUnit _x;
         if (!isNull _playerAsZeus) then {
-            [_message, _color] remoteExec ["GRAD_VM_common_fnc_curatorShowFeedbackMessage", _playerAsZeus];
+            [_message, _color] remoteExec ["grad_zeus_fnc_curatorShowFeedbackMessage", _playerAsZeus];
         };
     } forEach allCurators;
 }] call CBA_fnc_addEventHandler;
