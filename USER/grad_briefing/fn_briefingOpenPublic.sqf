@@ -20,13 +20,16 @@ Parameter(s):
 
 // TEXTS
 
-// COMMON
-private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>This is your public briefing. Intel might get added during mission.</t><br/><br/>";
-private _dynamicTextCombined = "";
-
 // ROLE SPECIFIC INTEL
 private _displayName = player getVariable ["GRAD_cfgRoles_displayName", "no name"];
 private _briefing = player getVariable ["GRAD_cfgRoles_briefing", "empty briefing"];
+
+// COMMON
+private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>This is your public briefing. Your role:" + _displayName + "</t><br/><br/>";
+private _dynamicTextCombined = "";
+
+// INTEL HINT
+private _hintIntel= "<t size='1.0' color='#ffffffff'>Intel might get added during mission.</t><br/><br/>";
 
 
 
@@ -37,11 +40,12 @@ private _briefing = player getVariable ["GRAD_cfgRoles_briefing", "empty briefin
 	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
 
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
-} forEach (player getVariable ["GRAD_dynamicIntel", []]);
+} forEach (player getVariable ["GRAD_dynamicIntelPublic", []]);
 
 [ parseText
   (
 	_titleCommon +
+	_hintIntel +
     _dynamicTextCombined
   )
 ] call grad_briefing_fnc_briefingScrollView;
