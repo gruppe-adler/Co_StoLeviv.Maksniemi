@@ -37,7 +37,7 @@ if (_civRecruitEnabled) then {
 		[[_unit,_armedCivPercentage,_civRifleArray,_civPistolArray,_civPackArray],"recruitCiv"] remoteExecCall ["INCON_ucr_fnc_recruitHandler",0,true];
 	};
 };
-
+/*
 _unit addEventHandler["Killed", {
 
 	params["_unit"];
@@ -75,3 +75,4 @@ _unit addEventHandler["Killed", {
 		]] remoteExec ["addAction", 0,true];
 	};
 }];
+*/
