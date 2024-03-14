@@ -1,6 +1,6 @@
 //This checks the variables passed in the execVM statments("number","enter" or "clear")
 
-private _keypadAffected = nearestObject [position player, "keypadclassname"];
+private _keypadAffected = nearestObject [position player, "keypadclassname"]; // todo helper object that is unique for keypads
 private _keycode = _keypadAffected getVariable ["AF_KP_keycode", "none"];
 private _codeToUnlock = _keypadAffected getVariable ["AF_KP_codeToUnlock", {}];
 
@@ -23,7 +23,7 @@ switch (_this select 0) do {
 		AF_KP_keypad_InputText = "";
 
 		if (AF_KP_keypad_OutputText == _keycode) then {
-			[player] call _codeToUnlock;
+			_keypadAffected call _codeToUnlock;
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
 			 [player, "zoom_fail"] remoteExec ["say3D", 0];

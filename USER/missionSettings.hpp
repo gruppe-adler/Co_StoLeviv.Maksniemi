@@ -11,3 +11,6 @@ showLogo = 1;                                                                   
 
 
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
+
+#include "USER\AF_keypad\AF_KP_defines.hpp"
+#include "USER\AF_keypad\AF_KP_dialogs.hpp"
