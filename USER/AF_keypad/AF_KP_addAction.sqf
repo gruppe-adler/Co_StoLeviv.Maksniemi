@@ -1,6 +1,6 @@
-params ["_door"];
+params ["_door", "_keycode"];
 
-GRAD_VM_keypadDoor = _door;
+_door setVariable ["AF_KP_keycode", _keycode, true];
 
 _door addAction
 [
@@ -8,10 +8,10 @@ _door addAction
     {
         params ["_target", "_caller", "_actionId", "_arguments"]; // script
 
-        if (_target getVariable ["GRAD_VM_keyPadInUse", false]) then {
+        if (_target getVariable ["AF_KP_keyPadInUse", false]) then {
             hint "KeyPad already in use";
         } else {
-            _target setVariable ["GRAD_VM_keyPadInUse", true, true];
+            _target setVariable ["AF_KP_keyPadInUse", true, true];
             createDialog "AF_Keypad";
         };
     },
