@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10737.445,21.252439,4654.1812};
-		dir[]={-0.58704424,-0.80866063,0.038042981};
-		up[]={-0.80696809,0.58827531,0.052294988};
-		aside[]={0.064668648,1.8626451e-09,0.99790692};
+		pos[]={8137.9746,38.52,9703.9375};
+		dir[]={0.39895511,-0.45921117,0.7937001};
+		up[]={0.20623575,0.88832587,0.41029504};
+		aside[]={0.89347768,2.3283064e-08,-0.44910839};
 	};
 };
 binarizationWanted=0;
@@ -1852,7 +1852,7 @@ class Mission
 			{
 				position[]={8110.0669,13.52,9743.3291};
 			};
-			title="mrk_spawn_radio_3";
+			title="mrk_spawn_hacker_3";
 			id=307;
 		};
 		class Item12
@@ -2109,7 +2109,7 @@ class Mission
 				position[]={9242.5215,18.771999,10084.52};
 				angles[]={6.228693,2.5036716,6.2504711};
 			};
-			title="mrk_spawn_radio_2";
+			title="mrk_spawn_hacker_2";
 			id=330;
 			atlOffset=0.029808044;
 		};
@@ -2367,7 +2367,7 @@ class Mission
 				position[]={9331.3174,7.9889998,7358.7231};
 				angles[]={6.1961341,2.8765152,6.2795644};
 			};
-			title="mrk_spawn_radio_1";
+			title="mrk_spawn_hacker_1";
 			id=362;
 			atlOffset=0.17520571;
 		};
@@ -18334,7 +18334,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.2594;
+			angle=228.25938;
 			id=2142;
 		};
 		class Item214
@@ -24012,7 +24012,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9338.6426,7.796,7364.772};
-			name="mrk_spawn_radio_1";
+			name="mrk_spawn_hacker_1";
 			type="Empty";
 			id=2480;
 			atlOffset=-0.0004940033;
@@ -24349,7 +24349,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9247.5186,18.577,10080.689};
-			name="mrk_spawn_radio_2";
+			name="mrk_spawn_hacker_2";
 			type="Empty";
 			id=2505;
 			atlOffset=-0.00045776367;
@@ -24545,7 +24545,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={8174.7002,13,9742.834};
-			name="mrk_spawn_radio_3";
+			name="mrk_spawn_hacker_3";
 			type="Empty";
 			id=2520;
 		};
