@@ -1,10 +1,7 @@
-#include "cfgCustomRole.hpp"
-
 if (!isServer) exitWith {};
 
-
-private _roles = configFile >> "cfgRoles";
-private _rolesCount =  count _roles;
+private _roles = missionConfigFile >> "cfgCustomRoles";
+private _rolesCount = count _roles;
 private _allMapMarkers = allMapMarkers;
 
 // distribute roles and spawns
@@ -31,13 +28,16 @@ private _allMapMarkers = allMapMarkers;
 		
 		private _spawnMarker = format ["%1_%2", _spawn, _markernumber];
 
-		_unit setVariable ["GRAD_cfgRoles_displayName", _displayName, true];
-		_unit setVariable ["GRAD_cfgRoles_briefing", _displayName, true];
-		_unit setVariable ["GRAD_cfgRoles_code", _displayName, true];
+		_unit setVariable ["GRAD_cfgCustomRoles_displayName", _displayName, true];
+		_unit setVariable ["GRAD_cfgCustomRoles_briefing", _briefing, true];
+		_unit setVariable ["GRAD_cfgCustomRoles_code", _code, true];
+
+		diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
 
 		if (_spawnMarker in _allMapMarkers) then {
 			private _spawnPos = getMarkerPos _spawnMarker;
-			_unit setVariable ["GRAD_cfgRoles_spawnPos", _spawnPos, true];
+			
+			_unit setVariable ["GRAD_cfgCustomRoles_spawnPos", _spawnPos, true];
 		} else {
 			diag_log "initRoles Error: no spawn marker found for " + _spawnMarker;
 		};

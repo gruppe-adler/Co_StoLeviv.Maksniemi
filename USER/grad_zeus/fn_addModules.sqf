@@ -9,12 +9,6 @@
           params ["", "_group"];
 
           ["GRAD_missionControl_setServerAsOwner", [_group]] call CBA_fnc_serverEvent;
-
-          {
-              if ([_x] call grad_missionControl_fnc_zombieIsZomie) then {
-                  [_x] call grad_missionControl_fnc_zombieRandomize;
-              };
-          } forEach units _group;
       }];
 
       _curator addEventHandler ["CuratorObjectPlaced", {
@@ -71,7 +65,7 @@
 
       if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-      [_nearestPhone, "grad_garble", _message] call GRAD_telephone_fnc_fakeCallPhone;   
+      [_nearestPhone, "grad_garble", _message#0] call GRAD_telephone_fnc_fakeCallPhone;   
   
   }, { systemchat "cancelled"; }, _position] call zen_dialog_fnc_create;  
 

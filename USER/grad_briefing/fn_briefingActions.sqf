@@ -14,7 +14,7 @@ private _openBriefing =
   "Public Briefing",
   "data\interact_briefing.paa",
   {
-      [] call grad_missionControl_fnc_briefingOpenPublic;
+      [] call grad_briefing_fnc_briefingOpenPublic;
   },
   {
       alive player
@@ -31,7 +31,7 @@ private _privateBriefing =
   "Personal Briefing",
   "data\interact_secret.paa",
   {
-      [] call grad_missionControl_fnc_briefingOpenPrivate;
+      [] call grad_briefing_fnc_briefingOpenPrivate;
   },
   {
       alive player
