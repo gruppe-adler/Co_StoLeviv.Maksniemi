@@ -2,13 +2,13 @@ version=54;
 class EditorData
 {
 	moveGridStep=1;
-	angleGridStep=0.2617994;
+	angleGridStep=0.08726646;
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=97;
 	class ItemIDProvider
 	{
-		nextID=2562;
+		nextID=2565;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9488.3867,3.5040572,3614.8762};
-		dir[]={-0.34043488,-0.5651893,0.75144207};
-		up[]={-0.23323537,0.82496125,0.51482058};
-		aside[]={0.91088164,-1.4901161e-08,0.41266772};
+		pos[]={9489.6533,2.796587,3619.7952};
+		dir[]={0.19466843,-0.78196442,-0.59214669};
+		up[]={0.24421406,0.62329394,-0.7428574};
+		aside[]={-0.94998658,-5.9779268e-08,-0.31230861};
 	};
 };
 binarizationWanted=0;
@@ -151,13 +151,14 @@ addons[]=
 	"gm_structures_euro_80_winter",
 	"weapons_f_vietnam_c",
 	"CUP_Editor_Rocks_Config",
-	"UK3CB_Factions_Vehicles_Small_Boat"
+	"UK3CB_Factions_Vehicles_Small_Boat",
+	"A3_Props_F_Decade_Civilian_Camping"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=85;
+		items=86;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -728,6 +729,13 @@ class AddonsMetaData
 			className="UK3CB_Factions_Vehicles_Small_Boat";
 			name="UK3CB_Factions_Vehicles_Small_Boat";
 		};
+		class Item85
+		{
+			className="A3_Props_F_Decade";
+			name="CFGPATCHES_A3_Props_F_Decade";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -861,14 +869,14 @@ class Mission
 		year=2019;
 		month=8;
 		day=27;
-		hour=6;
-		minute=-18;
+		hour=3;
+		minute=-24;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=331;
+		items=332;
 		class Item0
 		{
 			dataType="Layer";
@@ -18423,7 +18431,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25917;
+			angle=228.25914;
 			id=2142;
 		};
 		class Item214
@@ -24737,18 +24745,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9486.9463,2.0760522,3617.6609};
-				angles[]={4.712389,0,6.0213857};
+				position[]={9489.7168,1.8044404,3618.8779};
+				angles[]={1.5707964,3.1415927,0.34906584};
 			};
 			side="Empty";
 			class Attributes
 			{
-				init="[this, ""11333"", ""[_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;""] call grad_af_keypad_fnc_addaction;";
+				init="[this, ""11333"", ""[_this] call grad_af_keypad_fnc_openBoatHouseDoor;""] call grad_af_keypad_fnc_addaction;";
 				disableSimulation=1;
 			};
 			id=2555;
 			type="land_gm_euro_furniture_telephone_02";
-			atlOffset=1.4456525;
+			atlOffset=1.1724;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24775,6 +24783,21 @@ class Mission
 			type="Empty";
 			id=2559;
 			atlOffset=0.00024795532;
+		};
+		class Item331
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9490.0762,1.8019252,3619.0378};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2564;
+			type="Lantern_01_black_F";
+			atlOffset=1.0115058;
 		};
 	};
 	class Connections
