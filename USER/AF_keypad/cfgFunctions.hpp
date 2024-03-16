@@ -6,6 +6,7 @@ class grad_af_keypad{
       	class addAction;
 		class fncs;
 		class openBoatHouseDoor;
+		class lockBoatHouseDoor;
 		class setNotInUse;
 		class vars { postInit = 1; };
 	};

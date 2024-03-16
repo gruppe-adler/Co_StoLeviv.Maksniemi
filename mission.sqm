@@ -8,7 +8,7 @@ class EditorData
 	toggles=97;
 	class ItemIDProvider
 	{
-		nextID=2560;
+		nextID=2562;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={9487.7754,3.7313218,3614.3508};
-		dir[]={-0.11572123,-0.57573777,0.80940342};
-		up[]={-0.0814851,0.81762975,0.56994265};
-		aside[]={0.98993415,6.1118044e-09,0.14153183};
+		pos[]={9490.7227,3.7313218,3614.4536};
+		dir[]={-0.58631343,-0.60075569,0.54344207};
+		up[]={-0.44060138,0.79943269,0.40838453};
+		aside[]={0.67978466,-1.4901161e-08,0.73341191};
 	};
 };
 binarizationWanted=0;
@@ -151,13 +151,14 @@ addons[]=
 	"gm_structures_euro_80_winter",
 	"weapons_f_vietnam_c",
 	"CUP_Editor_Rocks_Config",
-	"UK3CB_Factions_Vehicles_Small_Boat"
+	"UK3CB_Factions_Vehicles_Small_Boat",
+	"CUP_CAMisc_ACR_Helpers"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=85;
+		items=86;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -728,6 +729,11 @@ class AddonsMetaData
 			className="UK3CB_Factions_Vehicles_Small_Boat";
 			name="UK3CB_Factions_Vehicles_Small_Boat";
 		};
+		class Item85
+		{
+			className="CUP_CAMisc_ACR_Helpers";
+			name="CUP_CAMisc_ACR_Helpers";
+		};
 	};
 };
 dlcs[]=
@@ -868,7 +874,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=331;
+		items=332;
 		class Item0
 		{
 			dataType="Layer";
@@ -18423,7 +18429,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25931;
+			angle=228.25926;
 			id=2142;
 		};
 		class Item214
@@ -24697,7 +24703,7 @@ class Mission
 			};
 			id=2549;
 			type="Land_Nav_Boathouse";
-			atlOffset=1.726;
+			atlOffset=1.7259998;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24743,11 +24749,12 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="[this, ""11333"", { " \n "  { " \n "   private _selName = _x select 0; " \n " " \n "   if (_selName select [0,5] == ""door_"") exitWith " \n "   { " \n "    _target setVariable [""bis_disabled_"" + _selName, 0, true]; " \n "   }; " \n "  } forEach selectionNames (_this); " \n " }] call grad_af_keypad_fnc_addaction;";
+				createAsSimpleObject=1;
+				disableSimulation=1;
 			};
 			id=2555;
 			type="land_gm_euro_furniture_telephone_02";
-			atlOffset=1.4456522;
+			atlOffset=1.4456525;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24774,6 +24781,22 @@ class Mission
 			type="Empty";
 			id=2559;
 			atlOffset=0.00024795532;
+		};
+		class Item331
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9486.957,1.8927844,3617.6389};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, ""11333"", { " \n " " \n "   [_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;" \n " }] call grad_af_keypad_fnc_addaction;";
+			};
+			id=2561;
+			type="Cube5cm_ACR";
+			atlOffset=1.2593033;
 		};
 	};
 	class Connections

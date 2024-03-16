@@ -3,7 +3,7 @@ class AF_KeyPad
 	idd=-1;
 	movingenable=false;
 
-	onUnload = "[] execvm ""USER\AF_keypad\AF_KP_setNotInUse; ";
+	onUnload = "[] call grad_af_keypad_fnc_setNotInUse;";
 	class controls 
 	{
 		class AF_KeyPad_Frame: RscFrame
@@ -39,7 +39,7 @@ class AF_KeyPad
 			y = 0.303956 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 1]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 1] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key2: RscButton
 		{
@@ -49,7 +49,7 @@ class AF_KeyPad
 			y = 0.303956 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 2]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 2] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key3: RscButton
 		{
@@ -59,7 +59,7 @@ class AF_KeyPad
 			y = 0.303956 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 3]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 3] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key4: RscButton
 		{
@@ -69,7 +69,7 @@ class AF_KeyPad
 			y = 0.387975 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 4]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 4] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key5: RscButton
 		{
@@ -79,7 +79,7 @@ class AF_KeyPad
 			y = 0.387975 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 5]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 5] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key6: RscButton
 		{
@@ -89,7 +89,7 @@ class AF_KeyPad
 			y = 0.387975 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 6]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 6] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key7: RscButton
 		{
@@ -99,7 +99,7 @@ class AF_KeyPad
 			y = 0.471994 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 7]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 7] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key8: RscButton
 		{
@@ -109,7 +109,7 @@ class AF_KeyPad
 			y = 0.471994 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 8]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 8] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key9: RscButton
 		{
@@ -119,7 +119,7 @@ class AF_KeyPad
 			y = 0.471994 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 9]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 9] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key_Clear: RscButton
 		{
@@ -129,7 +129,7 @@ class AF_KeyPad
 			y = 0.556012 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""clear"", 0]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""clear"", 0] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key0: RscButton
 		{
@@ -139,7 +139,7 @@ class AF_KeyPad
 			y = 0.556012 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""number"", 0]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""number"", 0] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 		class AF_Key_Enter: RscButton
 		{
@@ -149,7 +149,7 @@ class AF_KeyPad
 			y = 0.556012 * safezoneH + safezoneY;
 			w = 0.0700059 * safezoneW;
 			h = 0.0700156 * safezoneH;
-			Action = "[""enter"", 0]execVM ""USER\AF_keypad\AF_KP_fncs.sqf""";
+			Action = "[""enter"", 0] call grad_af_keypad_fnc_fncs.sqf""";
 		};
 	
 	};
