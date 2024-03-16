@@ -1,6 +1,6 @@
 //This checks the variables passed in the execVM statments("number","enter" or "clear")
 
-private _keypadAffected = nearestObject [position player, "keypadclassname"]; // todo helper object that is unique for keypads
+private _keypadAffected = nearestObject [position player, "land_gm_euro_furniture_telephone_02"]; // todo helper object that is unique for keypads
 private _keycode = _keypadAffected getVariable ["AF_KP_keycode", "none"];
 private _codeToUnlock = _keypadAffected getVariable ["AF_KP_codeToUnlock", {}];
 

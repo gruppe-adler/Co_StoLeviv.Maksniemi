@@ -1,1 +1,0 @@
-[] execVM "USER\AF_keypad\AF_KP_vars.sqf";

@@ -1,4 +1,4 @@
-private _keypadAffected = nearestObject [position player, "keypadclassname"];
+private _keypadAffected = nearestObject [position player, "land_gm_euro_furniture_telephone_02"];
 
 _keyPad setVariable ["AF_KP_keyPadInUse", false, true];
 
