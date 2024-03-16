@@ -11,4 +11,4 @@
 #include "grad_clothing\cfgFunctions.hpp"
 #include "grad_tasks\cfgFunctions.hpp"
 #include "grad_roles\cfgFunctions.hpp"
-#include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
+#include "..\node_modules\grad-leaveNotes\cfgFunctions.hpp"
