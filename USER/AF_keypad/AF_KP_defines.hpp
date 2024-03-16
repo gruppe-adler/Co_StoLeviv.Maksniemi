@@ -107,7 +107,7 @@ class RscText
     colorText[] = {1,1,1,.5};
     text = "";
     shadow = 2;
-    font = "PuristaMedium";
+    font = "PuristaBold";
     SizeEx = 0.05000;
     fixedWidth = 0;
     x = 0;
@@ -125,7 +125,7 @@ class RscPicture
     style = ST_PICTURE;
     colorBackground[] = {0,0,0,0};
     colorText[] = {1,1,1,1};
-    font = "PuristaMedium";
+    font = "PuristaBold";
     sizeEx = 0;
     lineSpacing = 0;
     text = "";
@@ -143,7 +143,7 @@ class RscButton
    access = 0;
     type = CT_BUTTON;
     text = "";
-    colorText[] = {1,1,1,.9};
+    colorText[] = {1,1,1,1};
     colorDisabled[] = {0.4,0.4,0.4,0};
     colorBackground[] = {0.75,0.75,0.75,0.8};
     colorBackgroundDisabled[] = {0,0.0,0};
@@ -161,8 +161,8 @@ class RscButton
     w = 0.055589;
     h = 0.039216;
     shadow = 2;
-    font = "PuristaMedium";
-    sizeEx = 0.03921;
+    font = "PuristaBold";
+    sizeEx = 0.0621;
     offsetX = 0.003;
     offsetY = 0.003;
     offsetPressedX = 0.002;
@@ -178,7 +178,7 @@ class RscFrame
     shadow = 2;
     colorBackground[] = {1,1,1,1};
     colorText[] = {1,1,1,0.9};
-    font = "PuristaMedium";
+    font = "PuristaBold";
     sizeEx = 0.03;
     text = "";
 };
@@ -190,7 +190,7 @@ class BOX
     style = ST_CENTER;
     shadow = 2;
     colorText[] = {1,1,1,1};
-    font = "PuristaMedium";
+    font = "PuristaBold";
     sizeEx = 0.02;
     colorBackground[] = { 0.2,0.2,0.2, 0.9 }; 
     text = ""; 

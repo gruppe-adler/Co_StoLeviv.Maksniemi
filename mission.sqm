@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=735;
+		nextID=769;
 	};
 	class Camera
 	{
 		pos[]={9488.3867,3.5040572,3614.8762};
-		dir[]={0.11525534,-0.52151716,0.84542096};
-		up[]={0.070446856,0.85322183,0.51674026};
-		aside[]={0.99084044,-1.1440716e-07,-0.13508011};
+		dir[]={-0.34043488,-0.5651893,0.75144207};
+		up[]={-0.23323537,0.82496125,0.51482058};
+		aside[]={0.91088164,-1.4901161e-08,0.41266772};
 	};
 };
 binarizationWanted=0;
@@ -18423,7 +18423,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25922;
+			angle=228.25917;
 			id=2142;
 		};
 		class Item214
@@ -24697,7 +24697,7 @@ class Mission
 			};
 			id=2549;
 			type="Land_Nav_Boathouse";
-			atlOffset=1.726;
+			atlOffset=1.7259998;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24748,7 +24748,7 @@ class Mission
 			};
 			id=2555;
 			type="land_gm_euro_furniture_telephone_02";
-			atlOffset=1.4456522;
+			atlOffset=1.4456525;
 			class CustomAttributes
 			{
 				class Attribute0

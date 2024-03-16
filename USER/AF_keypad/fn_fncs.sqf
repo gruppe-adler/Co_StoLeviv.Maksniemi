@@ -1,10 +1,10 @@
 //This checks the variables passed in the execVM statments("number","enter" or "clear")
 
-private _keypadAffected = nearestObject [position player, "Cube5cm_ACR"]; // todo helper object that is unique for keypads
+private _keypadAffected = nearestObject [position player, "land_gm_euro_furniture_telephone_02"]; // todo helper object that is unique for keypads
 private _keycode = _keypadAffected getVariable ["AF_KP_keycode", "none"];
 private _codeToUnlock = _keypadAffected getVariable ["AF_KP_codeToUnlock", {}];
 
-[player, "beep"] remoteExec ["say3D", 0];
+[player, "beep_strobe"] remoteExec ["say3D", 0];
 
 switch (_this select 0) do {
 	case "number": {
@@ -23,10 +23,10 @@ switch (_this select 0) do {
 		AF_KP_keypad_InputText = "";
 
 		if (AF_KP_keypad_OutputText == _keycode) then {
-			_keypadAffected call _codeToUnlock;
+			_keypadAffected call compile _codeToUnlock;
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
-			 [player, "zoom_fail"] remoteExec ["say3D", 0];
+			 [player, "radioerror"] remoteExec ["say3D", 0];
 			 hint format["Wrong Code"];
 		};
 	};
