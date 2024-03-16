@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=667;
+		nextID=701;
 	};
 	class Camera
 	{
-		pos[]={9490.7227,3.7313218,3614.4536};
-		dir[]={-0.58631343,-0.60075569,0.54344207};
-		up[]={-0.44060138,0.79943269,0.40838453};
-		aside[]={0.67978466,-1.4901161e-08,0.73341191};
+		pos[]={9487.6416,3.5040572,3615.6382};
+		dir[]={-0.29961181,-0.57634139,0.76030487};
+		up[]={-0.21130343,0.81719857,0.53621089};
+		aside[]={0.93037057,2.4447218e-09,0.36662957};
 	};
 };
 binarizationWanted=0;
@@ -18429,7 +18429,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25926;
+			angle=228.25923;
 			id=2142;
 		};
 		class Item214
@@ -24699,11 +24699,11 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="if (isServer) then {" \n "{ private _selName = _x select 0; " \n "if (_selName select [0,5] == ""door_"") exitWith " \n "   { " \n "    _target setVariable [""bis_disabled_"" + _selName, 1, true]; " \n "   }; " \n "} forEach selectionNames (this); };";
+				init="if (isServer) then {" \n " [this] call grad_af_keypad_fnc_lockBoatHouseDoor;" \n "};";
 			};
 			id=2549;
 			type="Land_Nav_Boathouse";
-			atlOffset=1.7259998;
+			atlOffset=1.726;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24792,7 +24792,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="[this, ""11333"", { " \n " " \n "   [_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;" \n " }] call grad_af_keypad_fnc_addaction;";
+				init="[this, ""11333"", ""[_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;""] call grad_af_keypad_fnc_addaction;";
 			};
 			id=2561;
 			type="Cube5cm_ACR";
