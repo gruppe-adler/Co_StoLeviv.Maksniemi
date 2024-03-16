@@ -7,6 +7,5 @@ class grad_tasks{
 		class addPhoneAction;
 		class getTaskForRole;
 		class forceSubtitle;
-		
 	};
 };
