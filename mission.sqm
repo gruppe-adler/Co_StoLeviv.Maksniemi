@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=701;
+		nextID=735;
 	};
 	class Camera
 	{
-		pos[]={9487.6416,3.5040572,3615.6382};
-		dir[]={-0.29961181,-0.57634139,0.76030487};
-		up[]={-0.21130343,0.81719857,0.53621089};
-		aside[]={0.93037057,2.4447218e-09,0.36662957};
+		pos[]={9488.3867,3.5040572,3614.8762};
+		dir[]={0.11525534,-0.52151716,0.84542096};
+		up[]={0.070446856,0.85322183,0.51674026};
+		aside[]={0.99084044,-1.1440716e-07,-0.13508011};
 	};
 };
 binarizationWanted=0;
@@ -151,14 +151,13 @@ addons[]=
 	"gm_structures_euro_80_winter",
 	"weapons_f_vietnam_c",
 	"CUP_Editor_Rocks_Config",
-	"UK3CB_Factions_Vehicles_Small_Boat",
-	"CUP_CAMisc_ACR_Helpers"
+	"UK3CB_Factions_Vehicles_Small_Boat"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=86;
+		items=85;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -729,11 +728,6 @@ class AddonsMetaData
 			className="UK3CB_Factions_Vehicles_Small_Boat";
 			name="UK3CB_Factions_Vehicles_Small_Boat";
 		};
-		class Item85
-		{
-			className="CUP_CAMisc_ACR_Helpers";
-			name="CUP_CAMisc_ACR_Helpers";
-		};
 	};
 };
 dlcs[]=
@@ -874,7 +868,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=332;
+		items=331;
 		class Item0
 		{
 			dataType="Layer";
@@ -18429,7 +18423,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25923;
+			angle=228.25922;
 			id=2142;
 		};
 		class Item214
@@ -24749,12 +24743,12 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				createAsSimpleObject=1;
+				init="[this, ""11333"", ""[_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;""] call grad_af_keypad_fnc_addaction;";
 				disableSimulation=1;
 			};
 			id=2555;
 			type="land_gm_euro_furniture_telephone_02";
-			atlOffset=1.4456525;
+			atlOffset=1.4456522;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24781,22 +24775,6 @@ class Mission
 			type="Empty";
 			id=2559;
 			atlOffset=0.00024795532;
-		};
-		class Item331
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={9486.957,1.8927844,3617.6389};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="[this, ""11333"", ""[_this select 0] call grad_af_keypad_fnc_openBoatHouseDoor;""] call grad_af_keypad_fnc_addaction;";
-			};
-			id=2561;
-			type="Cube5cm_ACR";
-			atlOffset=1.2593033;
 		};
 	};
 	class Connections

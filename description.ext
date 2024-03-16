@@ -28,6 +28,10 @@ enableDebugConsole = 1;
 #include "cfgIslands.hpp"
 #include "cfgCivilians.hpp"
 
+#include "USER\AF_keypad\AF_KP_defines.hpp"
+#include "USER\AF_keypad\AF_KP_dialogs.hpp"
+#include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
+
 class missionSettings {
 	#include "USER\missionSettings.hpp"
 
