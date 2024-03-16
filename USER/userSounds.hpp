@@ -3,7 +3,7 @@
 *   Ist in CfgSounds included.
 */
 
- #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
+ #include "..\node_modules\grad-leaveNotes\cfgSounds.hpp"
  
 class GRAD_garble {
 	name = "GRAD_garble";
