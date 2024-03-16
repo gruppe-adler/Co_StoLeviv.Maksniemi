@@ -19,15 +19,20 @@ switch (_this select 0) do {
 	
 	case "enter": {
 		AF_KP_keypad_OutputText = AF_KP_keypad_InputText;
-		closeDialog 0;
-		AF_KP_keypad_InputText = "";
 
 		if (AF_KP_keypad_OutputText == _keycode) then {
 			_keypadAffected call compile _codeToUnlock;
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
-			 [player, "radioerror"] remoteExec ["say3D", 0];
-			 hint format["Wrong Code"];
+			if (player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && count AF_KP_keypad_OutputText > 7) then {
+				_keypadAffected call compile _codeToUnlock;
+				[player, "target_locked"] remoteExec ["say3D", 0];
+				hint format["Hacked the System :]"];
+			} else {
+				[player, "radioerror"] remoteExec ["say3D", 0];
+				hint format["Wrong Code"];
+			 };
 		};
+		closeDialog 0;
 	};
 };
