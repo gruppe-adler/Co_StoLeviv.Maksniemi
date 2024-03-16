@@ -2,7 +2,7 @@ class cfgRoles {
 
     class engineer {
         role = "Engineer";
-        briefing = "You can repair any vehicle with your golden hands.";
+        briefing = "You can repair any vehicle with your golden hands. You can drive boats too.";
         code = "(_this select 0) setVariable ['ACE_isEngineer', 2, true];";
     };
 
@@ -26,7 +26,19 @@ class cfgRoles {
 
     class tankcrew {
         role = "Tank Crew";
-        briefing = "You have been driving tanks in the past. You can drive as well as shoot them";
+        briefing = "You have been driving tanks in the past. You can drive as well as shoot them.";
+        code = "";
+    };
+
+    class radionerd {
+        role = "Radio Nerd";
+        briefing = "You are a hobby radio dude. Your communication abilities are invaluable.";
+        code = "";
+    };
+
+    class explosive {
+        role = "Explosive Dude";
+        briefing = "You can plant and defuse explosives.";
         code = "";
     };
 
