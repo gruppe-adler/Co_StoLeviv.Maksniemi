@@ -3,7 +3,9 @@ if (isServer) then {
 	[] spawn {
 		systemChat "spawn running";
 
-		// tombstone loot
+		waitUntil { !isNil "GRAD_Roles_Initialised" };
+
+		// tombstone properties
 		private _tombStones = call grad_loot_fnc_getTombStones;
 		systemChat str count(_tombStones);
 		private _names = call grad_loot_fnc_generateNames;
@@ -12,25 +14,45 @@ if (isServer) then {
 		systemChat str count(_deathdates);
 		private _epitaphs = call grad_loot_fnc_getEpitaph;
 		systemChat ("epitaphs: " + str count(_epitaphs));
+
+
+		// role specific loot
+		private _tombStoneUsed = [];
+		private _classnames
+		private _roles = missionConfigFile >> "cfgCustomRoles";
+		private _rolesCount = { side _x == west } count (playableUnits + switchableUnits);
+
+		for "_i" from 1 to _rolesCount do { 
+			private _entry = _roles select _index;
+			private _lootClassname = getText(_entry >> "lootClassname");
+			private _lootLocation = getText(_entry >> "lootLocation");
+
+			if (_lootLocation == "tomb") then {
+				private _stone = selectRandom (_tombStones - _tombStoneUsed);
+				_tombStoneUsed pushBack _stone;
+			};
+		};
+
 		
+		// save attributes to tombstone hashmap
 		private _allHashes = [];
 		systemChat str (count _tombStones);
 		{ 
-			_allHashes pushBack [_x call BIS_fnc_netId, [_names#_forEachIndex, _deathdates#_forEachIndex, _epitaphs#_forEachIndex]];
+			private _loot = "";
+			if (_x in _tombStoneUsed) then {
+				_loot = "";
+			};
+			_allHashes pushBack [_x call BIS_fnc_netId, [_names#_forEachIndex, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
 			
-			systemChat str _forEachIndex;
+			// systemChat str _forEachIndex;
 		} forEach _tombStones;
 
 		private _hashMap = createHashMapFromArray _allHashes;
 
-		private _tombStoneUsed = [];
-
-		for "_i" from 1 to 10 do { 
-			private _stone = selectRandom (_tombStones - _tombStoneUsed);
-			_tombStoneUsed pushBack _stone;
-			private _positionATL = getPosATL _stone;
-			private _weaponholder = ["rhs_weap_m38", _positionATL] call grad_loot_fnc_createLoot;
-		};
+			
+		private _weaponholder = ["rhs_weap_m38", _positionATL] call grad_loot_fnc_createLoot;
+		// todo store name of tombstone externally to assign to player later on
+		
 
 		missionNameSpace setVariable ["grad_loot_tombstoneHashes", _hashMap, true];
 		missionNameSpace setVariable ["grad_loot_tombstones", _tombStones, true];
@@ -58,7 +80,7 @@ if (hasInterface) then {
 			_tombstone setVariable ["grad_loot_actiondummy", _actiondummy];
 			_actionDummy setVariable ["grad_loot_tombstone", _tombstone];
 
-			[_actiondummy, "colorGreen"] call grad_loot_fnc_createMarker;
+			// [_actiondummy, "colorGreen"] call grad_loot_fnc_createMarker;
 
 			_actionDummy setVariable ["grad_loot_name", _name];
 			_actionDummy setVariable ["grad_loot_deathdate", _date];

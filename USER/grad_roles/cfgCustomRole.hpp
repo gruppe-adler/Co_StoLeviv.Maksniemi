@@ -4,6 +4,8 @@ class cfgCustomRoles {
         briefing = "You can repair any vehicle with your golden hands.";
         code = "_this setVariable ['ACE_isEngineer', 2, true];";
         spawn = "mrk_spawn_engineer";
+        lootClassname = "";
+        lootLocation = "tomb";
     };
     
     class emergency {
@@ -11,6 +13,8 @@ class cfgCustomRoles {
         briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
         code = "_this call grad_customMedicSystem_fnc_initMedic;";
         spawn = "mrk_spawn_emergency";
+        lootClassname = "";
+        lootLocation = "";
     };
 
     class hunter {
@@ -18,6 +22,8 @@ class cfgCustomRoles {
         briefing = "You know the location of a bolt action rifle and you can imitate animal sounds for communication over long distances. You are invaluable in early game.";
         code = "";
         spawn = "mrk_spawn_hunter";
+        lootClassname = "rhs_weap_m38";
+        lootLocation = "home";
     };
 
     class tailor {
@@ -25,6 +31,8 @@ class cfgCustomRoles {
         briefing = "You are a tailor. You can disguise your friends so enemies wont recognize them again after they became sus.";
         code = "";
         spawn = "mrk_spawn_tailor";
+        lootClassname = "";
+        lootLocation = "home";
     };
 
     class tankcrew {
@@ -32,6 +40,8 @@ class cfgCustomRoles {
         briefing = "You have been driving tanks in the past. You can drive as well as shoot them.";
         code = "";
         spawn = "mrk_spawn_tankcrew";
+        lootClassname = "";
+        lootLocation = "tomb";
     };
 
     class hacker {
@@ -39,5 +49,7 @@ class cfgCustomRoles {
         briefing = "You are able to hack any keypad and computer.";
         code = "";
         spawn = "mrk_spawn_hacker";
+        lootClassname = "";
+        lootLocation = "";
     };
 };
