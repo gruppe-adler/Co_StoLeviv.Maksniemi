@@ -1,3 +1,9 @@
+/*
+
+	not used anymore
+
+*/
+
 params ["_actiondummy"];
 
 private _action = ["Read Name", "Read Name", "", {

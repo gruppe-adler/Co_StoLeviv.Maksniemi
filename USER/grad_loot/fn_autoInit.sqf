@@ -18,16 +18,9 @@ if (isServer) then {
 
 		// role specific loot
 		private _tombStoneUsed = [];
-		private _classnames
-		private _roles = missionConfigFile >> "cfgCustomRoles";
-		private _rolesCount = { side _x == west } count (playableUnits + switchableUnits);
+		private _lootCount = 40;
 
-		for "_i" from 1 to _rolesCount do { 
-			private _entry = _roles select _index;
-			private _lootClassname = getText(_entry >> "lootClassname");
-			private _lootLocation = getText(_entry >> "lootLocation");
-
-			if (_lootLocation == "tomb") then {
+		for "_i" from 1 to _lootCount do { 
 				private _stone = selectRandom (_tombStones - _tombStoneUsed);
 				_tombStoneUsed pushBack _stone;
 			};
@@ -38,9 +31,9 @@ if (isServer) then {
 		private _allHashes = [];
 		systemChat str (count _tombStones);
 		{ 
-			private _loot = "";
+			private _loot = "none";
 			if (_x in _tombStoneUsed) then {
-				_loot = "";
+				_loot = selectRandom [""];
 			};
 			_allHashes pushBack [_x call BIS_fnc_netId, [_names#_forEachIndex, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
 			
@@ -50,12 +43,13 @@ if (isServer) then {
 		private _hashMap = createHashMapFromArray _allHashes;
 
 			
-		private _weaponholder = ["rhs_weap_m38", _positionATL] call grad_loot_fnc_createLoot;
+		// private _weaponholder = ["rhs_weap_m38", _positionATL] call grad_loot_fnc_createLoot;
 		// todo store name of tombstone externally to assign to player later on
 		
 
 		missionNameSpace setVariable ["grad_loot_tombstoneHashes", _hashMap, true];
 		missionNameSpace setVariable ["grad_loot_tombstones", _tombStones, true];
+		missionNameSpace setVariable ["grad_loot_tombstonesLoot", _tombStoneUsed, true];
 	};
 };
 
@@ -86,8 +80,9 @@ if (hasInterface) then {
 			_actionDummy setVariable ["grad_loot_deathdate", _date];
 			_actionDummy setVariable ["grad_loot_epitaph", _epitaph];
 
-			[_actiondummy] call grad_loot_fnc_addTombNameAction;
+			// [_actiondummy] call grad_loot_fnc_addTombNameAction;
 			[_actiondummy] call grad_loot_fnc_addDigAction;
 		} forEach _tombStones;
+		
 	};
 };
