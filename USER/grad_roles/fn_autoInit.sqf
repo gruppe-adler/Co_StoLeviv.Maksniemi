@@ -2,7 +2,73 @@
 	tailor stuff
 */
 
+[] spawn { 
+	sleep 2;
+	private _roles = missionConfigFile >> "cfgCustomRoles";
+	private _playerRole = player getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
+
+	private _uniform = getArray(_roles >> _playerRole >> "uniform");
+	player addUniform selectRandom _uniform;
+
+	private _headgear = getArray(_roles >> _playerRole >> "headgear");
+	player addHeadgear selectRandom _headgear;
+
+	removeVest player;
+	player unassignItem "NVGoggles";
+	player removeItem "NVGoggles";
+
+	removeAllWeapons player;
+	
+
+	private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
+	[player] call _initFile;
+
+
+	player addEventhandler ["GetInMan", {
+		params ["_unit", "_role", "_vehicle", "_turret"];
+
+		// plays alarm on empty cars once
+		if (
+				!(_vehicle getVariable ["GRAD_isPlayers", false]) && 
+				_vehicle isKindOf "Car" && 
+				count crew _vehicle == 0 &&
+				!(_vehicle getVariable ["GRAD_alarmPlayed", false])
+			) then {
+				["play", _vehicle] call BIS_fnc_carAlarm;
+				_vehicle setVariable ["GRAD_alarmPlayed", true, true];
+		};
+
+		if (_vehicle isKindOf "Tank") then {
+			if (_role == "driver" || _role == "gunner") then {
+				if !(player getVariable ["GRAD_isTankCrew", false]) then {
+					moveOut player;
+					systemChat "I am not trained for this.";
+				};
+			};
+		};
+	}];
+
+	player addEventHandler ["SeatSwitchedMan", {
+		params ["_unit1", "_unit2", "_vehicle"];
+		{
+			if (!isNull _x) then {
+				private _role = (assignedVehicleRole _x);
+				if (count _role < 1) exitWith {};
+				_role = _role#0;
+				if (_role == "driver" || _role == "gunner") then {
+					if !(_x getVariable ["GRAD_isTankCrew", false]) then {
+						moveOut _x;
+						systemChat "I am not trained for this.";
+					};
+				};
+			};
+		} forEach [_unit1, _unit2];
+	}];
+};
 /*
+
+
+
 ["loadout", {
 
 	systemChat str _this
@@ -28,42 +94,4 @@ player addEventHandler [ "Put", {
 	vehicle crew stuff
 */
 
-player addEventhandler ["GetInMan", {
-	params ["_unit", "_role", "_vehicle", "_turret"];
-
-	// plays alarm on empty cars once
-	if (
-			!(_vehicle getVariable ["GRAD_isPlayers", false]) && 
-			_vehicle isKindOf "Car" && 
-			count crew _vehicle == 0 &&
-			!(_vehicle getVariable ["GRAD_alarmPlayed", false])
-		) then {
-			["play", _vehicle] call BIS_fnc_carAlarm;
-			_vehicle setVariable ["GRAD_alarmPlayed", true, true];
-	};
-
-	if (_vehicle isKindOf "Tank") then {
-		if (_role == "driver" || _role == "gunner") then {
-			if !(player getVariable ["GRAD_isTankCrew", false]) then {
-				moveOut player;
-				systemChat "I am not trained for this.";
-			};
-		};
-	};
-}];
-
-player addEventHandler ["SeatSwitchedMan", {
-	params ["_unit1", "_unit2", "_vehicle"];
-	{
-		if (!isNull _x) then {
-			private _role = assignedVehicleRole _x;
-			if (_role == "driver" || _role == "gunner") then {
-				if !(_x getVariable ["GRAD_isTankCrew", false]) then {
-					moveOut _x;
-					systemChat "I am not trained for this.";
-				};
-			};
-		};
-	} forEach [_unit1, _unit2];
-}];
 
