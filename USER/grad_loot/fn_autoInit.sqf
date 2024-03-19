@@ -21,9 +21,8 @@ if (isServer) then {
 		private _lootCount = 40;
 
 		for "_i" from 1 to _lootCount do { 
-				private _stone = selectRandom (_tombStones - _tombStoneUsed);
-				_tombStoneUsed pushBack _stone;
-			};
+			private _stone = selectRandom (_tombStones - _tombStoneUsed);
+			_tombStoneUsed pushBack _stone;
 		};
 
 		
@@ -33,9 +32,15 @@ if (isServer) then {
 		{ 
 			private _loot = "none";
 			if (_x in _tombStoneUsed) then {
-				_loot = selectRandom [""];
+				_loot = selectRandom ["rhs_weap_m38"];
+				
+				if (!isNil "DEBUG") then {
+					[_x, "COLORBLACK"] call grad_loot_fnc_createMarker;
+				};
 			};
 			_allHashes pushBack [_x call BIS_fnc_netId, [_names#_forEachIndex, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
+
+			
 			
 			// systemChat str _forEachIndex;
 		} forEach _tombStones;

@@ -9,4 +9,4 @@ enableSaving [false, false];
 // SCRIPTS =====================================================================
 [] execVM "USER\userInit.sqf";
 
- ATRAIN_Track_Debug_Enabled = true;
+DEBUG = true;

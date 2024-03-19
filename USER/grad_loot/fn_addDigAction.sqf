@@ -20,11 +20,11 @@ private _action = ["Dig", "Dig", "", {
         params ["_args"];
 		_args params ["_target"];
 
-        private _weaponholders = _target getVariable ["grad_loot_weaponholders", []];
         private _tombstone = _target getVariable ["grad_loot_tombstone", []];
         Hint "Finished!";
-        { _x hideObjectGlobal false; } forEach _weaponHolders;
         _tombstone hideObjectGlobal true;
+
+        [_tombstone] call grad_loot_fnc_digFinishLoot;
 
         [(getModelInfo _tombstone) select 1, _target, _tombstone, getPos player] call grad_loot_fnc_digFinishFX;
         _target setVariable ["grad_loot_available", false, true];

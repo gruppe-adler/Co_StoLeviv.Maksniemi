@@ -1,4 +1,4 @@
-params ["_classname", "_positionATL", ["_amount", 1]];
+params ["_classname", "_positionATL", ["_amount", 1], ["_hideInitially", true], ["_includeMags", false]];
 
 private _lootContainers = [];
 
@@ -11,7 +11,12 @@ for "_i" from 1 to _amount do {
     ([_classname] call BIS_fnc_itemType) params ["_type"];
 
     if (_type == "WEAPON") then {
-        _lootContainer addWeaponCargoGlobal [_classname, _amount]; 
+        _lootContainer addWeaponCargoGlobal [_classname, _amount];
+
+        if (_includeMags) then {
+            private _classnameMag = (compatibleMagazines _classname) select 0;
+            _lootContainer addMagazineCargoGlobal [_classnameMag, ceil random 3];
+        };
     };
     if (_type == "ITEM") then {
         _lootContainer addItemCargoGlobal [_classname, _amount]; 
@@ -27,7 +32,7 @@ for "_i" from 1 to _amount do {
             _lootContainer addItemCargoGlobal [ _classname, 1 ];
         };
     };
-    _lootContainer hideObjectGlobal true;
+    _lootContainer hideObjectGlobal _hideInitially;
     _lootContainers pushBackUnique _lootContainer;
 };
 

@@ -15,6 +15,7 @@ class grad_loot {
 		class destroyActionDummy;
 		
 		class digFinishFX;
+		class digFinishLoot;
 		class digFX;
 		
 		class generateNames;
@@ -23,6 +24,8 @@ class grad_loot {
 		class getFirstName;
 		class getSurname;
 		class getTombStones;
+
+		class tombScanner { postInit = 1; };
 		
 	};
 	

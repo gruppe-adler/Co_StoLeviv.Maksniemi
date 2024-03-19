@@ -8,7 +8,7 @@ class EditorData
 	toggles=97;
 	class ItemIDProvider
 	{
-		nextID=2571;
+		nextID=2572;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=803;
+		nextID=837;
 	};
 	class Camera
 	{
-		pos[]={10748.182,7.3597536,4669.1265};
-		dir[]={-0.90359324,-0.4244844,-0.05772642};
-		up[]={-0.42362082,0.90543526,-0.027063187};
-		aside[]={-0.063755438,0,0.99796563};
+		pos[]={9332.8535,21.762045,7367.4458};
+		dir[]={-0.34225291,-0.87313753,-0.34712249};
+		up[]={-0.61302501,0.48747376,-0.6217472};
+		aside[]={-0.71208394,1.4901161e-08,0.70209444};
 	};
 };
 binarizationWanted=0;
@@ -848,7 +848,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=327;
+		items=328;
 		class Item0
 		{
 			dataType="Layer";
@@ -18403,7 +18403,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25906;
+			angle=228.25902;
 			id=2142;
 		};
 		class Item214
@@ -24714,6 +24714,21 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item327
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9323.0879,7.8400002,7362.9292};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=2571;
+			type="land_gm_euro_misc_clothesline_02";
 		};
 	};
 	class Connections
