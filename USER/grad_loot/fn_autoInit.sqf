@@ -31,14 +31,20 @@ if (isServer) then {
 		systemChat str (count _tombStones);
 		{ 
 			private _loot = "none";
+			private _names = _names#_forEachIndex;
 			if (_x in _tombStoneUsed) then {
 				_loot = selectRandom ["rhs_weap_m38"];
+
+				// all weapons are buried by some crazy hunter family members
+				private _customNameArray = _names splitString " ";
+				_customNameArray set [2, "Vixxär"];
+				_names = _customNameArray joinString " ";
 				
 				if (!isNil "DEBUG") then {
 					[_x, "COLORBLACK"] call grad_loot_fnc_createMarker;
 				};
 			};
-			_allHashes pushBack [_x call BIS_fnc_netId, [_names#_forEachIndex, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
+			_allHashes pushBack [_x call BIS_fnc_netId, [_names, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
 
 			
 			
