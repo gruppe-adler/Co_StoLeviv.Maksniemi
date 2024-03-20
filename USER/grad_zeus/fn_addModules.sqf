@@ -100,7 +100,6 @@
 
       if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-
       [objNull, _nearestPhone] remoteExec ["grad_telephone_fnc_callEnd", 2];
 
 }] call zen_custom_modules_fnc_register;

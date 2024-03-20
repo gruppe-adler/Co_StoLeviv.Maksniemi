@@ -7,15 +7,6 @@ class cfgCustomRoles {
         uniform[] = {"UK3CB_ION_B_U_SF_Uniform_SHIRT_01_WDL","UK3CB_ION_B_U_SF_Uniform_SHIRT_05_WDL", "UK3CB_ION_B_U_SF_Uniform_Short_Shirt_04_WDL","UK3CB_ION_B_U_SF_Uniform_Short_Shirt_05_WDL","UK3CB_ION_B_U_SF_Uniform_Short_Shirt_06_WDL","UK3CB_ION_B_U_SF_Uniform_Short_Shirt_08_WDL"};
         headgear[] = {"H_Bandanna_blu", "H_Bandanna_gry", "vn_b_bandana_03", "H_Bandanna_sgg", "rhssaf_bandana_smb"};
     };
-    
-    class emergency {
-        role = "Emergency Doctor";
-        briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
-        code = "_this call grad_customMedicSystem_fnc_initMedic;";
-        spawn = "mrk_spawn_emergency";
-        uniform[] = {"UK3CB_CHC_C_U_DOC_01"};
-        headgear[] = {"UK3CB_H_Beanie_02_Win", "UK3CB_H_Cap_Back_ION_WHI", "UK3CB_H_Cap_Earpiece_ION_WHI", "gm_xx_headgear_headwrap_01_wht"};
-    };
 
     class hunter {
         role = "Hunter";
@@ -51,5 +42,16 @@ class cfgCustomRoles {
         spawn = "mrk_spawn_hacker";
         uniform[] = {"U_C_E_LooterJacket_01_F", "U_I_L_Uniform_01_tshirt_black_F", "U_I_L_Uniform_01_tshirt_skull_F", "U_I_L_Uniform_01_tshirt_sport_F"};
         headgear[] = {"vn_b_headband_04", "vn_c_headband_01", "vn_b_headband_01", "vn_o_pl_cap_02_02", "vn_o_pl_cap_02_01"};
+    };
+};
+
+class cfgRoleEmergency {
+    class emergency {
+        role = "Emergency Doctor";
+        briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
+        code = "_this call grad_customMedicSystem_fnc_initMedic;";
+        spawn = "mrk_spawn_emergency";
+        uniform[] = {"UK3CB_CHC_C_U_DOC_01"};
+        headgear[] = {"UK3CB_H_Beanie_02_Win", "UK3CB_H_Cap_Back_ION_WHI", "UK3CB_H_Cap_Earpiece_ION_WHI", "gm_xx_headgear_headwrap_01_wht"};
     };
 };

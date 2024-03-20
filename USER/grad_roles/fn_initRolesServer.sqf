@@ -44,7 +44,35 @@ private _allMapMarkers = allMapMarkers;
 			} else {
 				diag_log "initRoles Error: no spawn marker found for " + _spawnMarker;
 			};
-		}; 
+		};
+	} else {
+		private _roleEmergency = missionConfigFile >> "cfgRoleEmergency";
+		private _entry = _roles select 0;
+
+		// docs and excluded zeus
+		if (isclass _entry && (isNull getAssignedCuratorLogic _unit)) then {
+			private _displayname = getText(_entry >> "role");
+			private _briefing = getText(_entry >> "briefing");
+			private _code = getText(_entry >> "code");
+			private _spawn = getText(_entry >> "spawn");
+			private _markernumber = (_foreachIndex mod 3) + 1;
+			
+			private _spawnMarker = format ["%1_%2", _spawn, _markernumber];
+
+			_unit setVariable ["GRAD_cfgCustomRoles_displayName", _displayName, true];
+			_unit setVariable ["GRAD_cfgCustomRoles_briefing", _briefing, true];
+			_unit setVariable ["GRAD_cfgCustomRoles_code", _code, true];
+
+			diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
+
+			if (_spawnMarker in _allMapMarkers) then {
+				private _spawnPos = getMarkerPos _spawnMarker;
+				
+				_unit setVariable ["GRAD_cfgCustomRoles_spawnPos", _spawnPos, true];
+			} else {
+				diag_log "initRoles Error: no spawn marker found for " + _spawnMarker;
+			};
+		};
 	};
 
 } forEach (playableUnits + switchableUnits);
