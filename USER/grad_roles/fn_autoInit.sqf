@@ -19,9 +19,11 @@
 
 	removeAllWeapons player;
 	
-
-	private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
-	[player] call _initFile;
+	// exclude zeus here :P
+	if (_playerRole != "none") then {
+		private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
+		[player] call _initFile;
+	};
 
 
 	player addEventhandler ["GetInMan", {
