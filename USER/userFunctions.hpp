@@ -11,6 +11,7 @@
 #include "grad_clothing\cfgFunctions.hpp"
 #include "grad_tasks\cfgFunctions.hpp"
 #include "grad_roles\cfgFunctions.hpp"
+#include "grad_briefing\cfgFunctions.hpp"
 #include "grad_zeus\cfgFunctions.hpp"
 #include "AF_keypad\cfgFunctions.hpp"
 #include "..\node_modules\grad-leaveNotes\cfgFunctions.hpp"
