@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={9457.3828,5.9967189,4923.5991};
-		dir[]={0.40175223,-0.58480656,-0.70469594};
-		up[]={0.28964511,0.81112963,-0.50805199};
-		aside[]={-0.86874622,2.2118911e-07,-0.49528071};
+		dir[]={0.40175244,-0.58480656,-0.70469582};
+		up[]={0.28963923,0.81117278,-0.50804311};
+		aside[]={-0.86873698,-1.4901161e-08,-0.49527359};
 	};
 };
 binarizationWanted=0;
@@ -792,13 +792,21 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=1;
+									items=2;
 									class Item0
 									{
 										class data
 										{
 											singleType="STRING";
 											value="ace_explosives_requirespecialist";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="STRING";
+											value="grad_telephone_setting_debugmode";
 										};
 									};
 								};
@@ -811,7 +819,7 @@ class CustomAttributes
 								singleType="ARRAY";
 								class value
 								{
-									items=1;
+									items=2;
 									class Item0
 									{
 										class data
@@ -826,6 +834,33 @@ class CustomAttributes
 													{
 														singleType="BOOL";
 														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=0;
 													};
 												};
 												class Item1
@@ -18436,7 +18471,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25899;
+			angle=228.25897;
 			id=2142;
 		};
 		class Item214
@@ -25733,7 +25768,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="if (isServer) then { private _pc = createSimpleObject [getMissionPath ""data\pc_mlod.p3d"", getPosASL this]; _pc setDir getDir this; deleteVehicle this; };";
+				init="if (isServer) then { private _pc = createSimpleObject [getMissionPath ""data\pc_mlod.p3d"", getPosworld this]; _pc setDir getDir this; deleteVehicle this; };";
 			};
 			id=2616;
 			type="Computer";
