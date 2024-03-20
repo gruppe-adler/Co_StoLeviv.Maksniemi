@@ -14,7 +14,7 @@ _localMedicMarkers pushbackUnique _marker;
 player setVariable ['grad_customMedicSystem_localMedicMarkers', _localMedicMarkers];
 
 
-if (player getVariable ['grad_customMedicSystem_isZeus'] || player getVariable ['grad_customMedicSystem_isMedic']) then {
+if (player getVariable ['grad_customMedicSystem_isZeus', false] || player getVariable ['grad_customMedicSystem_isMedic', false]) then {
 	_marker setMarkerAlphaLocal 1;
 	hint ("Helpless person reported at " + str mapGridPosition _unit);
 };

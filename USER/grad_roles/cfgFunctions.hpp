@@ -7,7 +7,6 @@ class grad_roles{
 		class initRolesServer { postInit = 1; };
 		class initRoleClient { postInit = 1; };
 		
-		class initEmergency;
 		class initEngineer;
 		class initTailor;
 		class initHacker;

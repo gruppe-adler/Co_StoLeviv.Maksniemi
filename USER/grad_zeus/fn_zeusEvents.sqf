@@ -8,18 +8,6 @@ if (!isServer) exitWith {};
     private _color = [0,0,0,1];
 
     switch (_type) do {
-        case ("spawn_demon"): {
-            _message = format ["%1 spawned a demon.", [_unit, false, true] call ace_common_fnc_getName];
-            _color = [0.5,0,0.5,1];
-        };
-        case ("spawn_horse"): {
-            _message = format ["%1 spawned a horse.", [_unit, false, true] call ace_common_fnc_getName];
-            _color = [0,0.5,0.5,1];
-        };
-        case ("spawn_zombie"): {
-            _message = format ["%1 spawned a zombie.", [_unit, false, true] call ace_common_fnc_getName];
-            _color = [0,0.5,0.5,1];
-        };
         case ("unconscious"): {
             _message = format ["%1 was knocked out.", [_unit, false, true] call ace_common_fnc_getName];
             _color = [0.5,0.1,0.1,1];
@@ -38,10 +26,6 @@ if (!isServer) exitWith {};
         };
         case ("killed"): {
             _message = format ["%1 killed.", [_unit, false, true] call ace_common_fnc_getName];
-            _color = [0.7,0.1,0.1,1];
-        };
-        case ("lovers"): {
-            _message = format ["%1 got assigned %2 as a lover.", [_unit, false, true] call ace_common_fnc_getName, [_unit getVariable ["grad_missionControl_buddy", objNull], false, true] call ace_common_fnc_getName];
             _color = [0.7,0.1,0.1,1];
         };
         default {};
