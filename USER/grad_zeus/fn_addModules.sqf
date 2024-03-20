@@ -101,6 +101,7 @@
       if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
       _nearestPhone setVariable ["grad_telephone_phoneStatus", "ending", true];
+      [objNull, _nearestPhone] call grad_telephone_fnc_callEnd;
 
 }] call zen_custom_modules_fnc_register;
 
