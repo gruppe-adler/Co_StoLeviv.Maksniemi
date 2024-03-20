@@ -28,18 +28,22 @@ grad_loot_tomb_cache = objNull;
 		if (((getModelInfo _cursorObject) select 0) in _tombStoneP3Ds) then {
 			private _tombstone = (_cursorObject call BIS_fnc_netId);
 			private _data = (missionNameSpace getVariable "grad_loot_tombstoneHashes") getOrDefault [_tombstone, []];
-            if (count _data < 1) exitWith {}; // on mission start
+            if (count _data < 1) then {
+                    _data = ["Unreadable", "", "", ""];
+            }; // on mission start
 
 			_data params ["_name", "_deathdate", "_epitaph", "_loot"];
 
-			private _text = "<t color='#ffffff' size='2.5'>" + _name + "</t><br /><t size='1.95'>" + _deathdate + "<br /></t><t size='1.8'>" + _epitaph + "</t>"; 
+			private _text = "<t color='#ffffff' size='1.5'>" + _name + "</t><br /><t size='0.95'>" + _deathdate + "<br /></t><t size='0.8'>" + _epitaph + "</t>"; 
 			// spawn BIS_fnc_dynamicText;
             // only flicker when looking at a new stone
             if (grad_loot_tomb_cache != _cursorObject) then {
                 grad_loot_tomb_cache = _cursorObject;
-			    "normal" cutText [_text, "PLAIN", .2, false, true, true];
+                [_text,-1,-1,60,0.25,0,789] spawn BIS_fnc_dynamicText;
             };
-		};
+		} else {
+            789 cutFadeOut 0.25;
+        };
 	};
 
-}, 1, [_tombStoneP3Ds]] call CBA_fnc_addPerFrameHandler;
+}, 0.5, [_tombStoneP3Ds]] call CBA_fnc_addPerFrameHandler;
