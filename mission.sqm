@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.08726646;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=97;
+	toggles=225;
 	class ItemIDProvider
 	{
-		nextID=2631;
+		nextID=2635;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=905;
+		nextID=939;
 	};
 	class Camera
 	{
-		pos[]={9457.582,6.758112,4925.6978};
-		dir[]={0.39411798,-0.64864677,-0.65109831};
-		up[]={0.3358919,0.76108396,-0.55490649};
-		aside[]={-0.85548437,-3.0403316e-07,-0.51783717};
+		pos[]={5528.0264,29.984716,6982.2988};
+		dir[]={0.68114853,-0.50471818,-0.53037924};
+		up[]={0.39827406,0.86319453,-0.31011695};
+		aside[]={-0.61437774,-6.5332279e-07,-0.78902489};
 	};
 };
 binarizationWanted=0;
@@ -916,7 +916,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=363;
+		items=367;
 		class Item0
 		{
 			dataType="Layer";
@@ -5788,8 +5788,8 @@ class Mission
 		class Item137
 		{
 			dataType="Marker";
-			position[]={5531.6611,10,7007.1064};
-			name="marker_3";
+			position[]={5526.5444,10,6997.1602};
+			name="mrk_hospital";
 			type="loc_Hospital";
 			id=959;
 		};
@@ -18471,7 +18471,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25896;
+			angle=228.25894;
 			id=2142;
 		};
 		class Item214
@@ -25790,6 +25790,70 @@ class Mission
 			id=2627;
 			type="Land_Laptop_Intel_02_F";
 			atlOffset=1.1920929e-06;
+		};
+		class Item363
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5523.0908,21.304428,7003.2158};
+				angles[]={-0,0.17453292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2631;
+			type="PortableHelipadLight_01_white_F";
+		};
+		class Item364
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5519.3716,21.304428,7004.1045};
+				angles[]={-0,0.17453292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2632;
+			type="PortableHelipadLight_01_white_F";
+		};
+		class Item365
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5525.3257,21.304428,7012.1836};
+				angles[]={-0,0.17453292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2633;
+			type="PortableHelipadLight_01_white_F";
+		};
+		class Item366
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5521.3203,21.304428,7013.146};
+				angles[]={-0,0.17453292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2634;
+			type="PortableHelipadLight_01_white_F";
 		};
 	};
 	class Connections

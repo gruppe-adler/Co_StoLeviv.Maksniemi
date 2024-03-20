@@ -2,12 +2,7 @@ params ["_p3d", "_actionDummy", "_tombstone", "_positionPlayer"];
 
 private _positiontomb = getPos _actionDummy;
 
-private _tombStoneThrown = createSimpleObject [_p3d, [0,0,0]];
-private _positionWorld = getPosWorld player;
-(_tombStoneThrown call BIS_fnc_boundingBoxDimensions) params ["_width", "_depth", "_height"];
-_tombStoneThrown setPosWorld [_positionWorld#0, _positionWorld#1, _positionWorld#2 - _depth/2];
-_tombStoneThrown setDir (random 360);
-_tombStoneThrown setVectorUp [0,1,0];
+[_p3d, position player, random 360] remoteExec ["grad_loot_fnc_tombStoneThrown", 0];
 [_tombstone] remoteExec ["grad_loot_fnc_destroyActionDummy", 0, true];
 
 // systemchat (str _positionTomb + " " + str _positionPlayer);
@@ -32,6 +27,7 @@ _positionFX set [2, 0];
 private _skeleton = _skeletonClass createVehicle [0,0,0];
 _skeleton setDir (random 360);
 _skeleton setPosATL [_positionFX#0, _positionFX#1, (_positionFX#2) - 0.2 - random 0.1];
+_skeleton disableCollisionWith player;
 
 private _decal = _decalClass createVehicle [0,0,0];
 _decal setDir (random 360);

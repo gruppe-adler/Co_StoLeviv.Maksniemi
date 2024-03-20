@@ -26,6 +26,7 @@ class grad_loot {
 		class getTombStones;
 
 		class tombScanner { postInit = 1; };
+		class tombStoneThrown;
 		
 	};
 	

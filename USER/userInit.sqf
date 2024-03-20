@@ -7,3 +7,5 @@
 if (hasInterface) then {
     player setVariable ["isSneaky", true, true];
 };
+
+GRAD_TELEPHONE_DEBUG_MODE = false;

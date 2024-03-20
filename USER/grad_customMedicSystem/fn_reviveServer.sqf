@@ -7,8 +7,9 @@
 params ["_unit"];
 
 [_unit, false] call ace_medical_fnc_setUnconscious;
+[_unit] remoteExec ["ace_medical_treatment_fnc_fullHealLocal", _unit];
 
-private _reviveAsMedic = random 1 > 0.5;
+private _reviveAsMedic = false; // random 1 > 0.5;
 
 if (_reviveAsMedic) then {
 	// remove from blufor and inco tracker, add to civilian side

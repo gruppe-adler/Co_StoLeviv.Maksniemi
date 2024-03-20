@@ -16,7 +16,7 @@ player setVariable ['grad_customMedicSystem_localMedicMarkers', _localMedicMarke
 
 if (player getVariable ['grad_customMedicSystem_isZeus', false] || player getVariable ['grad_customMedicSystem_isMedic', false]) then {
 	_marker setMarkerAlphaLocal 1;
-	hint ("Helpless person reported at " + str mapGridPosition _unit);
+	("Helpless person reported at " + str mapGridPosition _unit) call CBA_fnc_notify;
 };
 
 private _previousMarker = _unit getVariable ["mrk_unconscious", ""];
