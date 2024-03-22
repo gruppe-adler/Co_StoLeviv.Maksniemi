@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1119;
+		nextID=1157;
 	};
 	class Camera
 	{
@@ -18469,7 +18469,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25868;
+			angle=228.25865;
 			id=2142;
 		};
 		class Item214

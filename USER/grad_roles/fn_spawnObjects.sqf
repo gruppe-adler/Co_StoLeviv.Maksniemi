@@ -21,7 +21,7 @@ private _displayName = _unit getVariable ["ACE_Name", "none"];
 
 [{
 	_this call grad_telephone_fnc_addPhone;
-}, [_phone, true, "none", _displayName, _canOnlyCallNumber, _hasPublicPhoneBookEntry, _mapPosition, false, _isFakePhone], 10] call CBA_fnc_waitAndExecute;
+}, [_phone, true, "none", _displayName, "all", true, getPos _phone, false, false], 10] call CBA_fnc_waitAndExecute;
 
 /*
  ["_object", objNull],
