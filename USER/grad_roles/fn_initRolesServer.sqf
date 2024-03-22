@@ -37,6 +37,18 @@ private _allMapMarkers = allMapMarkers;
 			_unit setVariable ["GRAD_cfgCustomRoles_code", _code, true];
 			_unit setVariable ["GRAD_cfgCustomRoles_playerIndex", _playerIndex, true];
 
+			private _face = getText(((missionConfigFile >> "CfgIdentities") select _playerIndex) >> "face");
+			private _name = getText(((missionConfigFile >> "CfgIdentities") select _playerIndex) >> "name");
+
+			// all hunters from one big happy family
+			if (_displayname == "hunter") then {
+				_name = _name splitString " ";
+				_name set [1, "Vixxär"];
+				_name = _name joinString " ";
+			};
+
+			[_unit, _face, "Male01ENGB", 1.05, _name, _name] call BIS_fnc_setIdentity;
+
 			diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
 
 			if (_spawnMarker in _allMapMarkers) then {
