@@ -27,7 +27,7 @@ class cfgCustomRoles {
     };
 
     class tankcrew {
-        role = "Tank Crew";
+        role = "Tankcrew";
         briefing = "You have been driving tanks in the past. You can drive as well as shoot them.";
         code = "";
         spawn = "mrk_spawn_tankcrew";
