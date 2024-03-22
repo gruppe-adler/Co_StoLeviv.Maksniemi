@@ -48,6 +48,7 @@ private _allMapMarkers = allMapMarkers;
 			};
 
 			[_unit, _face, "Male01ENGB", 1.05, _name, _name] call BIS_fnc_setIdentity;
+			_unit setVariable ["ACE_Name", _name, true];
 
 			diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
 

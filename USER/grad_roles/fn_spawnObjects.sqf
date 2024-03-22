@@ -17,6 +17,17 @@ private _spawned = [_position, random 360, _objects] call BIS_fnc_ObjectsMapper;
 
 private _phone = _spawned select -1;
 
-private _displayName = name _unit;
+private _displayName = _unit getVariable ["ACE_Name", "none"];
 
 [_phone, true, "none", _displayName, _canOnlyCallNumber, _hasPublicPhoneBookEntry, _mapPosition, false, _isFakePhone] call grad_telephone_fnc_addPhone;
+/*
+ ["_object", objNull],
+  ["_isRotary", false],
+  ["_number", "none"],
+  ["_displayName", "none"],
+  ["_canOnlyCallNumber", "all"],
+  ["_hasPublicPhoneBookEntry", false],
+  ["_phonePosition", [0,0,0]],
+  ["_isPhoneBooth", false],
+  ["_isFakePhone", false]
+*/

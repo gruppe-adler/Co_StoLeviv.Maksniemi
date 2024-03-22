@@ -4,6 +4,9 @@ class grad_roles{
 		file = "USER\grad_roles";
 		
 		class autoInit { postInit = 1; };
+		
+		class createMarkerSpawn;
+
 		class initRolesServer { postInit = 1; };
 		class initRoleClient { postInit = 1; };
 		
@@ -12,6 +15,8 @@ class grad_roles{
 		class initHacker;
 		class initHunter;
 		class initTankCrew;
+
+		
 
 		class spawnObjects;
 		class spawnObjectsMapper;

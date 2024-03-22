@@ -10,9 +10,11 @@
 	private _playerIndex = player getVariable ["GRAD_cfgCustomRoles_playerIndex", ceil random 30];
 
 	if (side player == west) then {
-		private _emptyPosition = getPosASL player findEmptyPosition [0, 3, "land_gm_euro_furniture_table_02"];
-		[_emptyPosition] call grad_roles_fnc_spawnObjects;
+		private _emptyPosition = getPosASL player findEmptyPosition [2, 4, "land_gm_euro_furniture_table_02"];
+		[_emptyPosition, player] call grad_roles_fnc_spawnObjects;
 	};
+
+	[player] call grad_roles_fnc_createMarkerSpawn;
 
 
 }, [], 3] call CBA_fnc_waitAndExecute;
