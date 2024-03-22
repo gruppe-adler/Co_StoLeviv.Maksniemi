@@ -1,6 +1,10 @@
 /*
 	tailor stuff
 */
+if (isServer && !isMultiplayer) then {
+
+
+};
 
 [] spawn { 
 	sleep 2;
@@ -23,6 +27,8 @@
 	if (_playerRole != "none") then {
 		private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
 		[player] call _initFile;
+
+		
 	};
 
 

@@ -7,6 +7,7 @@ private _allMapMarkers = allMapMarkers;
 // distribute roles and spawns
 {
 	private _unit = _x;
+	private _playerIndex = _foreachindex; // for unique identity assignment
 
 	if (side _unit == west) then {
 
@@ -34,6 +35,7 @@ private _allMapMarkers = allMapMarkers;
 			_unit setVariable ["GRAD_cfgCustomRoles_displayName", _displayName, true];
 			_unit setVariable ["GRAD_cfgCustomRoles_briefing", _briefing, true];
 			_unit setVariable ["GRAD_cfgCustomRoles_code", _code, true];
+			_unit setVariable ["GRAD_cfgCustomRoles_playerIndex", _playerIndex, true];
 
 			diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
 

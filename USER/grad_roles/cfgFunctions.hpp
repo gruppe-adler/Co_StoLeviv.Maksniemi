@@ -12,5 +12,8 @@ class grad_roles{
 		class initHacker;
 		class initHunter;
 		class initTankCrew;
+
+		class spawnObjects;
+		class spawnObjectsMapper;
 	};
 };

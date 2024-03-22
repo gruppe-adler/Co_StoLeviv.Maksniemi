@@ -9,3 +9,5 @@ if (hasInterface) then {
 };
 
 GRAD_TELEPHONE_DEBUG_MODE = false;
+
+lockIdentity player;
