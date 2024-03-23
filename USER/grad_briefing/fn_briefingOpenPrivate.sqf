@@ -18,6 +18,8 @@ Parameter(s):
 
 */
 
+params ["_player"];
+
 // TEXTS
 
 // COMMON
@@ -32,7 +34,7 @@ private _dynamicTextCombined = "";
 	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
 
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
-} forEach (player getVariable ["GRAD_dynamicIntelPrivate", []]);
+} forEach (_player getVariable ["GRAD_dynamicIntelPrivate", []]);
 
 [ parseText
   (

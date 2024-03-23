@@ -119,3 +119,28 @@
 		  }, { systemchat "cancelled"; }, _position] call zen_dialog_fnc_create;        
 
 }] call zen_custom_modules_fnc_register;
+
+
+
+["STO LEVIV", "Get Private Briefing from player",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        private _isPlayer = isPlayer _objectUnderCursor;
+
+        if (!isplayer _objectUnderCursor) exitWith { systemChat "no player"; };
+
+        [_objectUnderCursor] call grad_briefing_fnc_briefingOpenPrivate;
+
+}] call zen_custom_modules_fnc_register;
+
+
+["STO LEVIV", "Get Public Briefing from player",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        private _isPlayer = isPlayer _objectUnderCursor;
+
+        if (!isplayer _objectUnderCursor) exitWith { systemChat "no player"; };
+
+        [_objectUnderCursor] call grad_briefing_fnc_briefingOpenPublic;
+
+}] call zen_custom_modules_fnc_register;

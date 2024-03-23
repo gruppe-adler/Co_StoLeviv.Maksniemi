@@ -20,9 +20,11 @@ Parameter(s):
 
 // TEXTS
 
+params ["_player"];
+
 // ROLE SPECIFIC INTEL
-private _displayName = player getVariable ["GRAD_cfgCustomRoles_displayName", "no name"];
-private _briefing = player getVariable ["GRAD_cfgCustomRoles_briefing", "empty briefing"];
+private _displayName = _player getVariable ["GRAD_cfgCustomRoles_displayName", "no name"];
+private _briefing = _player getVariable ["GRAD_cfgCustomRoles_briefing", "empty briefing"];
 
 // COMMON
 private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>This is your public briefing. Your role:" + _displayName + "</t><br/><br/>";
@@ -42,7 +44,7 @@ private _initialBriefing= "<t size='1.0' color='#ffffffff'>" + _briefing + "</t>
 	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
 
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
-} forEach (player getVariable ["GRAD_dynamicIntelPublic", []]);
+} forEach (_player getVariable ["GRAD_dynamicIntelPublic", []]);
 
 [ parseText
   (
