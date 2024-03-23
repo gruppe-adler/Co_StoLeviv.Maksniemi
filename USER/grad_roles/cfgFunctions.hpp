@@ -6,6 +6,7 @@ class grad_roles{
 		class autoInit { postInit = 1; };
 		
 		class createMarkerSpawn;
+		class distributePhoneNumbers;
 
 		class initRolesServer { postInit = 1; };
 		class initRoleClient { postInit = 1; };

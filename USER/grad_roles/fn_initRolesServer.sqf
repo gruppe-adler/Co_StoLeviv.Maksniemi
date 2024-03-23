@@ -93,3 +93,7 @@ private _allMapMarkers = allMapMarkers;
 } forEach (playableUnits + switchableUnits);
 
 missionNameSpace setVariable ["GRAD_Roles_Initialised", true];
+
+[{
+	[] call grad_roles_fnc_distributePhoneNumbers;
+}, [], 10] call CBA_fnc_waitAndExecute;
