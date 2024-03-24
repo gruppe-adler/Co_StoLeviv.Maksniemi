@@ -9,3 +9,13 @@ if (hasInterface) then {
 };
 
 GRAD_TELEPHONE_DEBUG_MODE = false;
+
+/*
+if (isServer) then {
+    [] execvm "USER\advanced_slingloading_refactored\aslr_server_init.sqf";
+} else {
+    [] execvm "USER\advanced_slingloading_refactored\aslr_client_init.sqf";
+};
+
+ASLR_SUPPORTED_VEHICLES_OVERRIDE pushBackUnique "Buoy_F";
+*/
