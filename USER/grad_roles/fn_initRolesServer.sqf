@@ -37,6 +37,10 @@ private _allMapMarkers = allMapMarkers;
 			_unit setVariable ["GRAD_cfgCustomRoles_code", _code, true];
 			_unit setVariable ["GRAD_cfgCustomRoles_playerIndex", _playerIndex, true];
 
+			// cap at identity limit
+			if (_playerIndex > 32) then {
+				_playerIndex = ceil random 31;
+			};
 			private _face = getText(((missionConfigFile >> "CfgIdentities") select _playerIndex) >> "face");
 			private _name = getText(((missionConfigFile >> "CfgIdentities") select _playerIndex) >> "name");
 

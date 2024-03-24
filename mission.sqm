@@ -18469,7 +18469,7 @@ class Mission
 			colorName="ColorPink";
 			a=20;
 			b=5;
-			angle=228.25865;
+			angle=228.25864;
 			id=2142;
 		};
 		class Item214
