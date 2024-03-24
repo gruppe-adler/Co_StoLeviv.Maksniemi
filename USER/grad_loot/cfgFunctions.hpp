@@ -3,7 +3,9 @@ class grad_loot {
 		tag = "grad_loot";
 		file = "USER\grad_loot";
 		
-		class addDigAction;
+		class addDigActionAny;
+		class addDigActionTomb;
+		class addOpenBoxActionUnderwater { postInit = 1; };
 		class addTombNameAction;
 		
 		class autoInit { postInit = 1; };
@@ -16,6 +18,7 @@ class grad_loot {
 		
 		class digFinishFX;
 		class digFinishLoot;
+		class digFinishLootAny;
 		class digFX;
 		
 		class generateNames;

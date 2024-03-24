@@ -4,6 +4,8 @@ class grad_roles{
 		file = "USER\grad_roles";
 		
 		class autoInit { postInit = 1; };
+
+		class addActionBalloon  { postInit = 1; };
 		
 		class createMarkerSpawn;
 		class distributePhoneNumbers;
@@ -18,7 +20,7 @@ class grad_roles{
 		class initTankCrew;
 
 		
-
+		class spawnBalloon;
 		class spawnObjects;
 		class spawnObjectsMapper;
 	};

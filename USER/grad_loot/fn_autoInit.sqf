@@ -92,7 +92,7 @@ if (hasInterface) then {
 			_actionDummy setVariable ["grad_loot_epitaph", _epitaph];
 
 			// [_actiondummy] call grad_loot_fnc_addTombNameAction;
-			[_actiondummy] call grad_loot_fnc_addDigAction;
+			[_actiondummy] call grad_loot_fnc_addDigActionTomb;
 		} forEach _tombStones;
 		
 	};

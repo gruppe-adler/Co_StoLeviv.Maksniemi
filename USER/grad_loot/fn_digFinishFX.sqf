@@ -1,9 +1,11 @@
-params ["_p3d", "_actionDummy", "_tombstone", "_positionPlayer"];
+params ["_p3d", "_actionDummy", ["_tombstone", objNull], "_positionPlayer"];
 
 private _positiontomb = getPos _actionDummy;
 
-[_p3d, position player, random 360] remoteExec ["grad_loot_fnc_tombStoneThrown", 0];
-[_tombstone] remoteExec ["grad_loot_fnc_destroyActionDummy", 0, true];
+if (_p3d != "") then {
+	[_p3d, position player, random 360] remoteExec ["grad_loot_fnc_tombStoneThrown", 0];
+	[_tombstone] remoteExec ["grad_loot_fnc_destroyActionDummy", 0, true];
+};
 
 // systemchat (str _positionTomb + " " + str _positionPlayer);
 
