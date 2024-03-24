@@ -20,6 +20,10 @@ if (isServer && !isMultiplayer) then {
 	removeVest player;
 	player unassignItem "NVGoggles";
 	player removeItem "NVGoggles";
+	removeAllItems player;
+	player addItem "ItemCompass";
+	player addItem "ItemMap";
+	player addItem "ItemWatch";
 
 	removeAllWeapons player;
 	
