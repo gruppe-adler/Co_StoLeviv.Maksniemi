@@ -27,21 +27,21 @@ private _displayName = _player getVariable ["GRAD_cfgCustomRoles_displayName", "
 private _briefing = _player getVariable ["GRAD_cfgCustomRoles_briefing", "empty briefing"];
 
 // COMMON
-private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>This is your public briefing. Your role:" + _displayName + "</t><br/><br/>";
+private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>This is your intel collection. Your role:" + _displayName + "</t><br/><br/>";
 private _dynamicTextCombined = "";
 
 // INTEL HINT
-private _hintIntel= "<t size='1.0' color='#ffffffff'>Intel might get added during mission.</t><br/><br/>";
+private _hintIntel= "<t size='1.0' font='RobotoCondensedLight' color='#ffffffff'>Intel might get added during mission.</t><br/><br/>";
 
 // INITIAL BRIEFING
-private _initialBriefing= "<t size='1.0' color='#ffffffff'>" + _briefing + "</t><br/><br/>";
+private _initialBriefing= "<t size='1.0' font='RobotoCondensed' color='#ffffffff'>" + _briefing + "</t><br/><br/>";
 
 
 // DYNAMIC INTEL
 {
 	_x params ["_time", "_text"];
-	private _titleDynamic = "<t size='1.5' color='#99ff0000'>" + _time + "</t><br/><br/>";
-	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
+	private _titleDynamic = "<t size='1.0' font='RobotoCondensed' color='#99ffffff'>" + _time + "</t><br/>";
+	private _textDynamic= "<t size='1.0' font='RobotoCondensed' color='#ffffffff'>" + _text + "</t><br/><br/><br/>";
 
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
 } forEach (_player getVariable ["GRAD_dynamicIntelPublic", []]);

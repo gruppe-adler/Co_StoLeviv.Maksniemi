@@ -7,5 +7,5 @@ params ["_vehicle"];
 	0,
 	false,
 	false,
-	"", "_this in (crew _target) && {speed _target < 10}"];
+	"", "_this in (crew _target)"];
 }, true, [], true] call CBA_fnc_addClassEventhandler;

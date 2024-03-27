@@ -1,5 +1,10 @@
 params ["_target", "_caller", "_actionId", "_arguments"];
 
+
+if (speed _target > 15) exitWith {
+	systemChat "fly slower than 15 kmh to release balloon";
+};
+
 private _vehiclePos = getPosASL _target; 
  
 // Define the distance below the bounding box 

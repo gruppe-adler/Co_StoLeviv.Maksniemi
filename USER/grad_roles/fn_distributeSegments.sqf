@@ -6,23 +6,28 @@ private _segmentSize = _playerCount / 3;
     private _unit = _x;
     private _startIndex;
     private _endIndex;
+	private _segment = 0;
 
     // Determine segment boundaries
     if (_foreachindex < _segmentSize) then {
         // First segment
         _startIndex = 0;
         _endIndex = _segmentSize;
+		_segment = "segment1";
     } else {
         if (_foreachindex < _segmentSize * 2) then {
             // Second segment
             _startIndex = _segmentSize;
             _endIndex = _segmentSize * 2;
+			_segment = "segment2";
         } else {
             // Third segment
             _startIndex = _segmentSize * 2;
             _endIndex = _playerCount;
+			_segment = "segment3";
         };
     };
+	_unit setVariable ["GRAD_roles_segment", _segment, true];
 
     // Get the home phone of the unit
     private _homePhone = _unit getVariable ["GRAD_telephone_homePhone", objNull];

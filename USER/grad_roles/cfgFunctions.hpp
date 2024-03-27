@@ -8,7 +8,7 @@ class grad_roles{
 		class addActionBalloon  { postInit = 1; };
 		
 		class createMarkerSpawn;
-		class distributePhoneNumbers;
+		class distributeSegments { postInit = 1; };
 
 		class initRolesServer { postInit = 1; };
 		class initRoleClient { postInit = 1; };

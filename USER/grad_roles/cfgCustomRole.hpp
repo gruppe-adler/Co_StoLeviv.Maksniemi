@@ -49,6 +49,7 @@ class cfgRoleEmergency {
     class emergency {
         role = "Emergency Doctor";
         briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
+        briefingPrivate = [""];
         code = "_this call grad_customMedicSystem_fnc_initMedic;";
         spawn = "mrk_spawn_emergency";
         uniform[] = {"UK3CB_CHC_C_U_DOC_01"};

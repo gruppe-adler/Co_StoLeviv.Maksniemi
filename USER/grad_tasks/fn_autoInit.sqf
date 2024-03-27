@@ -29,13 +29,31 @@ private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition th
 	}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 
+// allows for giving out intel
 ["GRAD_telephone_fakeCallAccept", {
 	params ["_phone", ["_sound", ""], ["_text", ""]];
 
-	["CROSSROAD", _text] spawn grad_tasks_fnc_forceSubtitle;
+	if (_text == "segmentintel") then {
+		private _segment = player getVariable ["GRAD_roles_segment", "segment1"];
+		private _text = getText(((missionConfigFile >> "cfgCustomTasks") select _segment) >> "briefing");
+		private _marker = getText(((missionConfigFile >> "cfgCustomTasks") select _segment) >> "marker");
+		_marker setMarkerAlphaLocal 1;
+		// enable marker
+		private _existingBriefing = player getVariable ["GRAD_dynamicIntelPublic", []];
+		private _index = _existingBriefing findIf {(_x select 1) == _text};
+		if (_index != -1) then {
+			_text = "You already have all infos I can share with you.";
+		} else {
+			["missionControl_curatorInfo", [player, "segmentintel"]] call CBA_fnc_serverEvent;
+		};
+	};
+
+	["GARBLED VOICE", _text] spawn grad_tasks_fnc_forceSubtitle;
 	
 	[{
 		[_this] call grad_briefing_fnc_briefingAdded;
 	}, _text, 5] call CBA_fnc_waitAndExecute;
+
+	
 
 }] call CBA_fnc_addEventHandler;

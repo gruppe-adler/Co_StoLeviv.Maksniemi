@@ -99,5 +99,6 @@ private _allMapMarkers = allMapMarkers;
 missionNameSpace setVariable ["GRAD_Roles_Initialised", true];
 
 [{
-	[] call grad_roles_fnc_distributePhoneNumbers;
+	// part players into three segments and give them a phone number
+	[] call grad_roles_fnc_distributeSegments;
 }, [], 10] call CBA_fnc_waitAndExecute;

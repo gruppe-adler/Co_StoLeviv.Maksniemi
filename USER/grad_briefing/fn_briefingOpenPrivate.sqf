@@ -23,15 +23,15 @@ params ["_player"];
 // TEXTS
 
 // COMMON
-private _titleCommon = "<t size='2.0' font='Caveat' color='#ffff3333'>Please keep this personal briefing secret.</t><br/><br/>";
+private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Please keep this personal briefing secret.</t><br/><br/>";
 
 private _dynamicTextCombined = "";
 
 // DYNAMIC INTEL
 {
 	_x params ["_time", "_text"];
-	private _titleDynamic = "<t size='1.5' color='#99ff0000'>" + _time + "</t><br/><br/>";
-	private _textDynamic= "<t size='1.0' color='#ffffffff'>" + _text + "</t><br/><br/>";
+	private _titleDynamic = "<t size='1.0' font='RobotoCondensed' color='#99ffffff'>" + _time + "</t><br/>";
+	private _textDynamic= "<t size='1.0' font='RobotoCondensed' color='#ffffffff'>" + _text + "</t><br/><br/><br/>";
 
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
 } forEach (_player getVariable ["GRAD_dynamicIntelPrivate", []]);
