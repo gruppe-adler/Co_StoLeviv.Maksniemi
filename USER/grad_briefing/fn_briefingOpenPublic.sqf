@@ -27,7 +27,7 @@ private _displayName = _player getVariable ["GRAD_cfgCustomRoles_displayName", "
 private _briefing = _player getVariable ["GRAD_cfgCustomRoles_briefing", "empty briefing"];
 
 // COMMON
-private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>This is your intel collection. Your role:" + _displayName + "</t><br/><br/>";
+private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Your role:" + _displayName + "</t><br/><br/>";
 private _dynamicTextCombined = "";
 
 // INTEL HINT

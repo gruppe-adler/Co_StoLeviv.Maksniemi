@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=97;
+	toggles=65;
 	class ItemIDProvider
 	{
-		nextID=2873;
+		nextID=2894;
 	};
 	class MarkerIDProvider
 	{
-		nextID=30;
+		nextID=32;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2297.0059,34.91,7437.0342};
-		dir[]={0.030950902,-0.48801899,0.87228423};
-		up[]={0.017305652,0.87282795,0.48771447};
-		aside[]={0.99937242,7.0576789e-10,-0.035460871};
+		pos[]={7067.1479,68.150978,3760.0967};
+		dir[]={0.0099962438,-0.99994999,0.00026425286};
+		up[]={0.99960077,0.0099997362,0.026424663};
+		aside[]={0.026425984,0,-0.99965078};
 	};
 };
 binarizationWanted=0;
@@ -166,13 +166,15 @@ addons[]=
 	"CUP_New_Buildings",
 	"grad_extras_shootHouseDoor",
 	"A3_Structures_F_Enoch_Cultural_CastleRuins",
-	"A3_Structures_F_Exp_Infrastructure_Pavements"
+	"A3_Structures_F_Exp_Infrastructure_Pavements",
+	"objects_f_vietnam_c",
+	"characters_f_vietnam_02_c"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=95;
+		items=97;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -813,6 +815,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item95
+		{
+			className="objects_f_vietnam_c";
+			name="objects_f_vietnam_c";
+			author="Savage Game Design";
+			url="https://www.arma3.com";
+		};
+		class Item96
+		{
+			className="characters_f_vietnam_02_c";
+			name="characters_f_vietnam_02_c";
+			author="Savage Game Design";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -983,14 +999,14 @@ class Mission
 		year=2019;
 		month=8;
 		day=27;
-		hour=5;
-		minute=-20;
+		hour=2;
+		minute=26;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=361;
+		items=376;
 		class Item0
 		{
 			dataType="Layer";
@@ -3121,6 +3137,7 @@ class Mission
 			markerType="RECTANGLE";
 			type="";
 			colorName="ColorEAST";
+			alpha=0;
 			fillName="FDiagonal";
 			a=450;
 			b=350;
@@ -13605,11 +13622,12 @@ class Mission
 		class Item170
 		{
 			dataType="Marker";
-			position[]={1122.8883,29,9539.6992};
+			position[]={1122.8879,29,9539.6992};
 			name="mrk_base_small_north";
 			markerType="ELLIPSE";
 			type="";
 			colorName="ColorEAST";
+			alpha=0;
 			fillName="FDiagonal";
 			a=140;
 			b=300;
@@ -13728,6 +13746,7 @@ class Mission
 			text=" Small Base (possible ammunition)";
 			type="hd_destroy";
 			colorName="ColorEAST";
+			alpha=0;
 			id=1849;
 		};
 		class Item177
@@ -13738,6 +13757,7 @@ class Mission
 			text=" Railway station";
 			type="hd_destroy";
 			colorName="ColorEAST";
+			alpha=0;
 			id=1850;
 		};
 		class Item178
@@ -13748,6 +13768,7 @@ class Mission
 			text=" Seaport Base";
 			type="hd_destroy";
 			colorName="ColorEAST";
+			alpha=0;
 			id=1851;
 			atlOffset=0.00016784668;
 		};
@@ -26229,8 +26250,204 @@ class Mission
 			text=" VIP Base";
 			type="hd_destroy";
 			colorName="ColorEAST";
+			alpha=0;
 			id=2870;
 			atlOffset=-1.335144e-05;
+		};
+		class Item361
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9586.5645,3.477469,3559.21};
+				angles[]={-0,1.7802358,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2879;
+			type="Land_vn_b_prop_locker_01";
+		};
+		class Item362
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9586.5078,3.4085453,3559.427};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2880;
+			type="vn_b_acc_seal_01_gh";
+		};
+		class Item363
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9586.6309,3.5484881,3559.6509};
+				angles[]={2.020777,0,-0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2881;
+			type="vn_b_vest_seal_01";
+		};
+		class Item364
+		{
+			dataType="Marker";
+			position[]={9582.6602,2.869,3561.3799};
+			name="mrk_loot_diving_1";
+			text=" Diver Hut";
+			type="hd_warning";
+			colorName="ColorYellow";
+			id=2882;
+			atlOffset=0.00048422813;
+		};
+		class Item365
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={9579.1406,2.539,3558.5911};
+			};
+			title="mrk_loot_diving_1";
+			id=2883;
+			atlOffset=-0.00036287308;
+		};
+		class Item366
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={4834.9468,20.23,10525.555};
+			};
+			title="mrk_vip_base";
+			id=2884;
+		};
+		class Item367
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={2257.8613,16.1,8564.8594};
+			};
+			title="mrk_tank_unloading";
+			id=2885;
+		};
+		class Item368
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={1138.62,20.74,9400.4229};
+			};
+			title="mrk_base_small";
+			id=2886;
+		};
+		class Item369
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3046.532,1.65,5763.3481};
+			};
+			title="mrk_seaport_base";
+			id=2887;
+		};
+		class Item370
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9502.1514,4.7273369,3885.5664};
+				angles[]={6.2828403,1.7802358,6.2813263};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=2888;
+			type="Land_vn_b_prop_locker_01";
+			atlOffset=4.7683716e-07;
+		};
+		class Item371
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9502.042,4.6585226,3885.6748};
+				angles[]={6.2828403,0,6.2813263};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2889;
+			type="vn_b_acc_seal_01_gh";
+			atlOffset=2.4915776;
+		};
+		class Item372
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9502.1992,5.7312617,3885.7566};
+				angles[]={6.2828364,0,6.2813177};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=2890;
+			type="vn_b_vest_seal_01";
+			atlOffset=0.35801315;
+		};
+		class Item373
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={9504,2.184,3879.176};
+			};
+			title="mrk_loot_diving_2";
+			id=2891;
+			atlOffset=-0.0002450943;
+		};
+		class Item374
+		{
+			dataType="Marker";
+			position[]={9503.251,2.22,3887.9741};
+			name="mrk_loot_diving_2";
+			text=" Diver Hut";
+			type="hd_warning";
+			colorName="ColorYellow";
+			id=2892;
+			atlOffset=0.049999237;
+		};
+		class Item375
+		{
+			dataType="Marker";
+			position[]={7788.4214,0,3982.6504};
+			name="mrk_sealoot";
+			text=" Sea loot area";
+			markerType="ELLIPSE";
+			type="";
+			colorName="ColorYellow";
+			fillName="FDiagonal";
+			a=1500;
+			b=1500;
+			id=2893;
+			atlOffset=24.24;
 		};
 	};
 	class Connections

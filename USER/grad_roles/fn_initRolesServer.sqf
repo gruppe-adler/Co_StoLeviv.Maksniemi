@@ -66,10 +66,10 @@ private _allMapMarkers = allMapMarkers;
 		};
 	} else {
 		private _roleEmergency = missionConfigFile >> "cfgRoleEmergency";
-		private _entry = _roles select 0;
+		private _entry = _roleEmergency select 0;
 
 		// docs and excluded zeus
-		if (isclass _entry && (isNull getAssignedCuratorLogic _unit)) then {
+		if (isclass _entry && (isNull getAssignedCuratorLogic _unit) || isclass _entry && !isMultiplayer) then {
 			private _displayname = getText(_entry >> "role");
 			private _briefing = getText(_entry >> "briefing");
 			private _code = getText(_entry >> "code");
@@ -92,6 +92,11 @@ private _allMapMarkers = allMapMarkers;
 				diag_log "initRoles Error: no spawn marker found for " + _spawnMarker;
 			};
 		};
+	};
+
+	// for ai testing
+	if (local _unit && !isPlayer _unit) then {
+		[_unit] call grad_roles_fnc_initRoleClient;
 	};
 
 } forEach (playableUnits + switchableUnits);

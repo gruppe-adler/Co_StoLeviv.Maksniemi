@@ -36,6 +36,10 @@ private _dynamicTextCombined = "";
 	_dynamicTextCombined = _dynamicTextCombined + _titleDynamic + _textDynamic;
 } forEach (_player getVariable ["GRAD_dynamicIntelPrivate", []]);
 
+if (_dynamicTextCombined == "") then {
+	_dynamicTextCombined = "No private intel collected so far.";
+};
+
 [ parseText
   (
 	_titleCommon +
