@@ -4,8 +4,8 @@ private _segmentSize = _playerCount / 3;
 
 {
     private _unit = _x;
-    private _startIndex;
-    private _endIndex;
+    private _startIndex = 0;
+    private _endIndex = 0;
 	private _segment = 0;
 
     // Determine segment boundaries
@@ -13,18 +13,18 @@ private _segmentSize = _playerCount / 3;
         // First segment
         _startIndex = 0;
         _endIndex = _segmentSize;
-		_segment = "segment1";
+		_segment = 0;
     } else {
         if (_foreachindex < _segmentSize * 2) then {
             // Second segment
             _startIndex = _segmentSize;
             _endIndex = _segmentSize * 2;
-			_segment = "segment2";
+			_segment = 1;
         } else {
             // Third segment
             _startIndex = _segmentSize * 2;
             _endIndex = _playerCount;
-			_segment = "segment3";
+			_segment = 2;
         };
     };
 	_unit setVariable ["GRAD_roles_segment", _segment, true];

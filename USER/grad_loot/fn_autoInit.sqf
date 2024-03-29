@@ -1,7 +1,7 @@
 if (isServer) then {
 
 	[] spawn {
-		systemChat "spawn running";
+		// systemChat "spawn running";
 
 		waitUntil { !isNil "GRAD_Roles_Initialised" };
 

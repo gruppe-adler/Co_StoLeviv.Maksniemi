@@ -34,10 +34,14 @@ private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition th
 	params ["_phone", ["_sound", ""], ["_text", ""]];
 
 	if (_text == "segmentintel") then {
-		private _segment = player getVariable ["GRAD_roles_segment", "segment1"];
-		private _text = getText(((missionConfigFile >> "cfgCustomTasks") select _segment) >> "briefing");
+		private _segment = player getVariable ["GRAD_roles_segment", 0];
+		_text = getText(((missionConfigFile >> "cfgCustomTasks") select _segment) >> "briefing");
 		private _marker = getText(((missionConfigFile >> "cfgCustomTasks") select _segment) >> "marker");
 		_marker setMarkerAlphaLocal 1;
+		private _mapgrid = mapGridPosition getMarkerPos _marker;
+		_text = format [_text, _mapgrid];
+		diag_log _text;
+
 		// enable marker
 		private _existingBriefing = player getVariable ["GRAD_dynamicIntelPublic", []];
 		private _index = _existingBriefing findIf {(_x select 1) == _text};

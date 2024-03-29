@@ -65,7 +65,7 @@
 
       if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-      [_nearestPhone, "grad_garble", _message#0] call GRAD_telephone_fnc_fakeCallPhone;   
+      [_nearestPhone, "GRAD_garble_long", _message#0] call GRAD_telephone_fnc_fakeCallPhone;   
   
   }, { systemchat "cancelled"; }, _position] call zen_dialog_fnc_create;  
 
@@ -102,7 +102,7 @@
 
     if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-    [_nearestPhone, "grad_garble", "segmentIntel"] call GRAD_telephone_fnc_fakeCallPhone;
+    [_nearestPhone, "GRAD_garble_long", "segmentIntel"] call GRAD_telephone_fnc_fakeCallPhone;
 
 }] call zen_custom_modules_fnc_register;
 

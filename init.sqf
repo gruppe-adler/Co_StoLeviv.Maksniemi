@@ -9,4 +9,4 @@ enableSaving [false, false];
 // SCRIPTS =====================================================================
 [] execVM "USER\userInit.sqf";
 
-DEBUG = true;
+DEBUG = false;

@@ -13,6 +13,14 @@ class GRAD_garble {
 	titles[] = {0, ""};
 };
 
+class GRAD_garble_long {
+	name = "GRAD_garble_long";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\garble_long.ogg", 20, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
+
 class GRAD_scissors {
 	name = "GRAD_scissors";
 	// filename, volume, pitch
