@@ -7,11 +7,6 @@ if (isNull _unit) then {
 [{
 	params ["_unit"];
 
-	// clear map before placing/showing markers
-	if (isPlayer _unit) then {
-		{ _x setMarkerAlphaLocal 0; } forEach allMapMarkers;
-	};
-
 	private _code = _unit getVariable ["GRAD_cfgCustomRoles_code", ""];
 	private _spawnPos = _unit getVariable ["GRAD_cfgCustomRoles_spawnPos", [0,0,0]];
 

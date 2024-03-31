@@ -119,6 +119,16 @@ private _markerCounter = 1;
 missionNameSpace setVariable ["GRAD_Roles_Initialised", true];
 
 [{
+	count (missionNameSpace getVariable ["GRAD_HOME_PHONES", []] > 0)
+},{
 	// part players into three segments and give them a phone number
 	[] call grad_roles_fnc_distributeSegments;
-}, [], 10] call CBA_fnc_waitAndExecute;
+}, []] call CBA_fnc_waitUntilAndExecute;
+
+
+{
+	_x addCuratorEditableObjects
+	[(playableUnits + switchableUnits),
+	true
+	];
+} count allCurators;

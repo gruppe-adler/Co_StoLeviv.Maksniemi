@@ -7,12 +7,13 @@ private _uniform = selectRandom (getArray(_roles >> _playerRole >> "uniform"));
 private _headgear = selectRandom (getArray(_roles >> _playerRole >> "headgear"));
 
 _unit setUnitLoadout [
-	/* primary weapon */	["", "", "", "", [], [], ""],
-	/* secondary weapon */	["", "", "", "", [], [], ""],
-	/* handgun weapon */	["", "", "", "", [], [], ""],
-	/* uniform */			[_uniform, [["ACE_Flashlight_KSF1", 1]]],
-	/* vest */				["V_PlateCarrier1_rgr", []],
-	/* backpack */			["",[]],
-	/* items */				_headgear, "",[],
-	/* items */				["ItemMap", "", "", "ItemCompass", "ItemWatch", ""]
+	[],[],[],
+	[_uniform,
+	[
+		["ACE_Flashlight_KSF1",1]]
+	],
+	["V_PlateCarrier1_rgr",
+	[
+
+	]],[],_headgear,"",[],["ItemMap","","","ItemCompass","ItemWatch",""]
 ];

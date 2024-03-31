@@ -45,7 +45,7 @@ private _roles = missionConfigFile >> "cfgCustomRoles";
 for "_i" from 0 to ((count _roles) - 1) do {
 	private _entry = (_roles select _i);
 	private _uniforms = (getArray(_entry >> "uniform"));
-	_civilianUniforms pushBack _uniforms;
+	_civilianUniforms append _uniforms;
 };
 
 //(Array of classnames) Safe headgear (will automatically include civilian headgear classes - useful if faction has randomisation script or to add items that are not used by the faction)
@@ -54,7 +54,7 @@ _civilianHeadgear = [];
 for "_i" from 0 to ((count _roles) - 1) do {
 	private _entry = (_roles select _i);
 	private _headgear = (getArray(_entry >> "headgear"));
-	_civilianHeadgear pushBack _headgear;
+	_civilianHeadgear append _headgear;
 };
 
 //(Array of classnames) Safe backpacks (will automatically include civilian backpack classes - useful if faction has randomisation script or to add items that are not used by the faction)

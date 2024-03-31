@@ -17,11 +17,17 @@ private _spawned = [_position, random 360, _objects] call BIS_fnc_ObjectsMapper;
 
 private _phone = _spawned select -1;
 
+// disable sim for objects not flying around as much
+{
+	if (_x != _phone) then {
+		_x enableSimulationGlobal false;
+	};
+} forEach _spawned;
+
 private _displayName = _unit getVariable ["ACE_Name", "none"];
 
-[{
-	_this remoteExec ["grad_telephone_fnc_addPhone", 2];
-}, [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false], 10] call CBA_fnc_waitAndExecute;
+[_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
+
 
 private _homePhones = missionNameSpace getVariable ["GRAD_HOME_PHONES", []];
 _homePhones pushBackUnique _phone;
