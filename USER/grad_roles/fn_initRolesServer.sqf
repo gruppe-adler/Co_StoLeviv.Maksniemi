@@ -33,7 +33,7 @@ private _markerCounter = 1;
 			private _briefing = getText(_entry >> "briefing");
 			private _code = getText(_entry >> "code");
 			private _spawn = getText(_entry >> "spawn");
-			private _markernumber =  floor((_markerCounter - 1) / 7) + 1;
+			private _markernumber = min(floor((_markerCounter - 1) / 7) + 1, 4);
 			
 			private _spawnMarker = format ["%1_%2", _spawn, _markernumber];
 
@@ -78,7 +78,7 @@ private _markerCounter = 1;
 			private _briefing = getText(_entry >> "briefing");
 			private _code = getText(_entry >> "code");
 			private _spawn = getText(_entry >> "spawn");
-			private _markernumber =  floor((_markerCounter - 1) / 7) + 1;
+			private _markernumber = min(floor((_markerCounter - 1) / 7) + 1, 4);
 			
 			private _spawnMarker = format ["%1_%2", _spawn, _markernumber];
 
