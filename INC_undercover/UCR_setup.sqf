@@ -40,8 +40,24 @@ _civilianVests = [];
 //(Array of classnames) Safe uniforms (on top of the specific factions above - useful if faction has randomisation script or to add items that are not used by the faction)
 _civilianUniforms = ["U_BG_Guerilla2_2","U_BG_Guerilla2_1","U_BG_Guerilla2_3","U_I_C_Soldier_Bandit_4_F","U_I_C_Soldier_Bandit_1_F","U_I_C_Soldier_Bandit_2_F","U_I_C_Soldier_Bandit_5_F","U_I_C_Soldier_Bandit_3_F"];
 
+private _roles = missionConfigFile >> "cfgCustomRoles";
+
+{
+	private _entry = (getText(_role select _foreachIndex));
+	private _uniforms = (getArray(_roles >> _entry >> "uniform"));
+	_civilianUniforms pushBackUnique _uniforms;
+} forEach _roles;
+
 //(Array of classnames) Safe headgear (will automatically include civilian headgear classes - useful if faction has randomisation script or to add items that are not used by the faction)
 _civilianHeadgear = [];
+
+private _roles = missionConfigFile >> "cfgCustomRoles";
+
+{
+	private _entry = (getText(_role select _foreachIndex));
+	private _headgear = (getArray(_roles >> _entry >> "headgear"));
+	_civilianHeadgear pushBackUnique _headgear;
+} forEach _roles;
 
 //(Array of classnames) Safe backpacks (will automatically include civilian backpack classes - useful if faction has randomisation script or to add items that are not used by the faction)
 _civilianBackpacks = ["B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_khk","B_FieldPack_oucamo","G_FieldPack_Medic","B_Carryall_cbr","B_Carryall_khk","B_Carryall_oucamo","B_TacticalPack_blk","B_TacticalPack_rgr","B_TacticalPack_oli","B_Kitbag_cbr","B_Kitbag_rgr","B_Kitbag_sgg","B_Respawn_Sleeping_bag_blue_F","B_Respawn_Sleeping_bag_brown_F","B_Respawn_TentDome_F","B_Respawn_TentA_F","B_Parachute","ACE_NonSteerableParachute","ACE_TacticalLadder_Pack"];
@@ -58,7 +74,7 @@ _noOffRoad = false; //Civilian vehicles driving at speed more than 50 meters fro
 _incogFactions = ["OPF_F","OPF_T_F", "rhs_faction_msv", "rhs_faction_rva", "rhs_faction_tv", "rhs_faction_vdv", "rhs_faction_vmf", "rhs_faction_vpvo", "rhs_faction_vv", "rhs_faction_vvs_c", "rhs_faction_vvs"]; //Array of enemy factions whose items and vehicles will allow the player to impersonate the enemy
 
  //Names of additional markers for areas that would be considered trespassing (any with "INC_tre" - case sensitive - somewhere in the marker name will automatically be included)
-_trespassMarkers = ["mrk_base_port", "mrk_base_trainstation", "mrk_base_small_north"];
+_trespassMarkers = ["mrk_tank_unloading", "mrk_vip_base", "mrk_base_small_north", "mrk_seaport_base"];
 
 //(Array of classnames) Safe vests (on top of the specific factions above - useful if faction has randomisation script or to add items that are not used by the faction)
 _incognitoVests = [];

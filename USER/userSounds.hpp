@@ -28,3 +28,11 @@ class GRAD_scissors {
 	// subtitle delay in seconds, subtitle text
 	titles[] = {0, ""};
 };
+
+class GRAD_polka {
+	name = "GRAD_polka";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\partisanpolka.ogg", 20, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
