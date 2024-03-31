@@ -15,19 +15,6 @@ private _taskObjective5 = ""; // task for ambushing convoy/getting ammunition th
 // [owner, taskID, description, destination, state, priority, showNotification, type, visibleIn3D] call BIS_fnc_taskCreate
 
 
-{
-	
-} forEach (playableUnits + switchableUnits);
-
-["Land_PhoneBooth_02_malden_F", "init", {
-		private _booth = (_this select 0);
-
-		if (local _booth) then {
-			[_booth] remoteExec ["grad_tasks_fnc_addPhoneAction", 0, _booth];
-		};
-		
-	}, true, [], true] call CBA_fnc_addClassEventHandler;
-
 
 // allows for giving out intel
 ["GRAD_telephone_fakeCallAccept", {

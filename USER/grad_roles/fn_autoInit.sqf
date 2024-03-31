@@ -6,6 +6,7 @@ if (isServer && !isMultiplayer) then {
 
 [] spawn { 
 	
+	private _playerRole = player getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
 	// exclude zeus here :P
 	if (_playerRole != "none") then {
 		private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];

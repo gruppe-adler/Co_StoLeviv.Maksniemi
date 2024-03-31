@@ -42,22 +42,20 @@ _civilianUniforms = ["U_BG_Guerilla2_2","U_BG_Guerilla2_1","U_BG_Guerilla2_3","U
 
 private _roles = missionConfigFile >> "cfgCustomRoles";
 
-{
-	private _entry = (getText(_role select _foreachIndex));
-	private _uniforms = (getArray(_roles >> _entry >> "uniform"));
-	_civilianUniforms pushBackUnique _uniforms;
-} forEach _roles;
+for "_i" from 0 to ((count _roles) - 1) do {
+	private _entry = (_roles select _i);
+	private _uniforms = (getArray(_entry >> "uniform"));
+	_civilianUniforms pushBack _uniforms;
+};
 
 //(Array of classnames) Safe headgear (will automatically include civilian headgear classes - useful if faction has randomisation script or to add items that are not used by the faction)
 _civilianHeadgear = [];
 
-private _roles = missionConfigFile >> "cfgCustomRoles";
-
-{
-	private _entry = (getText(_role select _foreachIndex));
-	private _headgear = (getArray(_roles >> _entry >> "headgear"));
-	_civilianHeadgear pushBackUnique _headgear;
-} forEach _roles;
+for "_i" from 0 to ((count _roles) - 1) do {
+	private _entry = (_roles select _i);
+	private _headgear = (getArray(_entry >> "headgear"));
+	_civilianHeadgear pushBack _headgear;
+};
 
 //(Array of classnames) Safe backpacks (will automatically include civilian backpack classes - useful if faction has randomisation script or to add items that are not used by the faction)
 _civilianBackpacks = ["B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_khk","B_FieldPack_oucamo","G_FieldPack_Medic","B_Carryall_cbr","B_Carryall_khk","B_Carryall_oucamo","B_TacticalPack_blk","B_TacticalPack_rgr","B_TacticalPack_oli","B_Kitbag_cbr","B_Kitbag_rgr","B_Kitbag_sgg","B_Respawn_Sleeping_bag_blue_F","B_Respawn_Sleeping_bag_brown_F","B_Respawn_TentDome_F","B_Respawn_TentA_F","B_Parachute","ACE_NonSteerableParachute","ACE_TacticalLadder_Pack"];

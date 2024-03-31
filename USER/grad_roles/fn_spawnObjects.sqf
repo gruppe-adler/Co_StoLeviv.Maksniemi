@@ -21,7 +21,7 @@ private _displayName = _unit getVariable ["ACE_Name", "none"];
 
 [{
 	_this remoteExec ["grad_telephone_fnc_addPhone", 2];
-}, [_phone, true, "none", _displayName, "all", true, getPos _phone, false, false], 10] call CBA_fnc_waitAndExecute;
+}, [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false], 10] call CBA_fnc_waitAndExecute;
 
 private _homePhones = missionNameSpace getVariable ["GRAD_HOME_PHONES", []];
 _homePhones pushBackUnique _phone;
