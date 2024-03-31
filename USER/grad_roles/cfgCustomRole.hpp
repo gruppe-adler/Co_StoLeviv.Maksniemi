@@ -35,9 +35,18 @@ class cfgCustomRoles {
         headgear[] = {"UK3CB_H_Bandanna_Camo", "UK3CB_H_Beanie_02_BLK", "UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "UK3CB_H_Bandanna_Brown_Check"};
     };
 
+    class boatcrew {
+        role = "boatcrew";
+        briefing = "Your house is on an island. Naturally you can drive boats - which others cannot.";
+        code = "";
+        spawn = "mrk_spawn_boatcrew";
+        uniform[] = {"gm_gc_civ_uniform_man_04_80_blu", "gm_gc_civ_uniform_man_04_80_gry", "UK3CB_U_KZS_DOWN_KHK"};
+        headgear[] = {"UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "rhs_beanie_green", "gm_ge_headgear_hat_beanie_blk"};
+    };
+
     class hacker {
         role = "Hacker";
-        briefing = "You are able to hack any keypad and computer.";
+        briefing = "You are able to hack any keypad and computer. You can switch on your hacky NVG goggles with self interact";
         code = "";
         spawn = "mrk_spawn_hacker";
         uniform[] = {"U_C_E_LooterJacket_01_F", "U_I_L_Uniform_01_tshirt_black_F", "U_I_L_Uniform_01_tshirt_skull_F", "U_I_L_Uniform_01_tshirt_sport_F"};
@@ -47,9 +56,9 @@ class cfgCustomRoles {
 
 class cfgRoleEmergency {
     class emergency {
-        role = "Emergency Doctor";
-        briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you.";
-        briefingPrivate = [""];
+        role = "Emergency";
+        briefing = "You are a neutral party and cannot carry weapons. <br/><br/>The most important thing is: Russians won't open fire on you. You are tasked with reviving players and helping them without interfering in combat.";
+        briefingPrivate = "";
         code = "_this call grad_customMedicSystem_fnc_initMedic;";
         spawn = "mrk_spawn_emergency";
         uniform[] = {"UK3CB_CHC_C_U_DOC_01"};

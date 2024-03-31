@@ -61,7 +61,7 @@ private _nightVisionOn =
 			_ppeffect ppEffectCommit 0;
 			_ppeffect ppEffectForceInNVG true;
 
-			_ppeffect ppEffectAdjust [300];
+			_ppeffect ppEffectAdjust [200];
 			_ppeffect ppEffectCommit 10;
 
 			player setVariable ["grad_roles_ppeffect", _ppeffect];

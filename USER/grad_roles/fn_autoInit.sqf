@@ -1,6 +1,4 @@
-/*
-	tailor stuff
-*/
+
 if (isServer && !isMultiplayer) then {
 
 
@@ -53,6 +51,14 @@ if (isServer && !isMultiplayer) then {
 		if (_vehicle isKindOf "Tank") then {
 			if (_role == "driver" || _role == "gunner") then {
 				if !(player getVariable ["GRAD_isTankCrew", false]) then {
+					moveOut player;
+					systemChat "I am not trained for this.";
+				};
+			};
+		};
+		if (_vehicle isKindOf "Ship") then {
+			if (_role == "driver" || _role == "gunner") then {
+				if !(player getVariable ["GRAD_isBoatCrew", false]) then {
 					moveOut player;
 					systemChat "I am not trained for this.";
 				};

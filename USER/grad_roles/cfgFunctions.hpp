@@ -11,13 +11,17 @@ class grad_roles{
 		class distributeSegments { postInit = 1; };
 
 		class initRolesServer { postInit = 1; };
-		class initRoleClient { postInit = 1; };
+		class initRoleClient;
 		
+		class initEmergency;
+		class initBoatCrew;
 		class initEngineer;
 		class initTailor;
 		class initHacker;
 		class initHunter;
 		class initTankCrew;
+
+		class initAI;
 
 		
 		class spawnBalloon;
