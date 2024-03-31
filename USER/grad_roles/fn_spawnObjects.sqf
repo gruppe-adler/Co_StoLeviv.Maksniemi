@@ -28,12 +28,12 @@ private _displayName = _unit getVariable ["ACE_Name", "none"];
 
 [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 
+_unit setVariable ["GRAD_telephone_homePhone", _phone, true];
 
 private _homePhones = missionNameSpace getVariable ["GRAD_HOME_PHONES", []];
 _homePhones pushBackUnique _phone;
 missionNameSpace setVariable ["GRAD_HOME_PHONES", _homePhones, true];
 
-_unit setVariable ["GRAD_telephone_homePhone", _phone, true];
 
 /*
  ["_object", objNull],
