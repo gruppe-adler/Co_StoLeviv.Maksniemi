@@ -27,5 +27,7 @@ class grad_roles{
 		class spawnBalloon;
 		class spawnObjects;
 		class spawnObjectsMapper;
+
+		class unitSetLoadout;
 	};
 };

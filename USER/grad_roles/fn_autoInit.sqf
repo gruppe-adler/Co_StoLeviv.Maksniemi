@@ -5,32 +5,11 @@ if (isServer && !isMultiplayer) then {
 };
 
 [] spawn { 
-	sleep 2;
-	private _roles = missionConfigFile >> "cfgCustomRoles";
-	private _playerRole = player getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
-
-	private _uniform = getArray(_roles >> _playerRole >> "uniform");
-	player addUniform selectRandom _uniform;
-
-	private _headgear = getArray(_roles >> _playerRole >> "headgear");
-	player addHeadgear selectRandom _headgear;
-
-	removeVest player;
-	player unassignItem "NVGoggles";
-	player removeItem "NVGoggles";
-	removeAllItems player;
-	player addItem "ItemCompass";
-	player addItem "ItemMap";
-	player addItem "ItemWatch";
-
-	removeAllWeapons player;
 	
 	// exclude zeus here :P
 	if (_playerRole != "none") then {
 		private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
 		[player] call _initFile;
-
-		
 	};
 
 
@@ -73,10 +52,20 @@ if (isServer && !isMultiplayer) then {
 				private _role = (assignedVehicleRole _x);
 				if (count _role < 1) exitWith {};
 				_role = _role#0;
-				if (_role == "driver" || _role == "gunner") then {
-					if !(_x getVariable ["GRAD_isTankCrew", false]) then {
-						moveOut _x;
-						systemChat "I am not trained for this.";
+				if (_vehicle isKindOf "Tank") then {
+					if (_role == "driver" || _role == "gunner") then {
+						if !(_x getVariable ["GRAD_isTankCrew", false]) then {
+							moveOut _x;
+							systemChat "I am not trained for this.";
+						};
+					};
+				};
+				if (_vehicle isKindOf "Ship") then {
+					if (_role == "driver" || _role == "gunner") then {
+						if !(_x getVariable ["GRAD_isBoatCrew", false]) then {
+							moveOut _x;
+							systemChat "I am not trained for this.";
+						};
 					};
 				};
 			};

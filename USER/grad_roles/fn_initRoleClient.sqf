@@ -27,5 +27,7 @@ if (isNull _unit) then {
 
 	[_unit] call grad_roles_fnc_createMarkerSpawn;
 
+	[_unit] call GRAD_roles_fnc_unitSetLoadout;
+
 
 }, [_unit], 3] call CBA_fnc_waitAndExecute;
