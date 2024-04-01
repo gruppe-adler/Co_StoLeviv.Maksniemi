@@ -7,6 +7,8 @@ class grad_af_keypad{
 		class fncs;
 		class openBoatHouseDoor;
 		class lockBoatHouseDoor;
+		class openVIPgate;
+		class openVIPDoor;
 		class openBoatGate;
 		class setNotInUse;
 		class vars { postInit = 1; };
