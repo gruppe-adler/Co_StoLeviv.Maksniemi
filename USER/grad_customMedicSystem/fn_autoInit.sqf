@@ -26,6 +26,7 @@ if (hasInterface) then {
         // execute only when event is fired locally
         if (player isEqualTo _unit) then {
             [{
+                params ["_unit", "_state"];
                 if (_state) then {
                     ["missionControl_curatorInfo", [_unit, "unconscious"]] call CBA_fnc_serverEvent;
                 } else {

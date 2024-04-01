@@ -10,4 +10,4 @@ if (_previousMarker != "") then {
 	deleteMarkerLocal _previousMarker;
 };
 private _name = [_unit, false, false] call ace_common_fnc_getName;
-hint (_name + " rescued.");
+(_name + " rescued.") call CBA_fnc_notify;

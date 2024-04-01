@@ -14,7 +14,7 @@ private _localMedicMarkers = _player getVariable ['grad_customMedicSystem_localM
 } forEach _localMedicMarkers;
 
 if (count _localMedicMarkers > 0) then {
-    hint "Check map for unsconcious persons";
+    "Check map for unsconcious persons" call CBA_fnc_notify;
 };
 
 
