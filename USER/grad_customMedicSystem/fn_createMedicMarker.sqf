@@ -8,7 +8,7 @@ _marker setMarkerShapeLocal "ICON";
 _marker setMarkerTypeLocal "hd_join";
 _marker setMarkerColorLocal "ColorRed";
 _marker setMarkerAlphaLocal 0;
-_marker setMarkerTextLocal (_unit getVariable ["ACE_Name", name _unit]);
+_marker setMarkerTextLocal ([_unit] call ace_common_fnc_getName);
 
 _localMedicMarkers pushbackUnique _marker;
 player setVariable ['grad_customMedicSystem_localMedicMarkers', _localMedicMarkers];

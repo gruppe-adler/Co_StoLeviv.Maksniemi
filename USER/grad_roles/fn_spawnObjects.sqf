@@ -24,7 +24,7 @@ private _phone = _spawned select -1;
 	};
 } forEach _spawned;
 
-private _displayName = _unit getVariable ["ACE_Name", "none"];
+private _displayName = ([_unit] call ace_common_fnc_getName);
 
 [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 

@@ -3,9 +3,6 @@ params ["_player"];
 // remove from blufor BFT
 [_player] joinSilent (createGroup civilian);
 
-// todo give medic loadout
-[player] call grad_customMedicSystem_fnc_addMedicLoadout;
-
 // show future medic markers
 _player setVariable ['grad_customMedicSystem_isMedic', true];
 

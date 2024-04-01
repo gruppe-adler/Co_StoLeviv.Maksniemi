@@ -54,7 +54,7 @@ private _markerCounter = 1;
 			};
 
 			[_unit, _face, "Male01ENGB", 1.05, _name, _name] call BIS_fnc_setIdentity;
-			_unit setVariable ["ACE_Name", _name, true];
+			[_unit] call ace_common_fnc_setName;
 
 			diag_log format ["spawnmarker %1 found: %2", _spawnMarker, _spawnMarker in _allMapMarkers];
 
@@ -86,7 +86,7 @@ private _markerCounter = 1;
 			private _name = getText(((missionConfigFile >> "CfgIdentities") select _playerIndex) >> "name");
 
 			[_unit, _face, "Male01ENGB", 1.05, _name, _name] call BIS_fnc_setIdentity;
-			_unit setVariable ["ACE_Name", _name, true];
+			[_unit] call ace_common_fnc_setName;
 
 			_unit setVariable ["GRAD_cfgCustomRoles_displayName", _displayName, true];
 			_unit setVariable ["GRAD_cfgCustomRoles_briefing", _briefing, true];
@@ -109,7 +109,7 @@ private _markerCounter = 1;
 		[_unit] call grad_roles_fnc_initRoleClient;
 		[_unit] call grad_roles_fnc_initAI;
 	} else {
-		[_unit] remoteExec ["grad_roles_fnc_initRoleClient", 0, true];
+		[_unit] remoteExec ["grad_roles_fnc_initRoleClient", _unit, true];
 	};
 
 	_markerCounter = _markerCounter + 1;
