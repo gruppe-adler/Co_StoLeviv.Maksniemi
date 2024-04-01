@@ -20,7 +20,9 @@ if (isNull _unit) then {
 		[_emptyPosition, _unit] call grad_roles_fnc_spawnObjects;
 	};
 
-	[_unit] call grad_roles_fnc_createMarkerSpawn;
+	if (!isServer) then {
+		[_unit] call grad_roles_fnc_createMarkerSpawn;
+	};
 
 	[_unit] call GRAD_roles_fnc_unitSetLoadout;
 
