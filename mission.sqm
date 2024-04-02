@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1632;
+		nextID=1654;
 	};
 	class Camera
 	{
-		pos[]={9350.8047,32.343315,7355.3892};
-		dir[]={-0.71608257,-0.68707299,0.12311397};
-		up[]={-0.67713797,0.72658724,0.11641835};
-		aside[]={0.16944075,-3.5703124e-08,0.98553997};
+		pos[]={9352.1602,32.343315,7371.522};
+		dir[]={-0.65123934,-0.72029388,-0.23888339};
+		up[]={-0.67623478,0.69366539,-0.24805148};
+		aside[]={-0.34437519,1.603039e-07,0.93883121};
 	};
 };
 binarizationWanted=0;
@@ -2603,7 +2603,7 @@ class Mission
 				position[]={10058.016,17.99,9394.4766};
 				angles[]={0.10866173,1.1339643,0.025449932};
 			};
-			title="mrk_spawn_tailor_1";
+			title="mrk_spawn_diver_1";
 			id=319;
 			atlOffset=-0.00022888184;
 		};
@@ -2659,7 +2659,7 @@ class Mission
 				position[]={7860.2349,10.458,8863.8613};
 				angles[]={6.221446,0.24517836,0};
 			};
-			title="mrk_spawn_tailor_3";
+			title="mrk_spawn_diver_3";
 			id=324;
 			atlOffset=0.00018978119;
 		};
@@ -2953,7 +2953,7 @@ class Mission
 				position[]={10170.878,13.669,7501.4541};
 				angles[]={0,0.07248611,0};
 			};
-			title="mrk_spawn_tailor_2";
+			title="mrk_spawn_diver_2";
 			id=365;
 			atlOffset=0.14899921;
 		};
@@ -21400,7 +21400,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10057.176,18.132999,9391.5479};
-			name="mrk_spawn_tailor_1";
+			name="mrk_spawn_diver_1";
 			type="Empty";
 			id=2368;
 			atlOffset=-0.0002746582;
@@ -21442,7 +21442,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={10169.952,13.52,7492.9521};
-			name="mrk_spawn_tailor_2";
+			name="mrk_spawn_diver_2";
 			type="Empty";
 			id=2372;
 		};
@@ -21554,7 +21554,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7854.915,10.42,8861.2646};
-			name="mrk_spawn_tailor_3";
+			name="mrk_spawn_diver_3";
 			type="Empty";
 			id=2376;
 		};
@@ -33324,8 +33324,8 @@ class Mission
 		class Item385
 		{
 			dataType="Marker";
-			position[]={8866.4277,4.75,5992.5894};
-			name="mrk_spawn_tailor_4";
+			position[]={8866.4277,4.75,5992.5889};
+			name="mrk_spawn_diver_4";
 			type="Empty";
 			id=2941;
 		};
@@ -33337,7 +33337,7 @@ class Mission
 				position[]={8865.6689,4.75,5995.2939};
 				angles[]={0,0.07248611,0};
 			};
-			title="mrk_spawn_tailor_4";
+			title="mrk_spawn_diver_4";
 			id=2942;
 		};
 		class Item387

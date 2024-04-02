@@ -16,7 +16,7 @@ class grad_roles{
 		class initEmergency;
 		class initBoatCrew;
 		class initEngineer;
-		class initTailor;
+		class initDiver;
 		class initHacker;
 		class initHunter;
 		class initTankCrew;
