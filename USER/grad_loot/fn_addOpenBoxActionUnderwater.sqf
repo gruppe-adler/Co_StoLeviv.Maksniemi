@@ -10,7 +10,7 @@ params ["_crate"];
 
 	}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
 
-	[_crate, 0, [], _action, true] call ace_interact_menu_fnc_addActionToObject;
+	[_crate, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;
 
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;

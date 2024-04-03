@@ -2,7 +2,7 @@ params ["_house"];
 
 if (!isServer) exitWith {};
 
-
+_house setVariable ["BIS_Disabled_Door_1",1,true];
 
 private _keypad = "land_gm_euro_furniture_telephone_02" createVehicle [0,0,0];
 _keypad enableSimulationGlobal false;
