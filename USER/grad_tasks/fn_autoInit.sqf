@@ -1,6 +1,6 @@
 
 // allows for giving out intel
-["GRAD_telephone_fakeCallAccept", {
+["GRAD_telephone_fakeCallStart", {
 	params ["_phone", ["_sound", ""], ["_text", ""]];
 
 	if (_text == "segmentintel") then {

@@ -65,7 +65,7 @@
 
       if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-      [_nearestPhone, "GRAD_garble_long", _message#0] call GRAD_telephone_fnc_fakeCallPhone;   
+      [_nearestPhone, "GRAD_garble_long", _message#0] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];   
   
   }, { systemchat "cancelled"; }, _position] call zen_dialog_fnc_create;  
 
@@ -102,7 +102,7 @@
 
     if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
 
-    [_nearestPhone, "GRAD_garble_long", "segmentIntel"] call GRAD_telephone_fnc_fakeCallPhone;
+    [_nearestPhone, "GRAD_garble_long", "segmentIntel"] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
 
 }] call zen_custom_modules_fnc_register;
 
@@ -120,6 +120,18 @@
     } forEach _homePhones;
 
     if (count _homePhones < 1) exitWith { systemChat "No home phones on map"; };
+
+}] call zen_custom_modules_fnc_register;
+
+
+
+["STO LEVIV", "Create XXX Phone from object",
+{
+  params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+    if (!isNull _objectUnderCursor) then {
+        [_objectUnderCursor] remoteExec ["GRAD_zeus_fnc_addFakePhone", 2];
+    };
 
 }] call zen_custom_modules_fnc_register;
 

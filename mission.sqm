@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1808;
+		nextID=1874;
 	};
 	class Camera
 	{
-		pos[]={9397.417,11.511006,3922.1748};
-		dir[]={-0.45404506,-0.53532511,0.71222895};
-		up[]={-0.28776771,0.84464127,0.45140153};
-		aside[]={0.84322745,-4.3510227e-09,0.53755754};
+		pos[]={9554.627,32.259296,3594.1296};
+		dir[]={-0.17817113,-0.41426274,0.89254785};
+		up[]={-0.081097789,0.91012716,0.40625933};
+		aside[]={0.98065954,7.2875991e-07,0.19576256};
 	};
 };
 binarizationWanted=0;
@@ -43133,7 +43133,6 @@ class Mission
 			};
 			id=3762;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 		class Item616
 		{
@@ -43164,7 +43163,6 @@ class Mission
 			};
 			id=3764;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 		class Item618
 		{
@@ -43180,7 +43178,6 @@ class Mission
 			};
 			id=3765;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 		class Item619
 		{
@@ -43212,7 +43209,6 @@ class Mission
 			};
 			id=3767;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 		class Item621
 		{
@@ -43228,7 +43224,6 @@ class Mission
 			};
 			id=3768;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 		class Item622
 		{
@@ -43259,7 +43254,6 @@ class Mission
 			};
 			id=3770;
 			type="Item_U_B_Wetsuit";
-			atlOffset=2.3841858e-07;
 		};
 	};
 	class Connections

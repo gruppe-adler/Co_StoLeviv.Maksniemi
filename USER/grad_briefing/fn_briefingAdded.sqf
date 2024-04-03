@@ -1,5 +1,8 @@
 params ["_text", ["_private", false]];
 
+// skip if no text was spoken
+if (_text == "") exitWith {};
+
 private _time = [dayTime, "HH:MM"] call BIS_fnc_timeToString;
 
 if (_private) then {
