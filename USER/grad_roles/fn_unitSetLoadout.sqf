@@ -15,10 +15,11 @@ private _headgear = selectRandom (getArray(_roles >> _playerRole >> "headgear"))
 private _item = selectRandom (getArray(_roles >> _playerRole >> "items"));
 private _backpack = getText(_roles >> _playerRole >> "backpack");
 private _backpackitems = [];
+private _hmd = ([_roles >> _playerRole,"hmd",""] call BIS_fnc_returnConfigEntry);
 
 
 _unit setUnitLoadout [ 
-  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[],["ItemMap","","","ItemCompass","ItemWatch",""]
+  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[],["ItemMap","","","ItemCompass","ItemWatch",_hmd]
 ];
 
 

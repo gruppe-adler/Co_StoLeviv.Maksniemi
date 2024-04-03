@@ -9,7 +9,7 @@
 		private _endIndex = 0;
 		private _segment = 0;
 
-		if (side _unit == west) then {
+		if (([_unit, true] call BIS_fnc_objectSide) == west) then {
 
 			// Determine segment boundaries
 			if (_foreachindex < _segmentSize) then {

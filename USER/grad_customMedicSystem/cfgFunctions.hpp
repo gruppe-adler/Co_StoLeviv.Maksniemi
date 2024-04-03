@@ -8,5 +8,6 @@ class grad_customMedicSystem {
 		class initMedic;
 		class removeMedicMarker;
 		class reviveServer;
+		class disableMedicVehicleDamage;
 	};
 };

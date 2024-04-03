@@ -14,7 +14,7 @@ private _markerCounter = 1;
 		_playerIndex = ceil random 31;
 	};
 
-	if (side _unit == west) then {
+	if (([_unit, true] call BIS_fnc_objectSide) == west) then {
 
 		private _index = _foreachindex mod _rolesCount;
 		/*

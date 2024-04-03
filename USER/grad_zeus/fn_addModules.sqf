@@ -107,6 +107,23 @@
 }] call zen_custom_modules_fnc_register;
 
 
+["STO LEVIV", "Segment Intel Call all phones",
+{
+  params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+
+    _position = ASLtoAGL _position;
+      
+    private _homePhones = missionNameSpace getVariable ["GRAD_HOME_PHONES", []];
+
+    {
+        [_x, "GRAD_garble_long", "segmentIntel"] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
+    } forEach _homePhones;
+
+    if (count _homePhones < 1) exitWith { systemChat "No home phones on map"; };
+
+}] call zen_custom_modules_fnc_register;
+
+
 
 ["STO LEVIV", "End nearest Call",
 {

@@ -23,13 +23,13 @@ class cfgCustomRoles {
 
     class diver {
         role = "Diver";
-        briefing = "You are a trained diver. You can use breathing equipment and you know where some are located.";
+        briefing = "You are a trained diver. You have a nice headlamp to be able to see underwater. You can use diving equipment and you know where its stored.";
         code = "";
         spawn = "mrk_spawn_diver";
         uniform[] = {"U_C_FormalSuit_01_blue_F", "U_C_FormalSuit_01_tshirt_gray_F", "U_C_FormalSuit_01_khaki_F", "UK3CB_CHC_C_U_BODYG_01", "UK3CB_CHC_C_U_FUNC_02", "UK3CB_CHC_C_U_POLITIC_03"};
         headgear[] = {"H_Hat_Safari_sand_F", "H_Hat_Safari_olive_F", "UK3CB_H_Profiteer_Cap_01", "UK3CB_H_Cap_Back_ION_BLK"};
-        items[] = {"ACE_Flashlight_Maglite_ML300L"};
         backpack = "gm_ge_army_backpack_medic_80_oli";
+        hmd = "SAN_Headlamp_v1";
     };
 
     class tankcrew {

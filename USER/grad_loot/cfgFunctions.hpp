@@ -15,6 +15,8 @@ class grad_loot {
 		class createMarkerMeeting;
 
 		class destroyActionDummy;
+
+		class getRandomDivingKey;
 		
 		class digFinishFX;
 		class digFinishLoot;

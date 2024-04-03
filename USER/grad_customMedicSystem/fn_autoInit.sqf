@@ -7,7 +7,7 @@ if (isServer) then {
 			[_unit] remoteExec ["grad_customMedicSystem_fnc_createMedicMarker"];
 		};
 
-		if (_state == "wokeup") then {
+		if (_state == "revived") then {
 			[_unit] remoteExec ["grad_customMedicSystem_fnc_removeMedicMarker"];
 		};
 
@@ -30,7 +30,7 @@ if (hasInterface) then {
                 if (_state) then {
                     ["missionControl_curatorInfo", [_unit, "unconscious"]] call CBA_fnc_serverEvent;
                 } else {
-                    ["missionControl_curatorInfo", [_unit, "wokeup"]] call CBA_fnc_serverEvent;
+                    ["missionControl_curatorInfo", [_unit, "revived"]] call CBA_fnc_serverEvent;
                 };
             },[_unit,_state], 1] call CBA_fnc_waitAndExecute;
         };

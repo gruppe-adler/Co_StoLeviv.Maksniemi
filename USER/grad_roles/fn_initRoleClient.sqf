@@ -15,12 +15,12 @@ if (isNull _unit) then {
 
 	private _playerIndex = _unit getVariable ["GRAD_cfgCustomRoles_playerIndex", ceil random 30];
 
-	if (side _unit == west) then {
+	if (([_unit, true] call BIS_fnc_objectSide) == west) then {
 		private _emptyPosition = [_unit, 1.5, 5, 2, 0, 20, 0] call BIS_fnc_findSafePos;
 		[_emptyPosition, _unit] call grad_roles_fnc_spawnObjects;
 	};
 
-	if (!isServer) then {
+	if (hasInterface) then {
 		[_unit] call grad_roles_fnc_createMarkerSpawn;
 	};
 

@@ -4,14 +4,33 @@ class meeting {
    code = "(_this select 0) call grad_loot_fnc_createMarker;";
 };
 
-class convoy {
-   role = "convoyintel";
-   briefing = "My mother told me every half hour there is a convoy packed with ammunition running down the central highway from west to east.";
-   code = "";
+class engineer {
+      
 };
 
-class grave {
-   role = "graveintel";
-   briefing = "My mother told me every half hour there is a convoy packed with ammunition running down the central highway from west to east.";
-   code = "";
+class hunter {
+      
+};
+
+class diver {
+   class intel1 {
+      briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember the keylock code.";
+      marker = "mrk_loot_diving_1";
+   };
+   class intel2 {
+      briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember the keylock code.";
+      marker = "mrk_loot_diving_1";
+   };
+};
+
+class tankcrew {
+      
+};
+
+class boatcrew {
+   
+};
+
+class hacker {
+   
 };

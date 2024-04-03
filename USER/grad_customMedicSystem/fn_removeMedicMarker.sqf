@@ -1,5 +1,6 @@
 params ["_unit"];
 
+private _isMedic = player getVariable ['grad_customMedicSystem_isMedic', false];
 private _localMedicMarkers = player getVariable ['grad_customMedicSystem_localMedicMarkers', []];
 
 private _previousMarker = _unit getVariable ["mrk_unconscious", ""];
@@ -9,5 +10,8 @@ if (_previousMarker != "") then {
 	
 	deleteMarkerLocal _previousMarker;
 };
-private _name = [_unit, false, false] call ace_common_fnc_getName;
-(_name + " rescued.") call CBA_fnc_notify;
+
+if (_isMedic) then {
+	private _name = [_unit, false, false] call ace_common_fnc_getName;
+	(_name + " rescued.") call CBA_fnc_notify;
+};
