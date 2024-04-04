@@ -13,7 +13,7 @@ class cfgCustomRoles {
 
     class hunter {
         role = "Hunter";
-        briefing = "You have a family famous for their weapon craze. Most of them are dead however.";
+        briefing = "You have a family famous for their weapon craze. Most of them are dead however. You still have a nice night vision bino.";
         code = "";
         spawn = "mrk_spawn_hunter";
         uniform[] = {"UK3CB_ADC_C_Hunter_U_05", "UK3CB_ADC_C_Hunter_U_10","UK3CB_ADC_C_Hunter_U_06", "UK3CB_ADC_C_Hunter_U_07", "U_C_HunterBody_grn"};

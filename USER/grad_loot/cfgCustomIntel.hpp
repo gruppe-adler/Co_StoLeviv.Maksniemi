@@ -19,19 +19,19 @@ class engineer {
 
 class hunter {
    class intel1 {
-      briefing = "The hunter roots in your Vixxär family run deep. Most of them are buried under their name and might have taken their guns with them.";
+      briefing = "The hunter roots in your Vixxär family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
       marker = "mrk_loot_hunter_1";
    };
    class intel2 {
-      briefing = "The hunter roots in your Lehtonen family run deep. Most of them are buried under their name and might have taken their guns with them.";
+      briefing = "The hunter roots in your Lehtonen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
       marker = "mrk_loot_hunter_1";
    };
    class intel3 {
-      briefing = "The hunter roots in your Meektiini family run deep. Most of them are buried under their name and might have taken their guns with them.";
+      briefing = "The hunter roots in your Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
       marker = "mrk_loot_hunter_1";
    };
    class intel4 {
-      briefing = "The hunter roots in your Meektiini family run deep. Most of them are buried under their name and might have taken their guns with them.";
+      briefing = "The hunter roots in your Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
       marker = "mrk_loot_hunter_1";
    };
 };
@@ -57,57 +57,57 @@ class diver {
 
 class tankcrew {
    class intel1 {
-      briefing = "When you were still an active tanker you were always repairing your tank in a small base in the west. Now its occupied.";
-      marker = "mrk_base_small";
+      briefing = "Uncle Matti is buried anonymously on a small island at %1. He might have his handgun buried with him. I need to find a boat and someone who can drive it.";
+      marker = "mrk_loot_boatcrew_1";
    };
    class intel2 {
-      briefing = "When you were still an active tanker you were always repairing your tank in a small base in the west. Now its occupied.";
-      marker = "";
+      briefing = "Grandpa Petter is buried anonymously on a small island at %1. He might have his handgun buried with him. I need to find a boat and someone who can drive it.";
+      marker = "mrk_loot_boatcrew_2";
    };
    class intel3 {
-      briefing = "There have to be other tankers somewhere... alone I wont be of much use.";
-      marker = "";
+      briefing = "My great grandpa Erkki is buried anonymously on a small island at %1. He might have his handgun buried with him. I need to find a boat and someone who can drive it.";
+      marker = "mrk_loot_boatcrew_3";
    };
    class intel4 {
-      briefing = "There have to be other tankers somewhere... alone I wont be of much use.";
-      marker = "";
+      briefing = "Aunt Niilas is buried anonymously on a small island at %1. She might have her handgun buried with her. I need to find a boat and someone who can drive it.";
+      marker = "mrk_loot_boatcrew_4";
    };
 };
 
 class boatcrew {
    class intel1 {
-      briefing = "Uncle Matti is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_1";
+      briefing = "I have heard ";
+      marker = "mrk_base_small";
    };
    class intel2 {
-      briefing = "Grandpa Petter is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_2";
+      briefing = "";
+      marker = "";
    };
    class intel3 {
-      briefing = "My great grandpa Erkki is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_3";
+      briefing = "";
+      marker = "";
    };
    class intel4 {
-      briefing = "Aunt Niilas is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_4";
+      briefing = "";
+      marker = "";
    };
 };
 
 class hacker {
     class intel1 {
-      briefing = "Uncle Matti is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_1";
+      briefing = "I remember I left some useful equipment in the house at %1. Might get it. Keycode is 1983.";
+      marker = "mrk_loot_hacker_1";
    };
    class intel2 {
-      briefing = "Grandpa Petter is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_2";
+      briefing = "I remember I left some equipment in the house at %1. Should get it. Keycode is 1985.";
+      marker = "mrk_loot_hacker_2";
    };
    class intel3 {
-      briefing = "My great grandpa Erkki is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_3";
+      briefing = "I remember I left a equipment at %1. I should get it. Keycode is 6969.";
+      marker = "mrk_loot_hacker_3";
    };
    class intel4 {
-      briefing = "Aunt Niilas is buried anonymously on a small island. He might have his handgun buried with him.";
-      marker = "mrk_loot_boatcrew_4";
+      briefing = "I remember I left equipment near %1. I should get it.";
+      marker = "mrk_loot_hacker_4";
    };
 };

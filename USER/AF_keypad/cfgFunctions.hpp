@@ -8,6 +8,7 @@ class grad_af_keypad{
 		class fncs;
 		class openBoatHouseDoor;
 		class lockBoatHouseDoor;
+		class openHackerLoot1;
 		class openVIPgate;
 		class openVIPDoor;
 		class openBoatGate;

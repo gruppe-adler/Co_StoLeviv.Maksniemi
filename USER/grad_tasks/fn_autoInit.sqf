@@ -18,7 +18,26 @@
 		if (_index != -1) then {
 			_text = "You already have all infos I can share with you.";
 		} else {
-			["missionControl_curatorInfo", [player, "segmentintel"]] call CBA_fnc_serverEvent;
+			["missionControl_curatorInfo", [player, "segmentintel", _text]] call CBA_fnc_globalEvent;
+		};
+	};
+
+	if (_text == "customintel") then {
+		private _index = (player getVariable ["GRAD_cfgCustomRoles_playerIndex", 0]) mod 6;
+		_text = getText(((missionConfigFile >> "cfgCustomIntel") select _index) >> "briefing");
+		private _marker = getText(((missionConfigFile >> "cfgCustomIntel") select _segment) >> "marker");
+		_marker setMarkerAlphaLocal 1;
+		private _mapgrid = mapGridPosition getMarkerPos _marker;
+		_text = format [_text, _mapgrid];
+		diag_log _text;
+
+		// enable marker
+		private _existingBriefing = player getVariable ["GRAD_dynamicIntelPrivate", []];
+		private _index = _existingBriefing findIf {(_x select 1) == _text};
+		if (_index != -1) then {
+			_text = "You already have all infos I can share with you.";
+		} else {
+			["missionControl_curatorInfo", [player, "customIntel", _text]] call CBA_fnc_globalEvent;
 		};
 	};
 

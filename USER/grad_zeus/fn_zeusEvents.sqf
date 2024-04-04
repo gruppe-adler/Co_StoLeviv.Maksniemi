@@ -1,8 +1,8 @@
 if (!isServer) exitWith {};
 
 
-["grad_missionControl_curatorInfo", {
-    params ["_unit", "_type"];
+["missionControl_curatorInfo", {
+    params ["_unit", "_type", "_text"];
 
     private _message = "";
     private _color = [0,0,0,1];
@@ -29,7 +29,11 @@ if (!isServer) exitWith {};
             _color = [0.7,0.1,0.1,1];
         };
         case ("segmentintel"): {
-            _message = format ["%1 received segment intel.", [_unit, false, true] call ace_common_fnc_getName];
+            _message = format ["%1 got segment intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
+            _color = [0.7,0.1,0.1,1];
+        };
+        case ("customintel"): {
+            _message = format ["%1 got custom intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
             _color = [0.7,0.1,0.1,1];
         };
         default {};
