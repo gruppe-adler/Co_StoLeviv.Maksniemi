@@ -21,6 +21,7 @@ enableDebugConsole = 1;
 
 #include "USER\grad_roles\cfgCustomRole.hpp"
 #include "USER\grad_tasks\cfgCustomTasks.hpp"
+#include "USER\grad_loot\cfgCustomIntel.hpp"
 
 #include "USER\missionInfo.hpp"
 #include "USER\loadouts.hpp"

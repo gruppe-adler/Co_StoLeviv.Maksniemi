@@ -11,7 +11,7 @@ class cfgCustomTasks {
 
    class segment3 {
         marker = "mrk_vip_base";
-        briefing = "Infiltrate and capture a high-value target (VIP) at an enemy command post, coordinates %1. Ensure the target is captured alive. Expect reinforced security measures including barriers, checkpoints, and surveillance equipment. You might need someone capable of hacking to get in.";
+        briefing = "Infiltrate and capture a high-value target (VIP) at an enemy command post, coordinates %1. Ensure the target is captured alive. Expect reinforced security measures including patrols and checkpoints. You might need someone capable of hacking to get in.";
    };
 
    class emergency {
