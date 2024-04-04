@@ -24,8 +24,8 @@
 
 	if (_text == "customintel") then {
 		private _index = (player getVariable ["GRAD_cfgCustomRoles_playerIndex", 0]) mod 6;
-		_text = getText(((missionConfigFile >> "cfgCustomIntel") select _index select (_index mod 4)) >> "briefing");
-		private _marker = getText(((missionConfigFile >> "cfgCustomIntel") select _index select (_index mod 4)) >> "marker");
+		_text = getText(((missionConfigFile >> "cfgCustomIntel") select _index >> ("intel" + str (_index mod 4))) >> "briefing");
+		private _marker = getText(((missionConfigFile >> "cfgCustomIntel") select _index >> ("intel" + str (_index mod 4))) >> "marker");
 		_marker setMarkerAlphaLocal 1;
 		private _mapgrid = mapGridPosition getMarkerPos _marker;
 		_text = format [_text, _mapgrid];
