@@ -14,12 +14,13 @@ private _uniform = selectRandom (getArray(_roles >> _playerRole >> "uniform"));
 private _headgear = selectRandom (getArray(_roles >> _playerRole >> "headgear"));
 private _item = selectRandom (getArray(_roles >> _playerRole >> "items"));
 private _backpack = getText(_roles >> _playerRole >> "backpack");
+private _bino = getText(_roles >> _playerRole >> "bino");
 private _backpackitems = [];
 private _hmd = ([_roles >> _playerRole,"hmd",""] call BIS_fnc_returnConfigEntry);
-
+private _radio = ([_roles >> _playerRole,"radio",""] call BIS_fnc_returnConfigEntry);
 
 _unit setUnitLoadout [ 
-  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[],["ItemMap","","","ItemCompass","ItemWatch",_hmd]
+  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[_bino],["ItemMap","",_radio,"ItemCompass","ItemWatch",_hmd]
 ];
 
 

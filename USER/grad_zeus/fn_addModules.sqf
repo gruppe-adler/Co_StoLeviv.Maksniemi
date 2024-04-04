@@ -107,7 +107,7 @@
 }] call zen_custom_modules_fnc_register;
 
 
-["STO LEVIV", "Segment Intel Call all phones",
+["STO LEVIV", "Segment Intel Call all homes",
 {
   params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 

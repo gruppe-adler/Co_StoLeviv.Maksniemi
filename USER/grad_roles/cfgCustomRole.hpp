@@ -8,17 +8,19 @@ class cfgCustomRoles {
         headgear[] = {"H_Bandanna_blu", "H_Bandanna_gry", "vn_b_bandana_03", "H_Bandanna_sgg", "rhssaf_bandana_smb"};
         items[] = {"gm_boltcutter"};
         backpack = "ACE_TacticalLadder_Pack";
+        bino = "gm_photocamera_01_blk";
     };
 
     class hunter {
         role = "Hunter";
-        briefing = "You know the location of a bolt action rifle and a pumpgun in your hunting hut.";
+        briefing = "You have a family famous for their weapon craze. Most of them are dead however.";
         code = "";
         spawn = "mrk_spawn_hunter";
         uniform[] = {"UK3CB_ADC_C_Hunter_U_05", "UK3CB_ADC_C_Hunter_U_10","UK3CB_ADC_C_Hunter_U_06", "UK3CB_ADC_C_Hunter_U_07", "U_C_HunterBody_grn"};
         headgear[] = {"vn_o_boonie_vc_01_01", "vn_b_boonie_01_01", "vn_b_boonie_04_09", "vn_b_boonie_03_01", "rhssaf_booniehat_woodland"};
         items[] = {"ACE_Flashlight_Maglite_ML300L"};
         backpack = "rhs_rd54_flora1";
+        bino = "gm_fero51_oli";
     };
 
     class diver {
@@ -30,6 +32,7 @@ class cfgCustomRoles {
         headgear[] = {"H_Hat_Safari_sand_F", "H_Hat_Safari_olive_F", "UK3CB_H_Profiteer_Cap_01", "UK3CB_H_Cap_Back_ION_BLK"};
         backpack = "gm_ge_army_backpack_medic_80_oli";
         hmd = "SAN_Headlamp_v1";
+        bino = "";
     };
 
     class tankcrew {
@@ -41,6 +44,7 @@ class cfgCustomRoles {
         headgear[] = {"UK3CB_H_Bandanna_Camo", "UK3CB_H_Beanie_02_BLK", "UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "UK3CB_H_Bandanna_Brown_Check"};
         items[] = {"ACE_Flashlight_Maglite_ML300L"};
         backpack = "gm_ge_backpack_satchel_80_blk";
+        bino = "";
     };
 
     class boatcrew {
@@ -52,6 +56,7 @@ class cfgCustomRoles {
         headgear[] = {"UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "rhs_beanie_green", "gm_ge_headgear_hat_beanie_blk"};
         items[] = {"ACE_Flashlight_Maglite_ML300L"};
         backpack = "vn_c_pack_01";
+        bino = "gm_df7x40_blk";
     };
 
     class hacker {
@@ -63,6 +68,7 @@ class cfgCustomRoles {
         headgear[] = {"vn_b_headband_04", "vn_c_headband_01", "vn_b_headband_01", "vn_o_pl_cap_02_02", "vn_o_pl_cap_02_01"};
         items[] = {};
         backpack = "vn_b_pack_pfield_01";
+        bino = "";
     };
 };
 
@@ -77,5 +83,7 @@ class cfgRoleEmergency {
         headgear[] = {"UK3CB_H_Beanie_02_Win", "UK3CB_H_Cap_Back_ION_WHI", "UK3CB_H_Cap_Earpiece_ION_WHI", "gm_xx_headgear_headwrap_01_wht"};
         items[] = {"ACE_surgicalKit"};
         backpack = "UK3CB_CHC_C_B_MED";
+        radio = "gm_radio_sem52a";
+        bino = "";
     };
 };

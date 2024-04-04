@@ -1,7 +1,6 @@
 params ["_player"];
 
-// remove from blufor BFT
-[_player] joinSilent (createGroup civilian);
+_player setCaptive true;
 
 // show future medic markers
 _player setVariable ['grad_customMedicSystem_isMedic', true];

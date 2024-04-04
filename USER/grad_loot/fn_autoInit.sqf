@@ -36,8 +36,10 @@ if (isServer) then {
 				_loot = selectRandom ["rhs_weap_m38"];
 
 				// all weapons are buried by some crazy hunter family members
+				// plus two very famous individuals
+				private _familyName = selectRandom ["Vixxär", "Lehtonen", "Meektiini"];
 				private _customNameArray = _names splitString " ";
-				_customNameArray set [2, "Vixxär"];
+				_customNameArray set [2, _familyName];
 				_names = _customNameArray joinString " ";
 				
 				if (!isNil "DEBUG") then {
