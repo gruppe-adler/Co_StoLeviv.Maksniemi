@@ -62,12 +62,12 @@ if (_availableSpawns isEqualTo []) then {
 // Initialize identities
 private _availableIdentities = missionNamespace getVariable ["GRAD_availableIdentities", []];
 if (_availableIdentities isEqualTo []) then {
-	_identityMap = createHashMap;
 	private _identities = missionConfigFile >> "CfgIdentities";
 	private _identityCount = count _identities;
 
 	for "_i" from 0 to (_identityCount - 1) do {
 		private _identityClass = _identities select _i;
+		private _identityMap = createHashMap;
 		_identityMap set ["face", getText(_identityClass >> "face")];
 		_identityMap set ["name", getText(_identityClass >> "name")];
 		_availableIdentities pushBack _identityMap;
