@@ -25,7 +25,7 @@
 	};
 
 	if (_text == "customintel") then {
-		private _index = (player getVariable ["GRAD_cfgCustomRoles_playerIndex", 0]) mod 6;
+		private _index = (player getVariable ["GRAD_cfgCustomRoles_spawnIndex", 0]) mod 6;
 		private _indexPlayer = str (_index mod 4);
 
 		_text = ([((missionConfigFile >> "cfgCustomIntel") select _index) >> ("intel" + _indexPlayer),"briefing","nothing"] call BIS_fnc_returnConfigEntry);

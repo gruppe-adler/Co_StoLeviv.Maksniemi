@@ -10,13 +10,14 @@ if (isNull _unit) then {
 	private _code = _unit getVariable ["GRAD_cfgCustomRoles_code", ""];
 	private _spawnPos = _unit getVariable ["GRAD_cfgCustomRoles_spawnPos", [0,0,0]];
 	private _playerRole = _unit getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
+	
+	/*
 	private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
 	[_unit] call _initFile;
+	*/
 
 	_unit setPos _spawnPos;
 	_unit call compile _code;
-
-	// private _playerIndex = _unit getVariable ["GRAD_cfgCustomRoles_playerIndex", ceil random 30];
 
 	if (([_unit, true] call BIS_fnc_objectSide) == west) then {
 		private _emptyPosition = [_unit, 1.5, 5, 2, 0, 20, 0] call BIS_fnc_findSafePos;

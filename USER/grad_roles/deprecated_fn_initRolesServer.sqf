@@ -1,3 +1,13 @@
+/*
+
+	NOT IN USE 
+
+	DEPRECATED!
+
+*/
+
+
+
 if (!isServer) exitWith {};
 
 private _roles = missionConfigFile >> "cfgCustomRoles";

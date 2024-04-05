@@ -144,7 +144,6 @@ _assignedEntry params ["_role", "_spawnMarker", "_identity", "_markerNumber"];
 _player setVariable ["GRAD_cfgCustomRoles_displayName", _role getOrDefault ["displayName", ""], true];
 _player setVariable ["GRAD_cfgCustomRoles_briefing", _role getOrDefault ["briefing", ""], true];
 _player setVariable ["GRAD_cfgCustomRoles_code", _role getOrDefault ["code", ""], true];
-// _player setVariable ["GRAD_cfgCustomRoles_playerIndex", _playerIndex, true];
 
 // Handlde spawn
 private _allMapMarkers = allMapMarkers;

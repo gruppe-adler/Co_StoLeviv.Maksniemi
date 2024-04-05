@@ -38,7 +38,7 @@ class cfgCustomRoles {
     class tankcrew {
         role = "Tankcrew";
         briefing = "You have been driving tanks in the past. You can drive as well as shoot them.";
-        code = "";
+        code = "_player setVariable ['GRAD_isTankCrew', true, true];";
         spawn = "mrk_spawn_tankcrew";
         uniform[] = {"UK3CB_CHC_C_U_Overall_02", "UK3CB_CHC_C_U_Overall_04", "UK3CB_CHC_C_U_Overall_03", "UK3CB_CHC_C_U_Overall_01", "UK3CB_CHC_C_U_Overall_05"};
         headgear[] = {"UK3CB_H_Bandanna_Camo", "UK3CB_H_Beanie_02_BLK", "UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "UK3CB_H_Bandanna_Brown_Check"};
@@ -50,7 +50,7 @@ class cfgCustomRoles {
     class boatcrew {
         role = "Boatcrew";
         briefing = "Your house is on an island. Naturally you can drive boats - others cannot.";
-        code = "";
+        code = "player setvariable ['GRAD_isBoatCrew', true, true];";
         spawn = "mrk_spawn_boatcrew";
         uniform[] = {"gm_gc_civ_uniform_man_04_80_blu", "gm_gc_civ_uniform_man_04_80_gry", "UK3CB_U_KZS_DOWN_KHK"};
         headgear[] = {"UK3CB_H_Woolhat_CBR", "UK3CB_H_Beanie_02_GRY", "rhs_beanie_green", "gm_ge_headgear_hat_beanie_blk"};
@@ -62,7 +62,7 @@ class cfgCustomRoles {
     class hacker {
         role = "Hacker";
         briefing = "You are able to hack any keypad and computer. You can switch on your hacky NVG goggles with self interact";
-        code = "";
+        code = "[player] call grad_roles_fnc_initHacker;";
         spawn = "mrk_spawn_hacker";
         uniform[] = {"U_C_E_LooterJacket_01_F", "U_I_L_Uniform_01_tshirt_black_F", "U_I_L_Uniform_01_tshirt_skull_F", "U_I_L_Uniform_01_tshirt_sport_F"};
         headgear[] = {"vn_b_headband_04", "vn_c_headband_01", "vn_b_headband_01", "vn_o_pl_cap_02_02", "vn_o_pl_cap_02_01"};
