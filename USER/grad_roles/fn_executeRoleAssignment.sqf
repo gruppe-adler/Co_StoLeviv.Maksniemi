@@ -72,11 +72,7 @@ if (_availableIdentities isEqualTo []) then {
 		_identityMap set ["name", getText(_identityClass >> "name")];
 		_availableIdentities pushBack _identityMap;
 	};
-<<<<<<< HEAD
-		
-=======
 	
->>>>>>> ddf1574979e235643afa8adbfdae35955f7eefa4
 	missionNamespace setVariable ["GRAD_availableIdentities", _availableIdentities];
 };
 
