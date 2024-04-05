@@ -32,7 +32,7 @@ if (_availableRoles isEqualTo []) then {
 		_roleMap set ["bino", getText(_roleClass >> "bino")];
 		// hmd is not set for all roles
 		if (isClass (_roleClass >> "hmd")) then {
-			_roleMap set ["hmd", getText(_roleClass >> "hmd"];
+			_roleMap set ["hmd", getText(_roleClass >> "hmd")];
 		} else {
 			_roleMap set ["hmd", ""];
 		};
@@ -93,7 +93,7 @@ if (_assignedEntry isEqualTo []) then {
 	private _spawnMarker = "";
 	// Role
 	// Normal Partisan
-	if (([_unit, true] call BIS_fnc_objectSide) == west) then {
+	if (([_player, true] call BIS_fnc_objectSide) == west) then {
 		_player setVariable ["GRAD_roles_segment", _currentSegment, true];
 		_role = selectRandom _availableRoles;
 		_availableRoles deleteAt (_availableRoles find _role);
@@ -120,20 +120,20 @@ if (_assignedEntry isEqualTo []) then {
 	};
 
 	// Spawn
-	private _roleName = _role get "name"
+	private _roleName = _role get "name";
 	private _availableMarkerNumbers = _availableSpawns get _roleName;
 	private _markerNumber = selectRandom _availableMarkerNumbers;	
 	_availableMarkerNumbers deleteAt (_availableMarkerNumbers find _markerNumber);
 	_availableSpawns set [_roleName, _availableMarkerNumbers];
 	missionNamespace setVariable ["GRAD_availableSpawns", _availableSpawns];
-	_spawnMarker = format ["%1_%2", _spawn, _markerNumber];
+	_spawnMarker = format ["%1_%2", _role get "spawn", _markerNumber];
 
 	// Identity
 	private _identity = selectRandom _availableIdentities;
 	_availableIdentities deleteAt (_availableIdentities find _identity);
 	missionNamespace setVariable ["GRAD_availableIdentities", _availableIdentities];
 
-	_assignedEntry = [_role, _spawnMarker, _identity];
+	_assignedEntry = [_role, _spawnMarker, _identity, _markerNumber];
 	_assignmentTable set [_id, _assignedEntry];
 	missionNamespace setVariable ["GRAD_assignmentTable", _assignmentTable];
 };
