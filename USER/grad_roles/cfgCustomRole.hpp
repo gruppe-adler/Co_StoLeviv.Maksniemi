@@ -48,7 +48,7 @@ class cfgCustomRoles {
     };
 
     class boatcrew {
-        role = "boatcrew";
+        role = "Boatcrew";
         briefing = "Your house is on an island. Naturally you can drive boats - others cannot.";
         code = "";
         spawn = "mrk_spawn_boatcrew";
