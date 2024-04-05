@@ -56,9 +56,9 @@
 	[{
 		params ["_text", "_inteltype"];
 		if (_inteltype == "customintel") then {
-			[_text, "", true] call grad_briefing_fnc_briefingAdded;
+			[_text, true] call grad_briefing_fnc_briefingAdded;
 		} else {
-			[_text, "", false] call grad_briefing_fnc_briefingAdded;
+			[_text, false] call grad_briefing_fnc_briefingAdded;
 		};
 	}, [_text, _inteltype], 5] call CBA_fnc_waitAndExecute;
 
