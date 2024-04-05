@@ -6,6 +6,8 @@ class grad_roles{
 		class autoInit { postInit = 1; };
 
 		class addActionBalloon  { postInit = 1; };
+
+		class balloonLightpoint;
 		
 		class createMarkerSpawn;
 		class distributeSegments;

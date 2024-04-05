@@ -15,12 +15,10 @@ _positionBelow = [_vehiclePos select 0, _vehiclePos select 1, (_vehiclePos selec
  
 private _balloon = "Land_Balloon_01_air_F" createVehicle [0,0,0]; 
 _balloon setPosASL _positionBelow; 
-_balloon setMass 0.0001;
 
 _balloon setVelocity [0,0,-1]; 
 _balloon allowDamage false;
  
-private _chemlight = "ACE_G_Chemlight_Orange_Infinite" createVehicle [0,0,0]; 
-_chemlight attachto [_balloon, [0,0,0.2]];
+[_balloon] remoteExec ["grad_roles_fnc_balloonLightpoint", [0,-2] select isDedicated, true];
 
 systemChat "balloon dropped";
