@@ -33,7 +33,7 @@ if (isServer) then {
 			private _loot = "none";
 			private _names = _names#_forEachIndex;
 			if (_x in _tombStoneUsed) then {
-				_loot = selectRandom ["rhs_weap_m38"];
+				_loot = selectRandom ["rhs_weap_m38", "vn_m1891", "UK3CB_M1903A1", "vn_m1903"];
 
 				// all weapons are buried by some crazy hunter family members
 				// plus two very famous individuals
@@ -42,7 +42,7 @@ if (isServer) then {
 				_customNameArray set [2, _familyName];
 				_names = _customNameArray joinString " ";
 				
-				if (!isNil "DEBUG") then {
+				if (DEBUG) then {
 					[_x, "COLORBLACK"] call grad_loot_fnc_createMarker;
 				};
 			};
@@ -67,6 +67,43 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+
+	["loadout", {
+
+		private _playerRole = player getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
+
+		private _dropUniform = {
+			// ripped from BI forums Larrow. :-*
+			//create a weaponHolder at the units position
+			private _holder = createVehicle ["GroundWeaponHolder", getPosATL player, [], 0, "CAN_COLLIDE"];
+			//get units container type you want to drop
+			private _container = uniform player;
+			//add it to the holder
+			_holder addItemCargoGlobal [_container, 1];
+			//use everyContianer on the holder to get a reference to the container
+			private _droppedContainer = (((everyContainer _holder) select 0) select 1);
+			//iterate through units container e.g uniformItems
+			{
+				//add each one to the reference
+				private _droppedContainer addItemCargoGlobal [_x, 1];
+			}forEach (uniformItems player);
+			//remove the unit container
+			removeUniform player;
+
+			"I cant use this" call CBA_fnc_notify;
+		};
+
+		if (_playerRole != "Diver") then {
+			private _uniform = uniform player;
+			if (_uniform == "vn_b_uniform_seal_09_01") then {
+				call _dropUniform;
+			};
+			if (_uniform == "U_B_Wetsuit") then {
+				call _dropUniform;
+			};
+		};
+
+	}] call CBA_fnc_addPlayerEventHandler;
 
 	[] spawn {
 		waitUntil {

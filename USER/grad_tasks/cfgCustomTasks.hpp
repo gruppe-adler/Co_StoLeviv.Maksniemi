@@ -11,11 +11,11 @@ class cfgCustomTasks {
 
    class segment3 {
         marker = "mrk_vip_base";
-        briefing = "Infiltrate and capture a high-value target (VIP) at an enemy command post, coordinates %1. Ensure the target is captured alive. Expect reinforced security measures including barriers, checkpoints, and surveillance equipment. You might need someone capable of hacking to get in.";
+        briefing = "Infiltrate and capture a high-value target (VIP) at an enemy command post, coordinates %1. Ensure the target is captured alive. Expect reinforced security measures including patrols and checkpoints. You might need someone capable of hacking to get in.";
    };
 
    class emergency {
         marker = "mrk_sealoot";
-        briefing = "Russians destroyed three smuggler ships that had weapons on board. The wrecks are now underwater and barely visible at sea level. Find and deploy balloon loot markers at three wreck locations in the search area at %1 via helicopter.";
+        briefing = "Russians destroyed three smuggler ships that had weapons on board and one sea watchtower. The wrecks/ruins are now underwater and barely visible at sea level. Find and deploy balloon loot markers (mousewheel action) at three wreck locations in the search area at %1 via helicopter. Find and inform the players about this.";
     };
 };

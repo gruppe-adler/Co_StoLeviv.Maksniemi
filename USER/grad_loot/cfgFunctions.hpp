@@ -7,6 +7,7 @@ class grad_loot {
 		class addDigActionTomb;
 		class addOpenBoxActionUnderwater { postInit = 1; };
 		class addTombNameAction;
+		class addWeaponToCrate;
 		
 		class autoInit { postInit = 1; };
         
