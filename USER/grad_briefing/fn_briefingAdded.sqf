@@ -10,11 +10,11 @@ if (_private) then {
 	_dynamicIntelPrivate pushBackUnique [_time, _text];
 	player setVariable ["GRAD_dynamicIntelPrivate", _dynamicIntelPrivate, true];
 
-	["Intel added to your PRIVATE briefing (self interact)", 1.5] call CBA_fnc_notify;
+	["Intel added to your PRIVATE briefing (self interact)", 1] call CBA_fnc_notify;
 } else {
 	private _dynamicIntelPublic = player getVariable ["GRAD_dynamicIntelPublic", []];
 	_dynamicIntelPublic pushBackUnique [_time, _text];
 	player setVariable ["GRAD_dynamicIntelPublic", _dynamicIntelPublic, true];
 
-	["Intel added to your PUBLIC briefing (self interact)", 1.5] call CBA_fnc_notify;
+	["Intel added to your PUBLIC briefing (self interact)", 1] call CBA_fnc_notify;
 };

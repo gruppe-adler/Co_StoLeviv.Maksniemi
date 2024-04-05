@@ -20,38 +20,38 @@ class cfgCustomIntel {
 
    class hunter {
       class intel1 {
-         briefing = "My guns were taken from me. But the hunter roots in your Vixxär family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. But the hunter roots in my Vixxär family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
       class intel2 {
-         briefing = "My guns were taken from me. The hunter roots in your Lehtonen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. The hunter roots in my Lehtonen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
       class intel3 {
-         briefing = "My guns were taken from me. The hunter roots in your Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. The hunter roots in my Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
       class intel4 {
-         briefing = "My guns were taken from me. The hunter roots in your Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. The hunter roots in my Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
    };
 
    class diver {
       class intel1 {
-         briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember your keylock code.";
+         briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
          marker = "mrk_loot_diving_1";
       };
       class intel2 {
-         briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember your keylock code.";
+         briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
          marker = "mrk_loot_diving_1";
       };
       class intel3 {
-         briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember your keylock code.";
+         briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
          marker = "mrk_loot_diving_1";
       };
       class intel4 {
-         briefing = "You know the huts at the harbor (%1) have diving equipment inside. You just dont remember your keylock code.";
+         briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
          marker = "mrk_loot_diving_1";
       };
    };

@@ -16,6 +16,6 @@ class cfgCustomTasks {
 
    class emergency {
         marker = "mrk_sealoot";
-        briefing = "Russians destroyed three smuggler ships that had weapons on board. The wrecks are now underwater and barely visible at sea level. Find and deploy balloon loot markers at three wreck locations in the search area at %1 via helicopter.";
+        briefing = "Russians destroyed three smuggler ships that had weapons on board and one sea watchtower. The wrecks/ruins are now underwater and barely visible at sea level. Find and deploy balloon loot markers (mousewheel action) at three wreck locations in the search area at %1 via helicopter. Find and inform the players about this.";
     };
 };

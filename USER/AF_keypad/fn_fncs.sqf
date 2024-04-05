@@ -24,13 +24,14 @@ switch (_this select 0) do {
 			_keypadAffected call compile _codeToUnlock;
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
-			if (player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && count AF_KP_keypad_OutputText > 7) then {
+			if (player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && count AF_KP_keypad_OutputText > 7 ||
+				player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && AF_KP_keypad_OutputText == "1337") then {
 				_keypadAffected call compile _codeToUnlock;
 				[player, "target_locked"] remoteExec ["say3D", 0];
-				hint format["Hacked the System :]"];
+				"Hacked the System :]" call CBA_fnc_notify;
 			} else {
 				[player, "radioerror"] remoteExec ["say3D", 0];
-				hint format["Wrong Code"];
+				"Wrong code." call CBA_fnc_notify;
 			 };
 		};
 		closeDialog 0;
