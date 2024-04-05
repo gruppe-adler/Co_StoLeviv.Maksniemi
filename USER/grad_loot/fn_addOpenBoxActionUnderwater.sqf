@@ -4,9 +4,9 @@ params ["_crate"];
 
 	params ["_crate"];
 
-	private _action = ["Open", "Open Crate", "", {
+	private _action = ["AttachHook", "Make slingloadable", "", {
     
-		player action ["Gear", _target];
+		[_target, true] remoteExec ["enableRopeAttach", _target, true];
 
 	}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
 
