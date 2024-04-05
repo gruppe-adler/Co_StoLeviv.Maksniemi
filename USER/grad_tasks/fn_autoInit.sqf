@@ -48,7 +48,8 @@
 
 	// workaround for missing sound in vehicle acceptance
 	if (objectParent player != player) then {
-		playSound [_sound, true, 0];
+		playSoundUI [_sound, 0.5];
+		[player, [_sound, 10]] remoteExec ["say3D", allPlayers select { _x != player}];
 	};
 
 	["GARBLED VOICE", _text] spawn grad_tasks_fnc_forceSubtitle;
