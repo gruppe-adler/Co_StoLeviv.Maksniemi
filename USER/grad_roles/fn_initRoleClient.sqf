@@ -9,6 +9,9 @@ if (isNull _unit) then {
 
 	private _code = _unit getVariable ["GRAD_cfgCustomRoles_code", ""];
 	private _spawnPos = _unit getVariable ["GRAD_cfgCustomRoles_spawnPos", [0,0,0]];
+	private _playerRole = _unit getVariable ["GRAD_cfgCustomRoles_displayName", "none"];
+	private _initFile = compile format ["grad_roles_fnc_init%1", _playerRole];
+	[_unit] call _initFile;
 
 	_unit setPos _spawnPos;
 	_unit call compile _code;
