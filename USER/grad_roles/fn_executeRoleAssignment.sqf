@@ -70,9 +70,9 @@ if (_availableIdentities isEqualTo []) then {
 		private _identityClass = _identities select _i;
 		_identityMap set ["face", getText(_identityClass >> "face")];
 		_identityMap set ["name", getText(_identityClass >> "name")];
+		_availableIdentities pushBack _identityMap;
 	};
-	
-	_availableIdentities pushBack _identityMap;
+		
 	missionNamespace setVariable ["GRAD_availableIdentities", _availableIdentities];
 };
 
