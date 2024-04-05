@@ -10,8 +10,10 @@ class grad_roles{
 		class createMarkerSpawn;
 		class distributeSegments;
 
-		class initRolesServer { postInit = 1; };
+		class initRolesServer { /*postInit = 1;*/ };
 		class initRoleClient;
+		class requestRoleAssignment {};
+		class executeRoleAssignment {};
 		
 		class initEmergency;
 		class initBoatCrew;

@@ -1,9 +1,4 @@
 
-if (isServer && !isMultiplayer) then {
-
-
-};
-
 [] spawn { 
 	
 	private _playerRole = player getVariable ["GRAD_cfgCustomRoles_displayName", "none"];

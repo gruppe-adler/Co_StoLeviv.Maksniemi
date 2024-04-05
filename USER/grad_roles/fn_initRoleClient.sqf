@@ -13,7 +13,7 @@ if (isNull _unit) then {
 	_unit setPos _spawnPos;
 	_unit call compile _code;
 
-	private _playerIndex = _unit getVariable ["GRAD_cfgCustomRoles_playerIndex", ceil random 30];
+	// private _playerIndex = _unit getVariable ["GRAD_cfgCustomRoles_playerIndex", ceil random 30];
 
 	if (([_unit, true] call BIS_fnc_objectSide) == west) then {
 		private _emptyPosition = [_unit, 1.5, 5, 2, 0, 20, 0] call BIS_fnc_findSafePos;

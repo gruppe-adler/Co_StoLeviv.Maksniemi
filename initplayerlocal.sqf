@@ -8,3 +8,5 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 if (!(player getVariable ["isMedical",false])) then {
     [player] execVM "INC_undercover\Scripts\initUCR.sqf";
 };
+
+[player] remoteExec ["grad_roles_fnc_requestRoleAssignment", 2];
