@@ -223,7 +223,7 @@
 
     _position = ASLtoAGL _position;
 
-    private _nearbyLocations = nearestLocations [getpos player, [], 10000] select { text _x != "" };
+    private _nearbyLocations = nearestLocations [getpos player, [], 10000, getPos player] select { text _x != "" };
     if (count _nearbyLocations < 1) exitWith { systemChat "no location nearby"; };
     _nearbyLocations params ["_location"];
 
