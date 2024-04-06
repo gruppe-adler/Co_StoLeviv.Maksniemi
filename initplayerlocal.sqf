@@ -10,3 +10,4 @@ if (!(player getVariable ["isMedical",false])) then {
 };
 
 [player] remoteExec ["grad_roles_fnc_requestRoleAssignment", 2];
+[player] remoteExec ["grad_briefing_fnc_onReconnect", 2];

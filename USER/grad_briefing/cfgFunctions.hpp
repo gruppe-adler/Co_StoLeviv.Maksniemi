@@ -9,5 +9,7 @@ class grad_briefing{
       	class briefingOpenPrivate;
       	class briefingOpenPublic;
       	class briefingScrollView;
+		class updateServerTable;
+		class onReconnect;
 	};
 };
