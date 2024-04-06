@@ -296,12 +296,14 @@
 {
         params ["_modulePosition"]; 
 
+        _modulePosition = ASLToATL _modulePosition;
+
         ["Example Dialog", [["EDIT", "Your text?", "string ping"]], {
 			   params ["_message", "_position"]; 
                   // systemchat str _position; 
                   // systemchat (_message select 0);
 			   [_position, random 360, _message select 0, ["somewhat",["cramped","EtelkaNarrowMediumPro"]]] remoteExec ["GRAD_leaveNotes_fnc_spawnNote", 2, false];
-		  }, { systemchat "cancelled"; }, _position] call zen_dialog_fnc_create;        
+		  }, { systemchat "cancelled"; }, _modulePosition] call zen_dialog_fnc_create;        
 
 }] call zen_custom_modules_fnc_register;
 

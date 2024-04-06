@@ -8,7 +8,7 @@ if (!isServer) exitWith {
 	params ["_object", "_text"];
 
 	[
-		getPosASL _object, 
+		getPosATL _object, 
 		getDir _object, 
 		_text, 
 		["somewhat",["cramped","EtelkaNarrowMediumPro"]]
