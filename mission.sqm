@@ -8,7 +8,7 @@ class EditorData
 	toggles=73;
 	class ItemIDProvider
 	{
-		nextID=5179;
+		nextID=5183;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6794.4185,10.365527,3013.6472};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={8053.5986,25.872274,7061.5215};
+		dir[]={-0.26136258,-0.92363548,-0.28033906};
+		up[]={-0.62983882,0.38322929,-0.67556953};
+		aside[]={-0.73143601,-1.2473902e-07,0.68192369};
 	};
 };
 binarizationWanted=0;
@@ -1960,7 +1960,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=559;
+		items=563;
 		class Item0
 		{
 			dataType="Layer";
@@ -24627,10 +24627,28 @@ class Mission
 			class Attributes
 			{
 				init="[this, ""73313"", ""[_this] call grad_af_keypad_fnc_openBoatGate;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
 			};
 			id=2686;
 			type="land_gm_euro_furniture_telephone_02";
 			atlOffset=1.0652034;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item264
 		{
@@ -33056,10 +33074,28 @@ class Mission
 			class Attributes
 			{
 				init="[this, ""1983"", ""[_this] call grad_af_keypad_fnc_openHackerLoot1;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
 			};
 			id=3794;
 			type="land_gm_euro_furniture_telephone_02";
 			atlOffset=1.1709743;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item402
 		{
@@ -33126,10 +33162,28 @@ class Mission
 			class Attributes
 			{
 				init="[this, ""1985"", ""[_this] call grad_af_keypad_fnc_openHackerLoot1;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
 			};
 			id=3800;
 			type="land_gm_euro_furniture_telephone_02";
 			atlOffset=1.226666;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item406
 		{
@@ -33187,10 +33241,28 @@ class Mission
 			class Attributes
 			{
 				init="[this, ""6969"", ""[_this] call grad_af_keypad_fnc_openHackerLoot1;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
 			};
 			id=3803;
 			type="land_gm_euro_furniture_telephone_02";
 			atlOffset=1.3634009;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item409
 		{
@@ -33240,17 +33312,35 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10532.243,8.1718178,4430.48};
+				position[]={10532.243,8.1718063,4430.48};
 				angles[]={1.6495281,6.2233729,5.4210272};
 			};
 			side="Empty";
 			class Attributes
 			{
 				init="[this, ""1511"", ""[_this] call grad_af_keypad_fnc_openHackerLoot1;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
 			};
 			id=3806;
 			type="land_gm_euro_furniture_telephone_02";
-			atlOffset=1.2300553;
+			atlOffset=1.2300429;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item412
 		{
@@ -56943,6 +57033,216 @@ class Mission
 			colorName="ColorYellow";
 			id=5178;
 			atlOffset=0.00020575523;
+		};
+		class Item559
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8046.7236,5.2600002,7056.1797};
+			};
+			areaSize[]={1,-1,1};
+			id=5179;
+			type="ModuleEditTerrainObject_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#name";
+					expression="_this setVariable [""#name"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=7;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="#initServer";
+					expression="_this setVariable [""#initServer"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="_this setVariable [""BIS_Disabled_Door_1"", 1, true];" \n "_this setVariable [""BIS_Disabled_Door_2"", 1, true];" \n "_this setVariable [""BIS_Disabled_Door_2"", 1, true];";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="#state";
+					expression="_this setVariable [""#state"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="#allowDamage";
+					expression="_this setVariable [""#allowDamage"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=1;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="#doorStates";
+					expression="_this setVariable [""#doorStates"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="ARRAY";
+							class value
+							{
+								items=3;
+								class Item0
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=21;
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+								class Item2
+								{
+									class data
+									{
+										singleType="SCALAR";
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="#init";
+					expression="_this setVariable [""#init"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				nAttributes=7;
+			};
+		};
+		class Item560
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8049.3188,6.6599779,7059.9019};
+				angles[]={0.21774727,4.4946766,4.7219534};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="[this, ""1983"", ""[_this] call grad_af_keypad_fnc_openHackerLoot1;""] call grad_af_keypad_fnc_addaction;";
+				disableSimulation=1;
+			};
+			id=5180;
+			type="land_gm_euro_furniture_telephone_02";
+			atlOffset=1.2622881;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item561
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8045.4258,5.2600307,7059.0938};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5181;
+			type="vn_o_ammobox_wpn_19";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""vn_m_machete_02""],[2]],[[""ACE_Chemlight_UltraHiOrange""],[20]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item562
+		{
+			dataType="Marker";
+			position[]={8050.3237,5.2170701,7053.4971};
+			name="mrk_loot_hacker_5";
+			type="hd_unknown";
+			colorName="ColorYellow";
+			id=5182;
+			atlOffset=-4.7683716e-07;
 		};
 	};
 	class Connections
