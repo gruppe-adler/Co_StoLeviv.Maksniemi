@@ -5,7 +5,7 @@ params ["_crate"];
 	params ["_crate"];
 
 	if (isServer) then {
-		[_target, false] remoteExec ["enableRopeAttach", _target];
+		_crate enableRopeAttach false;
 	};
 
 	if (hasInterface) then {
