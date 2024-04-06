@@ -22,6 +22,10 @@ switch (_this select 0) do {
 
 		if (AF_KP_keypad_OutputText == _keycode) then {
 			_keypadAffected call compile _codeToUnlock;
+			 private _light = _keypadAffected getVariable ["AF_KP_light", objNull];
+			 private _texture = "#(rgb,8,8,3)color(0,0.5,0,1)"; 
+    		 _light setObjectTextureGlobal [0, _texture];
+
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
 			if (player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && count AF_KP_keypad_OutputText > 7 ||
@@ -29,6 +33,11 @@ switch (_this select 0) do {
 				_keypadAffected call compile _codeToUnlock;
 				[player, "target_locked"] remoteExec ["say3D", 0];
 				"Hacked the System :]" call CBA_fnc_notify;
+
+				private _light = _keypadAffected getVariable ["AF_KP_light", objNull];
+			 	private _texture = "#(rgb,8,8,3)color(0,0.5,0,1)";
+				_light setObjectTextureGlobal [0, _texture];
+
 			} else {
 				[player, "radioerror"] remoteExec ["say3D", 0];
 				"Wrong code." call CBA_fnc_notify;

@@ -254,6 +254,8 @@
     private _satphoneID = ((call _getRandomChar) + (call _getRandomChar) + (call _getRandomChar) + (call _getRandomChar));
     private _phone = createVehicle ["Land_SatellitePhone_F", _position, [], 0, "NONE"];
     private _displayName = "Sat Phone " + _satphoneID;
+     _phone setVariable ["GRAD_Telephone_phoneCablePlugOffset", [0,0.2,0], true];
+     
     [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 
     [_phone, true, [0, 0.2, 1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable", [0,-2] select isDedicated, true]; 

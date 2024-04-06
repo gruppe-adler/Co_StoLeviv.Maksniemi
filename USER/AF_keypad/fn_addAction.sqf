@@ -14,12 +14,23 @@
 */
 
 
-params ["_door", ["_keycode", "none"], ["_unlockCode", { systemchat "no unlock code provided;" }]];
+params ["_keypad", ["_keycode", "none"], ["_unlockCode", { systemchat "no unlock code provided;" }]];
 
-_door setVariable ["AF_KP_keycode", _keycode];
-_door setVariable ["AF_KP_codeToUnlock", _unlockCode];
+if (isServer) then {
+    
+    private _light = "Sign_sphere10cm_EP1" createVehicle [0,0,0];
+    _light attachTo [_keypad, [0.0830078,0.0302887,0.0180677]];
+    _light setObjectMaterialGlobal [0, "a3\characters_f_bootcamp\common\data\vrarmoremmisive.rvmat"];
+    private _texture = "#(rgb,8,8,3)color(1,0,0,1)"; 
+    _light setObjectTextureGlobal [0, _texture];
+    _keypad setVariable ["AF_KP_light", _light, true];
 
-_door addAction
+    _keypad setVariable ["AF_KP_keycode", _keycode, true];
+    _keypad setVariable ["AF_KP_codeToUnlock", _unlockCode, true];
+};
+
+
+_keypad addAction
 [
     "Show Keypad",    // title
     {
