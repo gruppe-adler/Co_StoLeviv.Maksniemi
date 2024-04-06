@@ -31,7 +31,7 @@ _ctrlMessage ctrlcommit 0.1;
 if !(isnil "BIS_fnc_moduleCurator_feedbackMessage") then {terminate BIS_fnc_moduleCurator_feedbackMessage;};
 BIS_fnc_moduleCurator_feedbackMessage = [_ctrlMessage] spawn {
     disableserialization;
-    uisleep 3;
+    uisleep 10;
     _ctrlMessage = _this select 0;
     _ctrlMessage ctrlsetfade 1;
     _ctrlMessage ctrlcommit 0.5;

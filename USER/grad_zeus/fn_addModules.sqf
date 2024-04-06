@@ -255,7 +255,7 @@
     private _phone = createVehicle ["Land_SatellitePhone_F", _position, [], 0, "NONE"];
     private _displayName = "Sat Phone " + _satphoneID;
      _phone setVariable ["GRAD_Telephone_phoneCablePlugOffset", [0,0.2,0], true];
-     
+
     [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 
     [_phone, true, [0, 0.2, 1], 0, true] remoteExec ["ace_dragging_fnc_setCarryable", [0,-2] select isDedicated, true]; 
@@ -305,6 +305,23 @@
 
 }] call zen_custom_modules_fnc_register;
 
+
+
+//////////////
+////////////// LOOT
+//////////////
+
+
+["STO LEVIV - LOOT", "Spawn random Weapon Loot",
+{
+        params ["_modulePosition"]; 
+
+        _position = ASLtoATL _position; // LOOT FNC needs ATL!
+
+        private _loot = selectRandom ["rhs_weap_m38", "vn_m1891", "UK3CB_M1903A1", "vn_m1903"];
+        [_loot, _position, 1, false, true] call grad_loot_fnc_createLoot;
+
+}] call zen_custom_modules_fnc_register;
 
 
 

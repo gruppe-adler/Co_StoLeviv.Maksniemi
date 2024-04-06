@@ -12,7 +12,7 @@ _keypad setVectorDirAndUp ([[vectorDirVisual _house, vectorUpVisual _house], 0, 
  
 private _keycode = [1000, 9999] call BIS_fnc_randomInt;
 
-[_keypad, str _keycode, "[_this] call grad_af_keypad_fnc_openDivingHut;"] remoteExec ["grad_af_keypad_fnc_addaction", [0,-2] select isDedicated, true];
+[_keypad, str _keycode, "[_this] call grad_af_keypad_fnc_openDivingHut;"] remoteExec ["grad_af_keypad_fnc_addaction", 0, true];
 
 _keypad setVariable ["GRAD_divingKeypad", _keycode, true];
 
