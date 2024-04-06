@@ -3,17 +3,12 @@ if (!isServer) exitWith {};
 // unlock dynsim if necessary
 ["featureCamera", {
     if (isRemoteControlling player) then {
-        private _remoteControlledUnit = objNull;
         {
             private _currentUnit = getAssignedCuratorUnit _x;
             if (_currentUnit isEqualTo player) exitWith {
-                _remoteControlledUnit = _currentUnit;
-                _remoteControlledUnit;
+                _currentUnit enableDynamicSimulation false;
             };
         } forEach allCurators;
-        if (!isNull _remoteControlledUnit) then {
-           _remoteControlledUnit enableDynamicSimulation false;
-        };
     };
 }] call CBA_fnc_addPlayerEventHandler;
 
