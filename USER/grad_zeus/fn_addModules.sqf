@@ -227,7 +227,12 @@
     if (count _nearbyLocations < 1) exitWith { systemChat "no location nearby"; };
     _nearbyLocations params ["_location"];
 
-    private _phone = createVehicle ["land_gm_euro_furniture_telephone_01", _position, [], 0, "NONE"];
+    private _chair =  createVehicle ["land_gm_euro_furniture_chair_04", _position, [], 0, "NONE"]; 
+    
+    private _phone = createVehicle ["land_gm_euro_furniture_telephone_01", [0,0,0], [], 0, "NONE"];
+    _phone setPos (_chair modelToWorld [0.00512695,-0.0283203,0.460115]);
+    _phone setVectorDirAndUp [[0.237576,0.971369,0],[0,0,1]];
+
     private _displayName = "Some phone near " + name _location;
     [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 

@@ -53,6 +53,10 @@
 	};
 
 	["GARBLED VOICE", _text] spawn grad_tasks_fnc_forceSubtitle;
+
+	if (_inteltype != "customintel" && _inteltype != "segmentintel") then {
+		["missionControl_curatorInfo", [player, "", _text]] call CBA_fnc_globalEvent;
+	};
 	
 	[{
 		params ["_text", "_inteltype"];

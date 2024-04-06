@@ -1,7 +1,7 @@
 class cfgCustomIntel {
    class engineer {
       class intel1 {
-         briefing = "You have are in search of a russian officer that killed your wife shortly after the invasion. You won't accept any surrender.";
+         briefing = "I am in search of a russian officer that killed my wife shortly after the invasion. I won't accept any surrender. Will kill him on sight.";
          marker = "";
       };
       class intel2 {

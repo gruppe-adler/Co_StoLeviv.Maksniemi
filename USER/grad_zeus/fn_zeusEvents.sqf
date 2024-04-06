@@ -1,6 +1,23 @@
 if (!isServer) exitWith {};
 
+// unlock dynsim if necessary
+["featureCamera", {
+    if (isRemoteControlling player) then {
+        private _remoteControlledUnit = objNull;
+        {
+            private _currentUnit = getAssignedCuratorUnit _x;
+            if (_currentUnit isEqualTo player) exitWith {
+                _remoteControlledUnit = _currentUnit;
+                _remoteControlledUnit;
+            };
+        } forEach allCurators;
+        if (!isNull _remoteControlledUnit) then {
+           _remoteControlledUnit enableDynamicSimulation false;
+        };
+    };
+}] call CBA_fnc_addPlayerEventHandler;
 
+// curator infos
 ["missionControl_curatorInfo", {
     params ["_unit", "_type", "_text"];
 
@@ -33,10 +50,13 @@ if (!isServer) exitWith {};
             _color = [0.7,0.1,0.1,1];
         };
         case ("customintel"): {
-            _message = format ["%1 got custom intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
+            _message = format ["%1 got private intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
             _color = [0.7,0.1,0.1,1];
         };
-        default {};
+        default {
+            _message = format ["%1 got input intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
+            _color = [0.7,0.1,0.1,1];
+        };
     };
 
     // send message to all curators

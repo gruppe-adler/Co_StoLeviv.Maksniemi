@@ -4,7 +4,24 @@
 */
 
 #include "..\node_modules\grad-leaveNotes\cfgSounds.hpp"
- 
+
+
+class GRAD_flush {
+	name = "GRAD_flush";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\toilet_flush.ogg", 1, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
+
+class GRAD_lock {
+	name = "GRAD_lock";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\toilet_lock.ogg", 1, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
+
 class GRAD_garble {
 	name = "GRAD_garble";
 	// filename, volume, pitch

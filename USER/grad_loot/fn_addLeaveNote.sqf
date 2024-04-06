@@ -2,7 +2,7 @@ params ["_object", "_text"];
 
 if (!isServer) exitWith {
 	_this remoteExec ["grad_loot_fnc_addLeaveNote", 2];
-}
+};
 
 [{
 	params ["_object", "_text"];

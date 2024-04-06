@@ -5,6 +5,8 @@ class grad_af_keypad{
 		
       	class addAction;
 		class addDivingHut;
+		class addToiletAction;
+		class addToiletDoorAction;
 		class fncs;
 		class openBoatHouseDoor;
 		class lockBoatHouseDoor;
