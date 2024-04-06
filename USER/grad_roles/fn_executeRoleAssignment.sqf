@@ -10,7 +10,7 @@ private _availableRoles = missionNamespace getVariable ["GRAD_availableRoles", [
 if (_availableRoles isEqualTo []) then {
 	private _currentSegment = missionNamespace getVariable ["GRAD_currentSegment", -1];
 	_currentSegment = _currentSegment + 1;
-	missionNamespace setVariable ["GRAD_currentSegment", _currentSegment mod 2];
+	missionNamespace setVariable ["GRAD_currentSegment", _currentSegment mod 3];
 
 	// Emergency roles are excluded on purpose
 	private _roles = missionConfigFile >> "cfgCustomRoles";

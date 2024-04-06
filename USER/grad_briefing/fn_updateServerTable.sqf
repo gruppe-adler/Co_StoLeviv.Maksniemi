@@ -2,7 +2,7 @@ if (!isServer || !canSuspend) exitWith { _this remoteExec [_fnc_scriptName, 2]; 
 
 params ["_player", "_isPrivate", "_briefingArr"];
 
-while { !(missionNamespace getVariable ["GRAD_briefingTableActive", false]) } do {
+while { missionNamespace getVariable ["GRAD_briefingTableActive", false] } do {
 	sleep (random 0.5);
 };
 
