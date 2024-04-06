@@ -87,8 +87,10 @@ private _assignmentTable = missionNamespace getVariable ["GRAD_assignmentTable",
 // Check if Player already has an assigned role (JIP)
 private _id = getPlayerUID _player;
 private _assignedEntry = _assignmentTable getOrDefault [_id, []];
+private _isReconnect = true;
 // First time assignment
 if (_assignedEntry isEqualTo []) then {
+	_isReconnect = false;
 	private _role = createHashmap;
 	private _spawnMarker = "";
 	// Role
@@ -166,7 +168,7 @@ _player setVariable ["ACE_Name", _sanitizedName, true];
 _player setVariable ["ACE_NameRaw", _rawName, true];
 
 
-[_player] remoteExec ["grad_roles_fnc_initRoleClient", _player];
+[_player, _isReconnect] remoteExec ["grad_roles_fnc_initRoleClient", _player];
 
 // Make assignment available again
 missionNamespace setVariable ["GRAD_roleAssignmentAvailable", true, false];
