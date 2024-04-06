@@ -15,5 +15,6 @@ class grad_af_keypad{
 		class openDivingHut;
 		class setNotInUse;
 		class vars { postInit = 1; };
+		class lockNearestHouseDoors;
 	};
 };

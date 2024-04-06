@@ -256,6 +256,28 @@
 }] call zen_custom_modules_fnc_register;
 
 
+//////////////
+////////////// LOCKING
+//////////////
+
+
+["STO LEVIV - LOCKING", "UNLOCK all building doors",
+{
+        params ["_modulePosition"]; 
+        private _position = ASLtoAGL _modulePosition;
+
+        [_position, false] call grad_af_keypad_fnc_lockNearestHouseDoors;
+
+}] call zen_custom_modules_fnc_register;
+
+["STO LEVIV - LOCKING", "LOCK all building doors",
+{
+        params ["_modulePosition"]; 
+        private _position = ASLtoAGL _modulePosition;
+
+        [_position, true] call grad_af_keypad_fnc_lockNearestHouseDoors;
+
+}] call zen_custom_modules_fnc_register;
 
 
 //////////////

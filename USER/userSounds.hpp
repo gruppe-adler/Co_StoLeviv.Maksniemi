@@ -21,10 +21,26 @@ class GRAD_garble_long {
 	titles[] = {0, ""};
 };
 
-class GRAD_hotline {
-	name = "GRAD_hotline";
+class GRAD_hotline1 {
+	name = "GRAD_hotline1";
 	// filename, volume, pitch
-	sound[] = {"USER\sounds\xxxhotline.ogg", 1, 1};
+	sound[] = {"USER\sounds\xxxhotline1.ogg", 1, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
+
+class GRAD_hotline2 {
+	name = "GRAD_hotline2";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\xxxhotline2.ogg", 1, 1};
+	// subtitle delay in seconds, subtitle text
+	titles[] = {0, ""};
+};
+
+class GRAD_hotline3 {
+	name = "GRAD_hotline3";
+	// filename, volume, pitch
+	sound[] = {"USER\sounds\xxxhotline3.ogg", 1, 1};
 	// subtitle delay in seconds, subtitle text
 	titles[] = {0, ""};
 };
