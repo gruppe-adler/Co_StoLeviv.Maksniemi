@@ -16,6 +16,10 @@ class cfgCustomIntel {
          briefing = "You heard a russian VIP lives deep in the northern forests.";
          marker = "";
       };
+      class intel5 {
+         briefing = "You heard a russian VIP lives deep in the northern forests.";
+         marker = "";
+      };
    };
 
    class hunter {
@@ -32,6 +36,10 @@ class cfgCustomIntel {
          marker = "mrk_loot_hunter_1";
       };
       class intel4 {
+         briefing = "My guns were taken from me. The hunter roots in my Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         marker = "mrk_loot_hunter_1";
+      };
+      class intel5 {
          briefing = "My guns were taken from me. The hunter roots in my Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
@@ -54,6 +62,10 @@ class cfgCustomIntel {
          briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
          marker = "mrk_loot_diving_1";
       };
+      class intel5 {
+         briefing = "I know the huts at the harbor (%1) have diving equipment inside. I just dont remember the keylock code.";
+         marker = "mrk_loot_diving_1";
+      };
    };
 
    class tankcrew {
@@ -70,6 +82,10 @@ class cfgCustomIntel {
          marker = "mrk_loot_boatcrew_3";
       };
       class intel4 {
+         briefing = "Aunt Niilas is buried anonymously on a small island at %1. She might have her handgun buried with her. I need to find a boat and someone who can drive it.";
+         marker = "mrk_loot_boatcrew_4";
+      };
+      class intel5 {
          briefing = "Aunt Niilas is buried anonymously on a small island at %1. She might have her handgun buried with her. I need to find a boat and someone who can drive it.";
          marker = "mrk_loot_boatcrew_4";
       };
@@ -92,6 +108,10 @@ class cfgCustomIntel {
          briefing = "I have heard of anti air equipment being stored in a lightly fortified base in the outwestern area at %1. ";
          marker = "mrk_base_small";
       };
+      class intel5 {
+         briefing = "I have heard of anti air equipment being stored in a lightly fortified base in the outwestern area at %1. ";
+         marker = "mrk_base_small";
+      };
    };
 
    class hacker {
@@ -108,6 +128,10 @@ class cfgCustomIntel {
          marker = "mrk_loot_hacker_3";
       };
       class intel4 {
+         briefing = "I remember I left equipment near %1. I should get it.";
+         marker = "mrk_loot_hacker_4";
+      };
+      class intel5 {
          briefing = "I remember I left equipment near %1. I should get it.";
          marker = "mrk_loot_hacker_4";
       };

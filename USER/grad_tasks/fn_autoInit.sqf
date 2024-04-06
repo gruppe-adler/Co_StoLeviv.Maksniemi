@@ -25,11 +25,10 @@
 	};
 
 	if (_text == "customintel") then {
-		private _index = (player getVariable ["GRAD_cfgCustomRoles_spawnIndex", 0]) mod 6;
-		private _indexPlayer = str (_index mod 5);
-
-		_text = ([((missionConfigFile >> "cfgCustomIntel") select _index) >> ("intel" + _indexPlayer),"briefing","nothing"] call BIS_fnc_returnConfigEntry);
-		private _marker = ([((missionConfigFile >> "cfgCustomIntel") select _index) >> ("intel" + _indexPlayer),"marker","nothing"] call BIS_fnc_returnConfigEntry);
+		private _cfgentry = toLower(player getVariable ["GRAD_cfgCustomRoles_displayName", ""]);
+		private _indexPlayer = player getVariable ["GRAD_cfgCustomRoles_spawnIndex", 1];
+		_text = ([((missionConfigFile >> "cfgCustomIntel") >> _cfgentry) >> ("intel" + (str _indexPlayer)),"briefing","nothing"] call BIS_fnc_returnConfigEntry);
+		private _marker = ([((missionConfigFile >> "cfgCustomIntel") >> _cfgentry) >> ("intel" + str (_indexPlayer)),"marker","nothing"] call BIS_fnc_returnConfigEntry);
 		
 		_marker setMarkerAlphaLocal 1;
 		private _mapgrid = mapGridPosition getMarkerPos _marker;
