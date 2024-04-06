@@ -15,3 +15,13 @@ if (side player == independent) exitWith {};
 
 [player] remoteExec ["grad_roles_fnc_requestRoleAssignment", 2];
 [player] remoteExec ["grad_briefing_fnc_onReconnect", 2];
+
+// Waiting for initial / reconnect loadout to be set
+sleep 30;
+
+private _id = [
+    "loadout",
+    {
+        [player] remoteExec ["grad_roles_fnc_updateLoadoutTable", 2];
+    }
+] call CBA_fnc_addPlayerEventHandler;

@@ -30,7 +30,12 @@ if (isNull _unit) then {
 		[_unit] call grad_roles_fnc_createMarkerSpawn;
 	};
 
-	[_unit] call GRAD_roles_fnc_unitSetLoadout;
+	// use saved loadout on reconnect
+	if (_isReconnect) then {
+		[_unit] remoteExec ["GRAD_roles_fnc_setReconnectLoadout", 2];
+	} else {
+		[_unit] call GRAD_roles_fnc_unitSetLoadout;
+	};
 
 
 }, [_unit, _isReconnect], 3] call CBA_fnc_waitAndExecute;

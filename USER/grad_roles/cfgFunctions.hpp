@@ -33,5 +33,7 @@ class grad_roles{
 		class spawnObjectsMapper;
 
 		class unitSetLoadout;
+		class updateLoadoutTable;
+		class setReconnectLoadout;
 	};
 };
