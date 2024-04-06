@@ -8,7 +8,7 @@ class EditorData
 	toggles=73;
 	class ItemIDProvider
 	{
-		nextID=5177;
+		nextID=5179;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2167;
+		nextID=2192;
 	};
 	class Camera
 	{
-		pos[]={10168.446,28.960001,6069.001};
-		dir[]={-0.64911097,-0.59575641,0.47299966};
-		up[]={-0.48148495,0.80316395,0.35085267};
-		aside[]={0.58891892,1.3737008e-08,0.80819166};
+		pos[]={6794.4185,10.365527,3013.6472};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -1960,7 +1960,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=557;
+		items=559;
 		class Item0
 		{
 			dataType="Layer";
@@ -19728,7 +19728,7 @@ class Mission
 					};
 					id=2186;
 					type="UK3CB_CW_SOV_O_LATE_RIF_1";
-					atlOffset=2.403306;
+					atlOffset=1.6884708;
 				};
 			};
 			class Attributes
@@ -26476,7 +26476,7 @@ class Mission
 					};
 					id=3226;
 					type="UK3CB_CW_SOV_O_LATE_RIF_1";
-					atlOffset=2.4034328;
+					atlOffset=1.7384777;
 				};
 			};
 			class Attributes
@@ -30700,13 +30700,13 @@ class Mission
 						angles[]={0,0.002565634,0};
 					};
 					side="East";
-					flags=6;
+					flags=2;
 					class Attributes
 					{
 					};
 					id=3684;
 					type="UK3CB_CW_SOV_O_LATE_RIF_1";
-					atlOffset=6.2942505e-05;
+					atlOffset=6.0152102;
 				};
 			};
 			class Attributes
@@ -56798,7 +56798,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4855.7905,27.132061,10529.066};
-				angles[]={0,3.8687084,-0};
+				angles[]={0,3.8687084,0};
 			};
 			side="Empty";
 			flags=5;
@@ -56815,7 +56815,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6461.2158,18.683212,9558.793};
-				angles[]={-0,2.9794669,0};
+				angles[]={0,2.9794669,0};
 			};
 			side="Empty";
 			flags=4;
@@ -56824,6 +56824,7 @@ class Mission
 			};
 			id=5169;
 			type="UK3CB_C_Forklift";
+			atlOffset=-0.0001411438;
 		};
 		class Item551
 		{
@@ -56840,7 +56841,7 @@ class Mission
 			};
 			id=5171;
 			type="UK3CB_C_Tractor";
-			atlOffset=1.9073486e-06;
+			atlOffset=-9.5367432e-05;
 		};
 		class Item552
 		{
@@ -56867,7 +56868,7 @@ class Mission
 			fillName="FDiagonal";
 			a=200;
 			b=250;
-			angle=142.00998;
+			angle=142.00996;
 			id=5173;
 			atlOffset=3.5524368e-05;
 		};
@@ -56896,7 +56897,7 @@ class Mission
 			fillName="FDiagonal";
 			a=10;
 			b=10;
-			angle=119.93698;
+			angle=119.93697;
 			id=5175;
 			atlOffset=0.0029997826;
 		};
@@ -56913,6 +56914,35 @@ class Mission
 			b=10;
 			angle=119.93697;
 			id=5176;
+		};
+		class Item557
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6793.5723,1.3674688,3019.2407};
+				angles[]={0,1.7737503,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="[this, ""rhsusf_weap_m9""] call grad_loot_fnc_addDigActionAny;";
+			};
+			id=5177;
+			type="Land_Grave_dirt_F";
+			atlOffset=-1.1920929e-07;
+		};
+		class Item558
+		{
+			dataType="Marker";
+			position[]={6799.0278,1.126,3022.782};
+			name="mrk_loot_boatcrew_5";
+			text=" Mikaels Grave";
+			type="hd_unknown";
+			colorName="ColorYellow";
+			id=5178;
+			atlOffset=0.00020575523;
 		};
 	};
 	class Connections

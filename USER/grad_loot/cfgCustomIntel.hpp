@@ -86,8 +86,8 @@ class cfgCustomIntel {
          marker = "mrk_loot_boatcrew_4";
       };
       class intel5 {
-         briefing = "Aunt Niilas is buried anonymously on a small island at %1. She might have her handgun buried with her. I need to find a boat and someone who can drive it.";
-         marker = "mrk_loot_boatcrew_4";
+         briefing = "My great uncle Mikael is buried anonymously on a small island at %1. She might have her handgun buried with her. I need to find a boat and someone who can drive it.";
+         marker = "mrk_loot_boatcrew_5";
       };
    };
 
