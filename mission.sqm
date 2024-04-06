@@ -8,7 +8,7 @@ class EditorData
 	toggles=73;
 	class ItemIDProvider
 	{
-		nextID=5172;
+		nextID=5173;
 	};
 	class MarkerIDProvider
 	{
@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={10162.578,28.553104,7486.5425};
-		dir[]={0.46276873,-0.80505437,0.37112471};
-		up[]={0.62803817,0.59319341,0.50366533};
-		aside[]={0.62563074,-1.9026629e-07,-0.78012109};
+		dir[]={0.19111721,-0.83087003,0.52261913};
+		up[]={0.28535923,0.55645806,0.78032851};
+		aside[]={0.93917412,-1.73226e-07,-0.34344736};
 	};
 };
 binarizationWanted=0;
@@ -1925,7 +1925,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=554;
+		items=555;
 		class Item0
 		{
 			dataType="Layer";
@@ -56833,6 +56833,20 @@ class Mission
 			id=5171;
 			type="UK3CB_C_Tractor";
 			atlOffset=1.9073486e-06;
+		};
+		class Item554
+		{
+			dataType="Marker";
+			position[]={4846.855,20.462246,10549.908};
+			name="INC_highSec_VIP";
+			markerType="ELLIPSE";
+			type="";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=70;
+			b=70;
+			angle=182.44798;
+			id=5172;
 		};
 	};
 	class Connections
