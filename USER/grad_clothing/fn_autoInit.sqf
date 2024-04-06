@@ -10,14 +10,16 @@ if (isServer) then {
 		{
 			private _clothesLine = _x;
 			[_clothesLine, 5] call grad_clothing_fnc_setClothes;
-			[_clothesLine] remoteExec ["grad_clothing_fnc_addAction", 0, _clothesLine];
+			[_clothesLine] remoteExec ["grad_clothing_fnc_addAction", 0, true];
 		} forEach allMissionObjects "land_gm_euro_misc_clothesline_01";
 
 		{
 			private _clothesLine = _x;
 			[_clothesLine, 5] call grad_clothing_fnc_setClothes;
-			[_clothesLine] remoteExec ["grad_clothing_fnc_addAction", 0, _clothesLine];
+			[_clothesLine] remoteExec ["grad_clothing_fnc_addAction", 0, true];
 		} forEach allMissionObjects "land_gm_euro_misc_clothesline_02";
+
+		
 		
 	};
 };

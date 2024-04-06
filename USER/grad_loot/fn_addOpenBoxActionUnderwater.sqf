@@ -4,13 +4,19 @@ params ["_crate"];
 
 	params ["_crate"];
 
-	private _action = ["AttachHook", "Make slingloadable", "", {
-    
-		[_target, true] remoteExec ["enableRopeAttach", _target, true];
+	if (isServer) then {
+		[_target, false] remoteExec ["enableRopeAttach", _target];
+	};
 
-	}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
+	if (hasInterface) then {
+		private _action = ["AttachHook", "Make slingloadable", "", {
+		
+			[_target, true] remoteExec ["enableRopeAttach", _target, true];
 
-	[_crate, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;
+		}, {true}, {}, []] call ace_interact_menu_fnc_createAction;
+
+		[_crate, 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToObject;
+	};
 
 
 }, true, [], true] call CBA_fnc_addClassEventHandler;
