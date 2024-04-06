@@ -11,7 +11,7 @@ missionNamespace setVariable ["GRAD_loadoutTableActive", true];
 private _loadoutTable = missionNamespace getVariable ["GRAD_loadoutTable", createHashMap];
 private _id = getPlayerUID _player;
 
-_loadoutTable set [_id, getUnitLoadout player];
+_loadoutTable set [_id, getUnitLoadout _player];
 
 missionNamespace setVariable ["GRAD_loadoutTable", _loadoutTable];
 
