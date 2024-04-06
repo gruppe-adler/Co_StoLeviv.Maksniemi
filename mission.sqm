@@ -32810,7 +32810,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={9436.0225,6.6490002,4904.2969};
-			name=" mrk_loot_hunter_1";
+			name="mrk_loot_hunter_1";
 			text=" Cemetery of Aittasaari";
 			type="hd_unknown";
 			colorName="ColorYellow";
