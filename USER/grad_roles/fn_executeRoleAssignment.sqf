@@ -51,10 +51,10 @@ if (_availableSpawns isEqualTo []) then {
 
 	for "_i" from 0 to (_rolesCount - 1) do {
 		private _roleClass = _roles select _i;
-		_availableSpawns set [configName _roleClass, [1, 2, 3, 4]];
+		_availableSpawns set [configName _roleClass, [1, 2, 3, 4, 5]];
 	};
 	// The emergency-roles are not part of the cfgCustomRoles and therefore have to be set separately
-	_availableSpawns set ["emergency", [1, 2, 3, 4]];
+	_availableSpawns set ["emergency", [1, 2, 3, 4, 5]];
 
 	missionNamespace setVariable ["GRAD_availableSpawns", _availableSpawns];
 };
