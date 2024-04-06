@@ -10,5 +10,8 @@ if (!(player getVariable ["isMedical",false])) then {
 };
 
 if !(isNull (getAssignedCuratorLogic player)) exitWith {};
+// additional check for fuckups by game engine (not assigning curator correctly)
+if (side player == independent) exitWith {};
+
 [player] remoteExec ["grad_roles_fnc_requestRoleAssignment", 2];
 [player] remoteExec ["grad_briefing_fnc_onReconnect", 2];

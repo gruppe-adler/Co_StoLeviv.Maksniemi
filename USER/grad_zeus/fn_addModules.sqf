@@ -246,9 +246,9 @@
     _position = ASLtoAGL _position;
 
     private _getRandomChar = {
-        private _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private _index = floor(random(count _chars));
-        private _randomChar = _chars select _index;
+        private _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+        private _index = floor(random(count _chars)); 
+        private _randomChar = (_chars splitstring "") select _index;
         _randomChar
     };
     private _satphoneID = ((call _getRandomChar) + (call _getRandomChar) + (call _getRandomChar) + (call _getRandomChar));
