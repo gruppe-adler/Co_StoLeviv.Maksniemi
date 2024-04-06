@@ -61,6 +61,16 @@ class Extended_InitPost_EventHandlers {
 	};
 };
 
+class GRAD_leaveNotes {
+    playerDistance = 1;             
+    actOffset[] = {0,0,0.1};        
+    actDist = 2;                    
+    noteObject = "Land_Notepad_F";  
+    startAmount = 10;               
+    visibleHandwriting = 1;         
+    canWriteDefault = 1;            
+    canInspectDefault = 1;          
+};
 
 class CfgIdentities
 {
@@ -396,11 +406,12 @@ class CfgFunctions
     #include "functions\events\cfgFunctions.hpp"
     #include "functions\external\cfgFunctions.hpp"
     #include "functions\groupsettings\cfgFunctions.hpp"
-		#include "functions\minimissions\cfgFunctions.hpp"
+	#include "functions\minimissions\cfgFunctions.hpp"
 	#include "functions\missionSetup\cfgFunctions.hpp"
     #include "functions\radiosettings\cfgFunctions.hpp"
 	#include "functions\waverespawn\cfgFunctions.hpp"
-
+    
+    #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-loadout\cfgFunctions.hpp"
 	#include "node_modules\grad-fortifications\cfgFunctions.hpp"
 	#include "node_modules\grad-introcam\cfgFunctions.hpp"

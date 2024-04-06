@@ -288,7 +288,6 @@
 ["STO LEVIV - NOTES", "Write + Spawn Note",
 {
         params ["_modulePosition"]; 
-        private _position = ASLtoAGL _modulePosition;
 
         ["Example Dialog", [["EDIT", "Your text?", "string ping"]], {
 			   params ["_message", "_position"]; 

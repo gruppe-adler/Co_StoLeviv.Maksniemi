@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4830.0298,25.777824,10563.357};
-		dir[]={-0.37532276,-0.81084555,0.44906896};
-		up[]={-0.51999182,0.58523083,0.62216371};
-		aside[]={0.76729852,5.1734969e-07,0.64129227};
+		pos[]={4830.2769,25.899857,10563.255};
+		dir[]={-0.44556019,-0.75056595,0.48798239};
+		up[]={-0.50608987,0.66079503,0.55427563};
+		aside[]={0.73847717,1.4959369e-07,0.6742782};
 	};
 };
 binarizationWanted=0;
@@ -4232,7 +4232,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=100;
-			angle=205.64397;
+			angle=205.64391;
 			id=734;
 			atlOffset=0.22156906;
 		};
@@ -4247,7 +4247,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=100;
-			angle=205.64397;
+			angle=205.64391;
 			id=735;
 			atlOffset=-0.00044155121;
 		};
@@ -4306,7 +4306,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=100;
-			angle=182.91096;
+			angle=182.91092;
 			id=739;
 			atlOffset=3.1471252e-05;
 		};
@@ -4336,7 +4336,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=100;
-			angle=191.02296;
+			angle=191.0229;
 			id=742;
 			atlOffset=-0.00015068054;
 		};
@@ -4366,7 +4366,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=70;
-			angle=193.05597;
+			angle=193.05591;
 			id=744;
 			atlOffset=-0.00016403198;
 		};
@@ -4381,7 +4381,7 @@ class Mission
 			fillName="FDiagonal";
 			a=800;
 			b=70;
-			angle=204.96896;
+			angle=204.96892;
 			id=746;
 		};
 		class Item62
@@ -4395,7 +4395,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=70;
-			angle=211.41597;
+			angle=211.41591;
 			id=747;
 		};
 		class Item63
@@ -4409,7 +4409,7 @@ class Mission
 			fillName="FDiagonal";
 			a=400;
 			b=70;
-			angle=214.82397;
+			angle=214.82391;
 			id=748;
 		};
 		class Item64
@@ -48108,7 +48108,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="if (isServer) then { [position this, getDir this, ""Maxim, dont forget my keycode for the panic room is 1984. Just in case I need fresh toilet paper every second day. You get the joke, dont you?"", [""somewhat"",[""cramped"",""EtelkaNarrowMediumPro""]]] remoteExec [""GRAD_leaveNotes_fnc_spawnNote"", 2, false]; deleteVehicle this; };";
+								init="if (isServer) then { [this, ""Maxim, dont forget my keycode for the panic room is 1984. Just in case I need fresh toilet paper every second day. You get the joke, dont you?""] call grad_loot_fnc_addLeaveNote; };";
 							};
 							id=4343;
 							type="land_gm_euro_stationary_07";

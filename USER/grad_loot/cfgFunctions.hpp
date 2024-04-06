@@ -6,6 +6,7 @@ class grad_loot {
 		class addDigActionAny;
 		class addDigActionTomb;
 		class addOpenBoxActionUnderwater { postInit = 1; };
+		class addLeaveNote;
 		class addTombNameAction;
 		class addWeaponToCrate;
 		
