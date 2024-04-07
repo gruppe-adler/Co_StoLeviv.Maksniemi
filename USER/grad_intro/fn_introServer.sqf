@@ -39,7 +39,7 @@ introBus setDriveOnPath _busPath;
 		getPos introStep_4
 	];
 
-	[_newDudeActual, _steps, {}, "AmovPercMlmpSnonWnonDfl", 0.5, 1] spawn BIS_fnc_scriptedMove;
+	[_newDudeActual, _steps, {}, "AmovPercMlmpSnonWnonDfl", 0.5, 1, "AidlPercMstpSnonWnonDnon_G01"] spawn BIS_fnc_scriptedMove;
 	
 }, [], 24] call CBA_fnc_waitAndExecute;
 
