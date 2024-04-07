@@ -74,7 +74,7 @@
 }] call zen_custom_modules_fnc_register;
 
 
-["STO LEVIV - CALLS", "Private Intel (Role specific)",
+["STO LEVIV - CALLS", "Personal Intel (Role specific)",
 {
   params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 
@@ -156,7 +156,7 @@
         if (random 1 > 0.5) then {
             [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Someone from our cell will call you. Decide for a meeting place and time."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
         } else {
-            [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Check your phonebook and call all your private contacts, gather them all to discuss your intel and further steps."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
+            [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Check your phonebook and call ALL your private contacts, gather them on a position and time of your choice to discuss your intel and further steps."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
         };
     } forEach _homePhones;
 
@@ -164,7 +164,8 @@
 
 }] call zen_custom_modules_fnc_register;
 
-["STO LEVIV - ROUND CALLS", "Private Intel Roundcall",
+
+["STO LEVIV - ROUND CALLS", "Personal Intel Roundcall",
 {
   params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
 

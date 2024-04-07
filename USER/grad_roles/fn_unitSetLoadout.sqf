@@ -15,16 +15,16 @@ private _headgear = selectRandom (getArray(_roles >> _playerRole >> "headgear"))
 private _item = selectRandom (getArray(_roles >> _playerRole >> "items"));
 private _backpack = getText(_roles >> _playerRole >> "backpack");
 private _bino = getText(_roles >> _playerRole >> "bino");
-private _backpackitems = [];
+
 private _hmd = ([_roles >> _playerRole,"hmd",""] call BIS_fnc_returnConfigEntry);
 private _radio = ([_roles >> _playerRole,"radio",""] call BIS_fnc_returnConfigEntry);
+private _backpackitems = [];
+
 
 _unit setUnitLoadout [ 
-  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[_bino],["ItemMap","",_radio,"ItemCompass","ItemWatch",_hmd]
+  [],[],[],[_uniform,[[_item,1]]],[],[_backpack,_backpackitems],_headgear,"",[],["ItemMap","",_radio,"ItemCompass","ItemWatch",_hmd]
 ];
 
-
-
-	[
-		[],[],[],["UK3CB_CHC_C_U_DOC_01",[["ACE_Flashlight_KSF1",1]]],[],[],"H_Hat_brown","",[],["ItemMap","","","ItemCompass","ItemWatch",""]
-	]
+if (_bino != "") then {
+	_unit addWeapon _bino;
+};

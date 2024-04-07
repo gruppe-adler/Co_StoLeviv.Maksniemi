@@ -3,7 +3,7 @@ private _duration = 120;
 // skiptime 3;
 // setTimeMultiplier 1;
 // skiptime -1.5;
-setDate [2019,8,27,0,28]; // fix date at night
+setDate [2019,1,27,6,0]; // fix date at night
 
 [_duration] remoteExec ["grad_intro_fnc_intro_start", 0, true];
 

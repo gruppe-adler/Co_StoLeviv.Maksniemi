@@ -62,3 +62,36 @@ if (!isServer) exitWith {};
         };
     } forEach allCurators;
 }] call CBA_fnc_addEventHandler;
+
+
+["GRAD_telephone_callStart", {
+    params ["_player1", "_player2"];
+
+
+    // send message to all curators
+    {
+        private _playerAsZeus = getAssignedCuratorUnit _x;
+        if (!isNull _playerAsZeus) then {
+            private _namePlayer1 = _player1 getVariable ['ACE_name', 'no name'];
+            private _namePlayer2 = _player2 getVariable ['ACE_name', 'no name'];
+            private _color = [0.1,0.5,0.1,1];
+            [_namePlayer1 + " call STARTED with " + _namePlayer2, _color] remoteExec ["grad_zeus_fnc_curatorShowFeedbackMessage", _playerAsZeus];
+        };
+    } forEach allCurators;
+}] call CBA_fnc_addEventHandler;
+
+
+["GRAD_telephone_callEnded", {
+    params ["_player1", "_player2"];
+
+    // send message to all curators
+    {
+        private _playerAsZeus = getAssignedCuratorUnit _x;
+        if (!isNull _playerAsZeus) then {
+            private _namePlayer1 = _player1 getVariable ['ACE_name', 'no name'];
+            private _namePlayer2 = _player2 getVariable ['ACE_name', 'no name'];
+            private _color = [0.1,0.5,0.1,1];
+            [_namePlayer1 + " call ENDED with " + _namePlayer2, _color] remoteExec ["grad_zeus_fnc_curatorShowFeedbackMessage", _playerAsZeus];
+        };
+    } forEach allCurators;
+}] call CBA_fnc_addEventHandler;

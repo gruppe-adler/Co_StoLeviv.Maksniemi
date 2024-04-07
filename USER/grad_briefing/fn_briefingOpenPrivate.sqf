@@ -23,7 +23,7 @@ params ["_player"];
 // TEXTS
 
 // COMMON
-private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Please keep this personal briefing secret.</t><br/><br/>";
+private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Personal intel. Share only to persons you trust.</t><br/><br/>";
 
 private _dynamicTextCombined = "";
 
@@ -37,7 +37,7 @@ private _dynamicTextCombined = "";
 } forEach (_player getVariable ["GRAD_dynamicIntelPrivate", []]);
 
 if (_dynamicTextCombined == "") then {
-	_dynamicTextCombined = "No private intel collected so far.";
+	_dynamicTextCombined = "No personal intel collected so far.";
 };
 
 [ parseText
