@@ -53,3 +53,27 @@ introBus setDriveOnPath _busPath;
 	
 }, [], 60] call CBA_fnc_waitAndExecute;
 
+
+// add phonebook entries of buddies
+[{
+	{
+		private _unit = _x;
+		private _segment = _unit getVariable ["GRAD_roles_segment", -1];
+		// Get the home phone of the unit
+		private _homePhone = _unit getVariable ["GRAD_telephone_homePhone", objNull];
+		_homePhone setVariable ["grad_telephone_displayName", (_unit getVariable ["ACE_Name", "no name"]), true];
+		// Assign phone numbers to the unit
+		if (!isNull _homePhone) then {
+			{
+				private _otherUnit = _x;
+				private _segmentOther = _otherUnit getVariable ["GRAD_roles_segment", -1];
+				if (_segmentOther == _segment && _otherUnit != _unit) then {
+					private _homePhoneOther = _otherUnit getVariable ["GRAD_telephone_homePhone", objNull];
+					if (!isNull _homePhoneOther) then {
+						[_unit, _homePhoneOther] call grad_telephone_fnc_addToPhonebook;
+					};
+				};
+			} forEach (playableUnits + switchableUnits);
+		};
+	} forEach (playableUnits + switchableUnits);
+}, [], 60] call CBA_fnc_waitAndExecute;

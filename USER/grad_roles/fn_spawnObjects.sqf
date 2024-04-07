@@ -23,7 +23,7 @@ private _phone = _spawned select -1;
 	};
 } forEach _spawned;
 
-private _displayName = ([_unit] call ace_common_fnc_getName);
+private _displayName = _unit getVariable ["ACE_name", "no name"];
 
 [_phone, true, "none", _displayName, "all", false, getPos _phone, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
 
@@ -33,9 +33,9 @@ private _homePhones = missionNameSpace getVariable ["GRAD_HOME_PHONES", []];
 _homePhones pushBackUnique _phone;
 missionNameSpace setVariable ["GRAD_HOME_PHONES", _homePhones, true];
 
-
+/*
 [{
-	private _unit = _x;
+	private _unit = player;
 	private _segment = _unit getVariable ["GRAD_roles_segment", -1];
 	// Get the home phone of the unit
 	private _homePhone = _unit getVariable ["GRAD_telephone_homePhone", objNull];
@@ -47,14 +47,14 @@ missionNameSpace setVariable ["GRAD_HOME_PHONES", _homePhones, true];
 			if (_segmentOther == _segment && _otherUnit != _unit) then {
 				private _homePhoneOther = _otherUnit getVariable ["GRAD_telephone_homePhone", objNull];
 				if (!isNull _homePhoneOther) then {
-					[_unit, _homePhoneOther] call grad_telephone_fnc_addToPhonebook;
+					[_unit, _homePhoneOther] remoteExec ["grad_telephone_fnc_addToPhonebook", 2];
 				};
 			};
 		} forEach (playableUnits + switchableUnits);
 	};
 
 }, [], 45] call CBA_fnc_waitAndExecute;
-
+*/
 
 /*
  ["_object", objNull],
