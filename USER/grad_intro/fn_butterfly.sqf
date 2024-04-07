@@ -28,7 +28,7 @@ diag_log format ["_path %1", _path];
     if (diag_tickTime > _startTime + _killSwitchDuration) exitWith {
         [_handle] call CBA_fnc_removePerFrameHandler;
 
-        [_butterfly] spawn grad_intro_fnc_mothBurn;
+        [getPos _butterfly] spawn grad_intro_fnc_mothBurn;
         deleteVehicle _butterfly;
     };
 

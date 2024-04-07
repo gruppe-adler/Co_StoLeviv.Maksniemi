@@ -29,31 +29,24 @@ introBus setDriveOnPath _busPath;
 [{
 	if (introDude getVariable ["grad_walkCommand", false]) exitWith {};
 	// introDude playActionNow "radioAnims_Ear";
-	introDude setPos getPos introStep_1;
-	introDude setBehaviour "Careless";
-	introDude setSpeedMode "LIMITED";
-	introDude setVariable ["grad_walkCommand", true];
+	private _newDudeActual = (createGroup civilian) createUnit ["C_Man_1", position introStep_1, [], 0, "CAN_COLLIDE"];
+	_newDudeActual setUnitLoadout [[],[],[],["UK3CB_U_KZS_UP_KHK",[]],[],[],"","",[],["","","","","ItemWatch",""]];
+	_newDudeActual allowDamage false;
 
 	private _steps = [
 		getPos introStep_2,
 		getPos introStep_3,
-		getPos introStep_4,
-		getPos introStep_5,
-		getPos introStep_6,
-		getPos introStep_7,
-		getPos introStep_8,
-		getPos introStep_9,
-		getPos introStep_10
+		getPos introStep_4
 	];
 
-	[introDude, _steps, {}, "AmovPercMlmpSnonWnonDfl"] spawn BIS_fnc_scriptedMove;
+	[_newDudeActual, _steps, {}, "AmovPercMlmpSnonWnonDfl", 0.5, 1] spawn BIS_fnc_scriptedMove;
 	
-}, [], 25] call CBA_fnc_waitAndExecute;
+}, [], 24] call CBA_fnc_waitAndExecute;
 
 [{
 	[introTelefonzelle, 1, 1] call BIS_fnc_Door;
 	
-}, [], 40] call CBA_fnc_waitAndExecute;
+}, [], 35] call CBA_fnc_waitAndExecute;
 
 [{
 	deleteVehicle introBus;

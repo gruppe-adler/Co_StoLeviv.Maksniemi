@@ -12,8 +12,8 @@ _camera camPreparePos (getPos intro_2);
 private _vectorDir = vectorDir intro_2;
 private _vectorUp = vectorUp intro_2;
 private _newVector = [_vectorDir, _vectorUp];
-private _duration = 12;
-private _durationFirefly = 20;
+private _duration = 10;
+private _durationFirefly = 10;
 
 private _delay = 1;
 _camera camCommitPrepared (_duration + _delay);
@@ -21,17 +21,17 @@ _camera camCommitPrepared (_duration + _delay);
 [_camera, _newVector, _duration, 3] call GRAD_INTRO_fnc_camTilt;
 
 // firefly circles at first, raises after _durationFirefly
-private _firefly = ["GRAD_butterfly", getpos introMoth_1, getPos introMoth_2, _durationFirefly, _durationFirefly] call grad_intro_fnc_butterfly;
+private _firefly = ["GRAD_butterfly", getpos introMoth_1, getPos introMoth_2, _durationFirefly, _durationFirefly+0.5] call grad_intro_fnc_butterfly;
 
-
+/*
 [{
     params ["_firefly"];
     
     _firefly camSetPos (getPos intro_2);
-    _firefly camCommit 12;
+    _firefly camCommit 10;
 
 }, [_firefly], (_durationFirefly + 1)] call CBA_fnc_waitAndExecute;
-
+*/
 
 [{
     params ["_camera"];
