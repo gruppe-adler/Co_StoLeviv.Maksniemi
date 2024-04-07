@@ -13,4 +13,5 @@
 #include "grad_roles\cfgFunctions.hpp"
 #include "grad_briefing\cfgFunctions.hpp"
 #include "grad_zeus\cfgFunctions.hpp"
+#include "grad_intro\cfgFunctions.hpp"
 #include "AF_keypad\cfgFunctions.hpp"

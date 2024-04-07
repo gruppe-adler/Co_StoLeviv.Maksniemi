@@ -373,3 +373,13 @@
         [_playerCloseBy] call grad_briefing_fnc_briefingOpenPublic;
 
 }] call zen_custom_modules_fnc_register;
+
+
+["STO LEVIV - FISH", "Fishplosion!",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        _position = ASLtoAGL _position;
+
+        [_position] remoteExec ["grad_fish_fnc_fishplosion", [0,-2] select isDedicated];
+
+}] call zen_custom_modules_fnc_register;
