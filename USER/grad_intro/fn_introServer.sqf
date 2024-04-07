@@ -27,10 +27,12 @@ private _busPath = [
 introBus setDriveOnPath _busPath;
 
 [{
+	if (introDude getVariable ["grad_walkCommand", false]) exitWith {};
 	// introDude playActionNow "radioAnims_Ear";
 	introDude setPos getPos introStep_1;
 	introDude setBehaviour "Careless";
 	introDude setSpeedMode "LIMITED";
+	introDude setVariable ["grad_walkCommand", true];
 
 	private _steps = [
 		getPos introStep_2,

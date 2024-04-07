@@ -3,7 +3,7 @@ if (isServer) then {
 	[] spawn {
 		// systemChat "spawn running";
 
-		waitUntil { !isNil "GRAD_Roles_Initialised" };
+		// waitUntil { !isNil "GRAD_Roles_Initialised" };
 
 		// tombstone properties
 		private _tombStones = call grad_loot_fnc_getTombStones;
@@ -45,15 +45,17 @@ if (isServer) then {
 					_namesUsed pushBackUnique _familyName;
 					missionNamespace setVariable ["GRAD_lootNamesUsed", _namesUsed];
 				} else {
-					_familyName = selectRandom _names;
+					_familyName = selectRandom _familyNames;
 				};
 				private _customNameArray = _names splitString " ";
 				_customNameArray set [2, _familyName];
 				_names = _customNameArray joinString " ";
 				
+				/*
 				if (DEBUG) then {
 					[_x, "COLORBLACK"] call grad_loot_fnc_createMarker;
 				};
+				*/
 			};
 			_allHashes pushBack [_x call BIS_fnc_netId, [_names, _deathdates#_forEachIndex, _epitaphs#_forEachIndex, _loot]];
 
