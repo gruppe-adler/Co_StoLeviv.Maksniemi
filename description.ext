@@ -98,8 +98,8 @@ class CfgIdentities
     {
         face = "WhiteHead_03";
         glasses = "";
-        name = "Juhani Lehtonen"; // Finnish prename and surname
-        nameSound = "Juhani Lehtonen";
+        name = "Juhani Valtonen"; // Finnish prename and surname
+        nameSound = "Juhani Valtonen";
         pitch = 1.0;
         speaker = "Male01ENG";
     };
@@ -338,8 +338,8 @@ class CfgIdentities
     {
         face = "WhiteHead_27";
         glasses = "";
-        name = "Lauri Vixxär"; // Finnish prename and surname
-        nameSound = "Lauri Vixxär";
+        name = "Lauri Korhonen"; // Finnish prename and surname
+        nameSound = "Lauri Korhonen";
         pitch = 1.0;
         speaker = "Male01ENG";
     };
@@ -348,8 +348,8 @@ class CfgIdentities
     {
         face = "WhiteHead_28";
         glasses = "";
-        name = "Timo Vixxär"; // Finnish prename and surname
-        nameSound = "Timo Vixxär";
+        name = "Timo Härkönen"; // Finnish prename and surname
+        nameSound = "Timo Härkönen";
         pitch = 1.0;
         speaker = "Male01ENG";
     };
@@ -358,8 +358,8 @@ class CfgIdentities
     {
         face = "WhiteHead_29";
         glasses = "";
-        name = "Veikko Vixxär"; // Finnish prename and surname
-        nameSound = "Veikko Vixxär";
+        name = "Veikko Lindroos"; // Finnish prename and surname
+        nameSound = "Veikko Lindroos";
         pitch = 1.0;
         speaker = "Male01ENG";
     };

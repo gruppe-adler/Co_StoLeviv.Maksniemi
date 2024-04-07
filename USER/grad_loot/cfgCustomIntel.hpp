@@ -36,11 +36,11 @@ class cfgCustomIntel {
          marker = "mrk_loot_hunter_1";
       };
       class intel4 {
-         briefing = "My guns were taken from me. The hunter roots in my Lehtonen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. The hunter roots in my Timonen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
       class intel5 {
-         briefing = "My guns were taken from me. The hunter roots in my Meektiini family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
+         briefing = "My guns were taken from me. The hunter roots in my Eskelinen family run deep. Most of them are buried under their name at the cemetery at %1 and might have taken their guns with them.";
          marker = "mrk_loot_hunter_1";
       };
    };

@@ -162,6 +162,14 @@ if (_spawnMarker in _allMapMarkers) then {
 private _face = _identity get "face";
 [_player, _face] remoteExec ["setFace", 0, _player];
 private _name = _identity get "name";
+// hunters need to be from specific families, in order to search for loot at the tombstones
+if (toLower (_role getOrDefault ["displayName", ""]) == "hunter") then {
+	private _familyNames = ["Vixxär", "Lehtonen", "Meektiini", "Timonen", "Eskelinen"];
+	private _surname = _familyNames select (_markerNumber - 1);
+	_name = _name splitString " ";
+	_name set [1, _surname];
+	_name = _name joinString " ";
+};
 private _sanitizedName = [_name, true] call ace_common_fnc_sanitizeString;
 private _rawName = [_name, false] call ace_common_fnc_sanitizeString;
 _player setVariable ["ACE_Name", _sanitizedName, true];

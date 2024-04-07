@@ -36,8 +36,17 @@ if (isServer) then {
 				_loot = selectRandom ["rhs_weap_m38", "vn_m1891", "UK3CB_M1903A1", "vn_m1903"];
 
 				// all weapons are buried by some crazy hunter family members
-				// plus two very famous individuals
-				private _familyName = selectRandom ["Vixxär", "Lehtonen", "Meektiini"];
+				private _familyNames = ["Vixxär", "Lehtonen", "Meektiini", "Timonen", "Eskelinen"];
+				private _namesUsed = missionNamespace getVariable ["GRAD_lootNamesUsed", []];
+				private _familyName = "";
+				// making sure each family name has at least 1 loot option
+				if ((count _namesUsed) < (count _familyNames)) then {
+					_familyName = (_familyNames select { !(_x in _namesUsed) }) select 0;
+					_namesUsed pushBackUnique _familyName;
+					missionNamespace setVariable ["GRAD_lootNamesUsed", _namesUsed];
+				} else {
+					_familyName = selectRandom _names;
+				};
 				private _customNameArray = _names splitString " ";
 				_customNameArray set [2, _familyName];
 				_names = _customNameArray joinString " ";
