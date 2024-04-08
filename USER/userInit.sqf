@@ -82,7 +82,7 @@ if (hasInterface) then {
 
             if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
             
-            [player, _nearestPhone] remoteexec ["grad_telephone_fnc_callEnd", 2];^
+            [player, _nearestPhone] remoteexec ["grad_telephone_fnc_callEnd", 2];
 			player setVariable ["grad_telephone_isCalling", false];
         };
 	 }] call CBA_fnc_addEventHandler;
