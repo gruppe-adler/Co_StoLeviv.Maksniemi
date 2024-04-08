@@ -51,6 +51,42 @@ if (hasInterface) then {
     },{alive player}] call ace_interact_menu_fnc_createAction;
 
     [player, 1, ["ACE_SelfActions"], _checkDisguise] call ace_interact_menu_fnc_addActionToObject;
+
+
+	 ["ace_unconscious", {
+        params ["_unit", "_state"];
+
+        if (player getVariable ["grad_telephone_isCalling", false]) then {
+            private _nearestPhone = objNull;
+            private _nearestPhoneIndex = 0;
+            private _position = getpos player;
+            private _allNumbers = missionNamespace getVariable ['GRAD_TELEPHONE_ALLNUMBERS', []];
+            {
+                private _phoneObjects = _x select 1;
+                private _numberIndex = _forEachIndex;
+
+                {
+                    private _phoneObject = _x;
+                    private _positionPhoneObject = position _x;
+
+                    if (isNull _nearestPhone) then {
+                        _nearestPhone = _phoneObject;
+                    };
+
+                    if (_positionPhoneObject distance2D _position < (position _nearestPhone) distance2D _position) then {
+                        _nearestPhone = _phoneObject;
+                        _nearestPhoneIndex = _numberIndex;
+                    };
+                } forEach _phoneObjects;
+            } forEach _allNumbers;
+
+            if (count _allNumbers < 1) exitWith { systemChat "No phones on map"; };
+            
+            [player, _nearestPhone] remoteexec ["grad_telephone_fnc_callEnd", 2];^
+			player setVariable ["grad_telephone_isCalling", false];
+        };
+	 }] call CBA_fnc_addEventHandler;
+	
 };
 
 
