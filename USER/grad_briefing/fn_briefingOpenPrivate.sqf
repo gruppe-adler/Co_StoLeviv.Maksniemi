@@ -23,7 +23,7 @@ params ["_player"];
 // TEXTS
 
 // COMMON
-private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Personal intel. Share only to persons you trust.</t><br/><br/>";
+private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Personal intel. Share only with people you trust!</t><br/><br/>";
 
 private _dynamicTextCombined = "";
 

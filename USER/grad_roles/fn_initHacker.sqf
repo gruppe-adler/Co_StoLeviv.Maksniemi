@@ -65,6 +65,10 @@ private _nightVisionOn =
 			_ppeffect ppEffectCommit 10;
 
 			player setVariable ["grad_roles_ppeffect", _ppeffect];
+
+			0 fadeMusic 0;
+			playMusic "Hackers";
+			1 fadeMusic 1;
 		};
   },
   {
@@ -86,6 +90,12 @@ private _nightVisionOff =
       player action ["nvGogglesOff", player];
       player setVariable ["grad_roles_thermals", false, true];
 
+	[] spawn {
+		0.5 fadeMusic 0;
+		sleep 0.6;
+		playMusic "";
+		0 fadeMusic 1;
+	};
 	  player removeItem "gm_ge_facewear_acidgoggles";
 
 		private _ppeffect = player getVariable ["grad_roles_ppeffect", -1];
