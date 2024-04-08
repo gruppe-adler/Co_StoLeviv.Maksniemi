@@ -416,3 +416,63 @@
         [_position] remoteExec ["grad_fish_fnc_fishplosion", [0,-2] select isDedicated];
 
 }] call zen_custom_modules_fnc_register;
+
+
+["STO LEVIV - INCON MODIFIER", "RAISE SUS VALUE",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        _position = ASLtoAGL _position;
+
+       
+        private _possiblePlayers = _position nearEntities ["Man", 7];
+        private _players = _possiblePlayers select { isPlayer _x };
+
+        {
+            private _susValueBefore = _x getVariable ["INC_suspiciousValue", 0];
+            private _susValueNew = _susValueNew + 1;
+            _x getVariable ["INC_suspiciousValue", 0];
+            _x setVariable ["INC_suspiciousValue", _susValueNew, true];
+
+            private _text = format ["Sus value raised from %1 to %2", _susValueBefore, _susValueNew];
+            ["missionControl_curatorInfo", [_x, "susvalue", _text]] call CBA_fnc_globalEvent;
+        } forEach _players;
+
+}] call zen_custom_modules_fnc_register;
+
+
+["STO LEVIV - INCON MODIFIER", "LOWER SUS VALUE",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        _position = ASLtoAGL _position;
+
+       
+        private _possiblePlayers = _position nearEntities ["Man", 7];
+        private _players = _possiblePlayers select { isPlayer _x };
+
+        {
+            private _susValueBefore = _x getVariable ["INC_suspiciousValue", 0];
+            private _susValueNew = (_susValueNew - 1) max 0;
+            _x getVariable ["INC_suspiciousValue", 0];
+            _x setVariable ["INC_suspiciousValue", _susValueNew, true];
+
+            private _text = format ["Sus value lowered from %1 to %2", _susValueBefore, _susValueNew];
+            ["missionControl_curatorInfo", [_x, "susvalue", _text]] call CBA_fnc_globalEvent;
+        } forEach _players;
+
+}] call zen_custom_modules_fnc_register;
+
+
+
+["STO LEVIV - VEHICLE PHONE", "Add new vehicle phone",
+{
+        params [["_position", [0,0,0], [[]], 3], ["_objectUnderCursor", objNull, [objNull]]];
+        _position = ASLtoAGL _position;
+
+        if (isNull _objectUnderCursor) exitWith { "no object" call CBA_fnc_notify; };
+        if (_objectUnderCursor isKindOf "LandVehicle" || _objectUnderCursor isKindOf "Air") then {
+             [this, true, "111", "Rettung Ersatz", "-1", true, getPos this, false, false] remoteExec ["grad_telephone_fnc_addPhone", 2];
+        } else {
+            "error: no air or landvehicle" call CBA_fnc_notify;
+        };
+
+}] call zen_custom_modules_fnc_register;

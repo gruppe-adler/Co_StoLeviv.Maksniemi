@@ -9,4 +9,5 @@ _vehicle addEventHandler ["HandleDamage", {
 	} else {
 		_damage
 	};
+	_damage
 }];

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2417;
+		nextID=2442;
 	};
 	class Camera
 	{
-		pos[]={10697.609,22.269787,5859.7056};
-		dir[]={0.71942484,-0.6887762,0.089528054};
-		up[]={0.68350405,0.72497398,0.085057929};
-		aside[]={0.12349139,0,-0.99234563};
+		pos[]={5540.1143,43.170071,7004.252};
+		dir[]={-0.44514933,-0.82999647,-0.33607832};
+		up[]={-0.66241193,0.55775958,-0.50010663};
+		aside[]={-0.60254145,1.6385457e-07,0.79809171};
 	};
 };
 binarizationWanted=0;
@@ -33064,7 +33064,20 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item414
@@ -33115,7 +33128,20 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item416

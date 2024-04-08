@@ -1,17 +1,5 @@
 if (!isServer) exitWith {};
 
-// unlock dynsim if necessary
-["featureCamera", {
-    if (isRemoteControlling player) then {
-        {
-            private _currentUnit = getAssignedCuratorUnit _x;
-            if (_currentUnit isEqualTo player) exitWith {
-                _currentUnit enableDynamicSimulation false;
-            };
-        } forEach allCurators;
-    };
-}] call CBA_fnc_addPlayerEventHandler;
-
 // curator infos
 ["missionControl_curatorInfo", {
     params ["_unit", "_type", "_text"];
@@ -46,6 +34,10 @@ if (!isServer) exitWith {};
         };
         case ("customintel"): {
             _message = format ["%1 got private intel: %2", [_unit, false, true] call ace_common_fnc_getName, _text];
+            _color = [0.7,0.1,0.1,1];
+        };
+        case ("susvalue"): {
+            _message = format ["%1 : %2", [_unit, false, true] call ace_common_fnc_getName, _text];
             _color = [0.7,0.1,0.1,1];
         };
         default {
@@ -95,3 +87,4 @@ if (!isServer) exitWith {};
         };
     } forEach allCurators;
 }] call CBA_fnc_addEventHandler;
+
