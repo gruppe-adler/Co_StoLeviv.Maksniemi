@@ -25,7 +25,14 @@ params ["_player"];
 // COMMON
 private _titleCommon = "<t size='2.0' font='RobotoCondensedBold' color='#ffff3333'>Personal intel. Share only with people you trust!</t><br/><br/>";
 
-private _dynamicTextCombined = "";
+private _dynamicTextCombined = "General tips: <br/>
+* You can check your disguise with self interact (if russians will shoot you)<br/><br/>
+* You can change clothes at your home up to 5 times to reset your disguise state<br/><br/>
+* If you are down, Docs will get your position and will revive you at the hospital<br/><br/>
+<br/><br/>
+Gameplay:<br/>
+* Please do not use global chat or markers (Gentlemans agreement)
+* If you are completely lost, go to the nearest phone booth and ping zeus, we call back<br/><br/>";
 
 // DYNAMIC INTEL
 {

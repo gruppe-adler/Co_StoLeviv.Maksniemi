@@ -12,6 +12,10 @@
 	player addEventhandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle", "_turret"];
 
+		if (_vehicle isKindOf "Air") then {
+			_vehicle allowDamage false;
+		};
+
 		// plays alarm on empty cars once
 		if (
 				!(_vehicle getVariable ["GRAD_isPlayers", false]) && 
@@ -43,6 +47,11 @@
 
 	player addEventHandler ["SeatSwitchedMan", {
 		params ["_unit1", "_unit2", "_vehicle"];
+
+		if (_vehicle isKindOf "Air") then {
+			_vehicle allowDamage false;
+		};
+		
 		{
 			if (!isNull _x) then {
 				private _role = (assignedVehicleRole _x);
