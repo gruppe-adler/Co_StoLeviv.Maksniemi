@@ -1,6 +1,6 @@
 
 params ["_camera"];
-private _duration = 2;
+private _duration = 1.5;
 
 [{
     "introBlackLoading" cutText ["", "BLACK OUT", _this];

@@ -21,7 +21,7 @@ private _vectorUp = vectorUp intro_3;
 _camera setVectorDirAndUp [_vectorDir, _vectorUp];
 
 
-private _duration = 15;
+private _duration = 19;
 _camera camPreparePos (getPos intro_4);
 _camera camCommitPrepared _duration;
 

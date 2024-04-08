@@ -21,7 +21,7 @@ _camera camCommitPrepared (_duration + _delay);
 [_camera, _newVector, _duration, 3] call GRAD_INTRO_fnc_camTilt;
 
 // firefly circles at first, raises after _durationFirefly
-private _firefly = ["GRAD_butterfly", getpos introMoth_1, getPos introMoth_2, _durationFirefly, _durationFirefly+0.5] call grad_intro_fnc_butterfly;
+private _firefly = ["GRAD_butterfly", getpos introMoth_1, getPos introMoth_2, _durationFirefly, _durationFirefly+0.1] call grad_intro_fnc_butterfly;
 
 /*
 [{
