@@ -68,6 +68,7 @@ introBus setDriveOnPath _busPath;
 		{
 			params ["_newDudeActual"];
 			deleteVehicle _newDudeActual;
+			[introTelefonzelle, 1, 0] call BIS_fnc_Door;
 		},
 		[_newDudeActual],
 		30
@@ -78,11 +79,11 @@ introBus setDriveOnPath _busPath;
 [{
 	[introTelefonzelle, 1, 1] call BIS_fnc_Door;
 	
-}, [], 37] call CBA_fnc_waitAndExecute;
+}, [], 36] call CBA_fnc_waitAndExecute;
 
 [{
 	deleteVehicle (driver introBus);
-	deleteVehicle introBus;
+	deleteVehicle introBus;	
 	
 }, [], 40] call CBA_fnc_waitAndExecute;
 

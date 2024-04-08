@@ -61,7 +61,7 @@ class cfgCustomRoles {
 
     class hacker {
         role = "Hacker";
-        briefing = "You are able to hack any keypad and computer. You can switch on your hacky NVG goggles with self interact";
+        briefing = "You are able to hack any keypad and computer, using your magic fingers (and the code 1337). You can switch on your hacky NVG goggles with self interact";
         code = "[player] call grad_roles_fnc_initHacker;";
         spawn = "mrk_spawn_hacker";
         uniform[] = {"U_C_E_LooterJacket_01_F", "U_I_L_Uniform_01_tshirt_black_F", "U_I_L_Uniform_01_tshirt_skull_F", "U_I_L_Uniform_01_tshirt_sport_F"};
