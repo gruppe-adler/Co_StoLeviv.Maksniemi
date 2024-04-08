@@ -154,7 +154,7 @@
 
     {
         if (random 1 > 0.5) then {
-            [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Someone from our cell will call you. Decide for a meeting place and time."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
+            [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Someone from our cell will call you."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
         } else {
             [_x, "GRAD_garble_long", "Its time to rise fellow partisan. Check your phonebook and call ALL your private contacts, gather them on a position and time of your choice to discuss your intel and further steps."] remoteExec ["GRAD_telephone_fnc_fakeCallPhone", 2];
         };
@@ -429,7 +429,7 @@
 
         {
             private _susValueBefore = _x getVariable ["INC_suspiciousValue", 0];
-            private _susValueNew = _susValueNew + 1;
+            private _susValueNew = _susValueBefore + 1;
             _x getVariable ["INC_suspiciousValue", 0];
             _x setVariable ["INC_suspiciousValue", _susValueNew, true];
 
@@ -451,7 +451,7 @@
 
         {
             private _susValueBefore = _x getVariable ["INC_suspiciousValue", 0];
-            private _susValueNew = (_susValueNew - 1) max 0;
+            private _susValueNew = (_susValueBefore - 1) max 0;
             _x getVariable ["INC_suspiciousValue", 0];
             _x setVariable ["INC_suspiciousValue", _susValueNew, true];
 

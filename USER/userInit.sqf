@@ -12,34 +12,28 @@ if (hasInterface) then {
 
         private _unit = player;
         private _disguiseActive = captive player;
-        
+
         private _response = "All fine, I think the enemy does not suspect anything";
 
         if ((_unit getVariable ["INC_suspiciousValue",1]) >= 2) then {
 				_response = "You are acting suspiciously";
-				sleep 2;
 			} else {
 
 				if (_unit getVariable ["INC_firedRecent",false]) then {
 					_response = "You smell of cordite";
-					sleep 2;
 				};
 
 				if ((_unit getVariable ["INC_disguiseValue",1]) < 2) then {
 					_response = "Your disguise is solid";
-					sleep 2;
 				} else {
 					if ((_unit getVariable ["INC_disguiseValue",1]) < 3) then {
 						_response = "Your disguise is good";
-						sleep 2;
 					} else {
 						if ((_unit getVariable ["INC_disguiseValue",1]) < 7) then {
 							_response = "You look a little out of place";
-							sleep 2;
 						} else {
 							if ((_unit getVariable ["INC_disguiseValue",1]) < 13) then {
 								_response = "You look suspicious";
-								sleep 2;
 							} else {
 								_response = "You look extremely suspicious";
 							};
