@@ -1,9 +1,9 @@
 params ["_player"];
 
 _player setCaptive true;
-
 // show future medic markers
 _player setVariable ['grad_customMedicSystem_isMedic', true];
+_player setVariable ["isSneaky", false, true];
 
 // show existing medic markers
 private _localMedicMarkers = _player getVariable ['grad_customMedicSystem_localMedicMarkers', []];

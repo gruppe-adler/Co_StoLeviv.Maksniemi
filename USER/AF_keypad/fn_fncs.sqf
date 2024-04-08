@@ -28,8 +28,8 @@ switch (_this select 0) do {
 
 			[player, "target_locked"] remoteExec ["say3D", 0];
 		} else {
-			if (player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && count AF_KP_keypad_OutputText > 7 ||
-				player getVariable ["GRAD_cfgCustomRoles_displayName", "none"] == "Hacker" && AF_KP_keypad_OutputText == "1337") then {
+			if (player getVariable ["grad_roles_thermals", false] && count AF_KP_keypad_OutputText > 7 ||
+				player getVariable ["grad_roles_thermals", false] && AF_KP_keypad_OutputText == "1337") then {
 				_keypadAffected call compile _codeToUnlock;
 				[player, "target_locked"] remoteExec ["say3D", 0];
 				"Hacked the System :]" call CBA_fnc_notify;
